@@ -610,7 +610,11 @@ button {
 /* AVATAR */
 
 .member-card__avatar {
+<<<<<<< HEAD
     height: 320px;
+=======
+    height: 200px;
+>>>>>>> 8483803b8b8416d9bac9e716e992a5fb11836a52
 
     display: grid;
     place-items: center;
