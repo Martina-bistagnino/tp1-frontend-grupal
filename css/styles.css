@@ -530,21 +530,6 @@ button {
     margin-bottom: 35px;
 }
 
-.filter-button {
-    padding: 10px 18px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 50px;
-
-    background: transparent;
-
-    color: var(--text-secondary);
-
-    cursor: pointer;
-
-    transition: var(--transition);
-}
 
 .filter-button:hover,
 .filter-button.active {
@@ -601,9 +586,6 @@ button {
         rgba(34, 211, 238, 0.45);
 }
 
-.member-card.hidden {
-    display: none;
-}
 
 
 
@@ -1429,43 +1411,7 @@ button {
     }
 
 }
-/* ==========================================
-   TEMA LUIS
-========================================== */
 
-.luis-theme {
-
-    --profile-bg: #080b0d;
-    --profile-surface: #121719;
-    --profile-surface-light: #192124;
-
-    --profile-accent: #f4d03f;
-    --profile-accent-secondary: #48c774;
-    --profile-purple: #3da5d9;
-
-    --profile-text: #f7f5ed;
-    --profile-muted: #b7b9b1;
-
-    --profile-border:
-        rgba(244, 208, 63, 0.16);
-
-    background:
-
-        radial-gradient(
-            circle at 85% 10%,
-            rgba(61, 165, 217, 0.12),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 10% 50%,
-            rgba(72, 199, 116, 0.07),
-            transparent 35%
-        ),
-
-        #080b0d;
-
-}
 
 
 /* ==========================================
