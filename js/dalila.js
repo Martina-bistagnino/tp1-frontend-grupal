@@ -169,9 +169,32 @@ function showRandomInterest() {
 
 
 
-/* ==========================================
+//* ==========================================
    EVENTOS
 ========================================== */
+
+const explorerBox =
+    document.querySelector(
+        ".dalila-explorer__content"
+    );
+
+function updateWithFade(callback) {
+
+    if (explorerBox) {
+        explorerBox.classList.add("fading");
+    }
+
+    setTimeout(() => {
+
+        callback();
+
+        if (explorerBox) {
+            explorerBox.classList.remove("fading");
+        }
+
+    }, 220);
+
+}
 
 dalilaButtons.forEach((button) => {
 
@@ -181,9 +204,6 @@ dalilaButtons.forEach((button) => {
 
             const selectedInterest =
                 button.dataset.interest;
-
-
-            /* Quitar activo anterior */
 
             dalilaButtons.forEach(
                 (currentButton) => {
@@ -195,34 +215,60 @@ dalilaButtons.forEach((button) => {
                 }
             );
 
-
-            /* Activar botón */
-
             button
                 .classList
                 .add("active");
 
+            if (selectedInterest === "random") {
 
-            /* RANDOM */
-
-            if (
-                selectedInterest === "random"
-            ) {
-
-                showRandomInterest();
+                updateWithFade(showRandomInterest);
 
                 return;
 
             }
 
-
-            /* Mostrar contenido */
-
-            showDalilaInterest(
-                selectedInterest
+            updateWithFade(() =>
+                showDalilaInterest(selectedInterest)
             );
 
         }
     );
 
 });
+
+
+/* ==========================================
+   TOGGLE MODO ECLIPSE
+========================================== */
+
+const eclipseToggle =
+    document.querySelector(
+        "#dalilaEclipseToggle"
+    );
+
+if (eclipseToggle) {
+
+    eclipseToggle.addEventListener(
+        "click",
+        () => {
+
+            document
+                .body
+                .classList
+                .toggle("eclipse-mode");
+
+            const active =
+                document
+                    .body
+                    .classList
+                    .contains("eclipse-mode");
+
+            eclipseToggle.textContent =
+                active
+                    ? "🌕 Modo Noche"
+                    : "🌘 Modo Eclipse";
+
+        }
+    );
+
+}
