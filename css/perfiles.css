@@ -1501,14 +1501,26 @@
 
 }
 
-.dalila-theme::before {
+
+/* ==========================================
+   ESTRELLAS TITILANTES (fondo Dalila)
+========================================== */
+
+.dalila-theme::before,
+.dalila-theme::after {
     content: "";
 
     position: fixed;
     inset: 0;
 
+    z-index: 1;
+
     pointer-events: none;
 
+    background-repeat: repeat;
+}
+
+.dalila-theme::before {
     background-image:
         radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, transparent),
         radial-gradient(1.5px 1.5px at 90px 80px, #ffffff, transparent),
@@ -1516,22 +1528,37 @@
         radial-gradient(1.5px 1.5px at 180px 110px, #ffffff, transparent),
         radial-gradient(1px 1px at 230px 60px, #ffffff, transparent);
 
-    background-repeat: repeat;
     background-size: 260px 260px;
 
-    opacity: 0.35;
+    animation: dalilaTwinkle 2.2s ease-in-out infinite alternate;
+}
 
-    animation: dalilaTwinkle 4s ease-in-out infinite alternate;
+.dalila-theme::after {
+    background-image:
+        radial-gradient(1px 1px at 50px 150px, #ffffff, transparent),
+        radial-gradient(1.5px 1.5px at 120px 20px, #ffffff, transparent),
+        radial-gradient(1px 1px at 200px 170px, #ffffff, transparent),
+        radial-gradient(1.5px 1.5px at 250px 90px, #ffffff, transparent);
+
+    background-size: 300px 300px;
+
+    animation: dalilaTwinkle 3s ease-in-out infinite alternate;
+    animation-delay: 1s;
 }
 
 @keyframes dalilaTwinkle {
     0% {
-        opacity: 0.2;
+        opacity: 0.1;
     }
     100% {
-        opacity: 0.55;
+        opacity: 0.9;
     }
 }
+
+
+/* ==========================================
+   MODO ECLIPSE
+========================================== */
 
 .dalila-theme.eclipse-mode {
 
@@ -1862,15 +1889,18 @@
 
         rgba(16, 23, 53, 0.7);
 
-     transition:
+    transition:
         opacity 0.25s ease,
         transform 0.25s ease;
+
 }
 
+
 .dalila-explorer__content.fading {
+
     opacity: 0;
 
-    transform: translateY(6px);    
+    transform: translateY(6px);
 
 }
 
@@ -1908,7 +1938,9 @@
 
 }
 
+
 #dalilaExplorerText::after {
+
     content: "▌";
 
     margin-left: 4px;
@@ -1916,12 +1948,16 @@
     color: var(--profile-accent);
 
     animation: dalilaCursorBlink 0.9s infinite;
+
 }
 
+
 @keyframes dalilaCursorBlink {
+
     50% {
         opacity: 0;
     }
+
 }
 
 
