@@ -40,6 +40,7 @@ El proyecto fue maquetado con un enfoque *mobile-first*, garantizando diseño ad
 
 ## 📂 4. Estructura de Archivos y Carpetas
 
+<pre><code>
 /
 ├── index.html          # Portada principal del equipo
 ├── bitacora.html       # Registro del proceso de desarrollo
@@ -66,6 +67,7 @@ El proyecto fue maquetado con un enfoque *mobile-first*, garantizando diseño ad
 └── img/
     ├── avatares/       # Avatares de integrantes (martina.jpg, dalila.jpg, etc.)
     └── capturas/       # Capturas de pantalla de la interactividad
+</code></pre>
 
 ---
 
