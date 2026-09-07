@@ -7,19 +7,15 @@ const jorgeButtons =
         ".jorge-console-button"
     );
 
-
 const jorgeOutput =
     document.querySelector(
         "#jorgeConsoleOutput"
     );
 
-
 const jorgePage =
     document.querySelector(
         ".jorge-theme"
     );
-
-
 
 /* ==========================================
    RESPUESTAS
@@ -31,14 +27,17 @@ const jorgeCommands = {
         ">>> print('Creatividad + lógica + curiosidad') → proceso ejecutado correctamente.",
 
     music:
-        "PLAYLIST LOADED: Just Bring It · i'mperfect · Paradigma.",
+        "PLAYLIST LOADED:<br>" +
+        "• Band-Maid (Secret My Lips): <a href='https://www.youtube.com/watch?v=1Vuca7V-5Ec' target='_blank'>[Reproducir en YouTube]</a><br>" +
+        "• Ling Tosite Sigure (Abnormalize): <a href='https://www.youtube.com/watch?v=DOKM9QWJG3g' target='_blank'>[Reproducir en YouTube]</a><br>" +
+        "• Lörihen (Presa Facil): <a href='https://www.youtube.com/watch?v=vT9Kd0noyJ4' target='_blank'>[Reproducir en YouTube]</a>",
 
     game:
-        "GAME FOUND: Dungeons & Dragons: Shadow over Mystara 🎮",
+        ">> CARGANDO ROM: D&D: Shadow over Mystara...<br>" +
+        ">> Género: Beat 'em up / Rol fantástico (Capcom, 1996).<br>" +
+        ">> Estado: Joyita inigualable. <a href='https://www.youtube.com/watch?v=FaKDO9RyzfU' target='_blank'>[Ver Intro / Arcade]</a>",
 
 };
-
-
 
 const randomJorgeFacts = [
 
@@ -55,8 +54,6 @@ const randomJorgeFacts = [
     "Probablemente esté sobrepensando este mensaje."
 ];
 
-
-
 /* ==========================================
    MOSTRAR TEXTO
 ========================================== */
@@ -67,35 +64,27 @@ function showJorgeOutput(text) {
         return;
     }
 
-
     jorgeOutput.innerHTML = "";
 
 
     const paragraph =
         document.createElement("p");
 
-
     const prompt =
         document.createElement("span");
 
-
     prompt.textContent =
-        "root@jorge:~$ ";
-
+        "root@jorge:~$ ";   
 
     paragraph.appendChild(prompt);
 
-
-    paragraph.append(
-        document.createTextNode(text)
-    );
-
-
+    const contentSpan = document.createElement("span");
+    contentSpan.innerHTML = text;
+    paragraph.appendChild(contentSpan);
+    
     jorgeOutput.appendChild(paragraph);
 
 }
-
-
 
 /* ==========================================
    RANDOM
@@ -109,14 +98,11 @@ function showRandomJorgeFact() {
             randomJorgeFacts.length
         );
 
-
     showJorgeOutput(
         randomJorgeFacts[index]
     );
 
 }
-
-
 
 /* ==========================================
    INFERNO MODE
@@ -161,7 +147,6 @@ function toggleInfernoMode() {
 }
 
 
-
 /* ==========================================
    EVENTOS
 ========================================== */
@@ -175,7 +160,6 @@ jorgeButtons.forEach((button) => {
             const command =
                 button.dataset.command;
 
-
             if (command === "random") {
 
                 showRandomJorgeFact();
@@ -184,7 +168,6 @@ jorgeButtons.forEach((button) => {
 
             }
 
-
             if (command === "inferno") {
 
                 toggleInfernoMode();
@@ -192,7 +175,6 @@ jorgeButtons.forEach((button) => {
                 return;
 
             }
-
 
             if (
                 jorgeCommands[command]
