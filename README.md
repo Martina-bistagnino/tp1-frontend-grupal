@@ -116,7 +116,12 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 *(Insertar captura: `![Captura Martina](img/capturas/martina.png)`)*
 
 ### 3. Perfil de Dalila (`js/dalila.js`)
-* **Curiosity Explorer:** Menú con `data-interest` que actualiza el ícono, título y descripción (`#dalilaExplorerIcon`, `#dalilaExplorerTitle`, `#dalilaExplorerText`) con datos sobre astronomía, tortugas y creatividad.
+
+* **Curiosity Explorer:** menú interactivo con opciones identificadas mediante `data-interest`. Al seleccionar una opción, JavaScript actualiza dinámicamente el ícono, título y descripción de la sección (`#dalilaExplorerIcon`, `#dalilaExplorerTitle` y `#dalilaExplorerText`). La información presenta diferentes intereses relacionados con astronomía, tortugas y creatividad.
+
+* **Uso de IA:** se utilizaron ChatGPT y Claude Code, ambos con planes gratuitos, principalmente como herramientas de asistencia para verificar código HTML, CSS y JavaScript, proponer modificaciones y ayudar en la creación de avatares. También se utilizaron como apoyo para explorar estilos visuales y seleccionar paletas de colores para el perfil.
+
+* **Revisión y adaptación:** las sugerencias generadas por IA fueron revisadas y adaptadas por el equipo antes de incorporarlas al proyecto. Se realizaron pruebas para comprobar que el código funcionara correctamente y que los cambios mantuvieran la estética y estructura definida para el perfil.
 
 *(Insertar captura: `![Captura Dalila](img/capturas/dalila.png)`)*
 
