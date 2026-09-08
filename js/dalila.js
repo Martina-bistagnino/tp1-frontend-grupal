@@ -3,7 +3,9 @@
 ========================================== */
 
 
-/* Botones */
+/* ==========================================
+   BOTONES
+========================================== */
 
 const dalilaButtons =
     document.querySelectorAll(
@@ -11,7 +13,9 @@ const dalilaButtons =
     );
 
 
-/* Elementos dinámicos */
+/* ==========================================
+   ELEMENTOS DINÁMICOS
+========================================== */
 
 const explorerIcon =
     document.querySelector(
@@ -27,7 +31,6 @@ const explorerText =
     document.querySelector(
         "#dalilaExplorerText"
     );
-
 
 
 /* ==========================================
@@ -93,10 +96,24 @@ const dalilaInterests = {
             desarrollar mi lado creativo.
         `
 
+    },
+
+
+    random: {
+
+        icon: "👑",
+
+        title: "¿Sabías que...?",
+
+        text: `
+            Cleopatra vivió más cerca de la llegada
+            del ser humano a la Luna que de la
+            construcción de las pirámides de Giza.
+        `
+
     }
 
 };
-
 
 
 /* ==========================================
@@ -121,7 +138,9 @@ function showDalilaInterest(interest) {
 
 
     if (!selectedInterest) {
+
         return;
+
     }
 
 
@@ -139,36 +158,6 @@ function showDalilaInterest(interest) {
 }
 
 
-
-/* ==========================================
-   FUNCIÓN RANDOM
-========================================== */
-
-function showRandomInterest() {
-
-    const interests =
-        Object.keys(dalilaInterests);
-
-
-    const randomIndex =
-        Math.floor(
-            Math.random() *
-            interests.length
-        );
-
-
-    const randomInterest =
-        interests[randomIndex];
-
-
-    showDalilaInterest(
-        randomInterest
-    );
-
-}
-
-
-
 /* ==========================================
    EVENTOS
 ========================================== */
@@ -178,63 +167,105 @@ const explorerBox =
         ".dalila-explorer__content"
     );
 
+
 function updateWithFade(callback) {
 
     if (explorerBox) {
-        explorerBox.classList.add("fading");
+
+        explorerBox.classList.add(
+            "fading"
+        );
+
     }
+
 
     setTimeout(() => {
 
         callback();
 
+
         if (explorerBox) {
-            explorerBox.classList.remove("fading");
+
+            explorerBox.classList.remove(
+                "fading"
+            );
+
         }
 
     }, 220);
 
 }
 
-dalilaButtons.forEach((button) => {
 
-    button.addEventListener(
-        "click",
-        () => {
+/* ==========================================
+   BOTONES DE INTERESES
+========================================== */
 
-            const selectedInterest =
-                button.dataset.interest;
+dalilaButtons.forEach(
+    (button) => {
 
-            dalilaButtons.forEach(
-                (currentButton) => {
+        button.addEventListener(
+            "click",
+            () => {
 
-                    currentButton
-                        .classList
-                        .remove("active");
+                const selectedInterest =
+                    button.dataset.interest;
 
-                }
-            );
 
-            button
-                .classList
-                .add("active");
+                /* ------------------------------
+                   ACTUALIZAR ESTADO ARIA
+                ------------------------------ */
 
-            if (selectedInterest === "random") {
+                dalilaButtons.forEach(
+                    (currentButton) => {
 
-                updateWithFade(showRandomInterest);
+                        currentButton
+                            .classList
+                            .remove(
+                                "active"
+                            );
 
-                return;
+
+                        currentButton
+                            .setAttribute(
+                                "aria-pressed",
+                                "false"
+                            );
+
+                    }
+                );
+
+
+                button
+                    .classList
+                    .add(
+                        "active"
+                    );
+
+
+                button
+                    .setAttribute(
+                        "aria-pressed",
+                        "true"
+                    );
+
+
+                /* ------------------------------
+                   MOSTRAR CONTENIDO
+                ------------------------------ */
+
+                updateWithFade(
+                    () =>
+                        showDalilaInterest(
+                            selectedInterest
+                        )
+                );
 
             }
+        );
 
-            updateWithFade(() =>
-                showDalilaInterest(selectedInterest)
-            );
-
-        }
-    );
-
-});
+    }
+);
 
 
 /* ==========================================
@@ -246,6 +277,7 @@ const eclipseToggle =
         "#dalilaEclipseToggle"
     );
 
+
 if (eclipseToggle) {
 
     eclipseToggle.addEventListener(
@@ -255,18 +287,32 @@ if (eclipseToggle) {
             document
                 .body
                 .classList
-                .toggle("eclipse-mode");
+                .toggle(
+                    "eclipse-mode"
+                );
+
 
             const active =
                 document
                     .body
                     .classList
-                    .contains("eclipse-mode");
+                    .contains(
+                        "eclipse-mode"
+                    );
+
 
             eclipseToggle.textContent =
                 active
                     ? "🌕 Modo Noche"
                     : "🌘 Modo Eclipse";
+
+
+            /* Actualizar estado ARIA */
+
+            eclipseToggle.setAttribute(
+                "aria-pressed",
+                active
+            );
 
         }
     );
