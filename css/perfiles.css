@@ -1832,7 +1832,26 @@
 
 }
 
+/* ==========================================
+   VIDEOS DE YOUTUBE - ÁLBUMES DALILA
+========================================== */
 
+.dalila-albums-grid .dalila-movie-card iframe {
+
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    height: auto;
+
+    margin-top: 20px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    display: block;
+
+}
 
 /* ==========================================
    EXPLORADOR INTERACTIVO
