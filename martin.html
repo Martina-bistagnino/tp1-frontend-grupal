@@ -45,6 +45,12 @@
                         <a href="#sobre-mi" class="nav__link">Sobre mí</a>
                     </li>
                     <li>
+                        <a href="#habilidades" class="nav__link">Stack</a>
+                    </li>
+                    <li>
+                        <a href="#interactivo" class="nav__link">Consola</a>
+                    </li>
+                    <li>
                         <a href="#favoritos" class="nav__link">Favoritos</a>
                     </li>
                     <li>
@@ -92,16 +98,18 @@
                     <div class="profile-actions">
                         <a href="#sobre-mi" class="button button--profile">Iniciar perfil</a>
                         <a href="https://github.com/TinchoHub" target="_blank" rel="noopener noreferrer"
-                            class="button button--profile-secondary">GitHub</a>
+                            class="button button--profile-secondary"
+                            aria-label="GitHub de Martín (se abre en nueva pestaña)">GitHub</a>
                         <a href="https://www.linkedin.com/in/martin-roige/" target="_blank" rel="noopener noreferrer"
-                            class="button button--profile-secondary">LinkedIn</a>
+                            class="button button--profile-secondary"
+                            aria-label="LinkedIn de Martín (se abre en nueva pestaña)">LinkedIn</a>
                     </div>
                 </div>
                 <!-- AVATAR -->
                 <div class="profile-hero__visual">
                     <div class="avatar-glow"></div>
-                    <div class="profile-avatar">
-                            <img src="img/avatares/martin.jpg" alt="Imagen de Martín Roige">
+                    <div class="profile-avatar" decoding="async" fetchpriority="high">
+                        <img src="img/avatares/martin.jpg" alt="Imagen de Martín Roige">
                     </div>
                     <div class="avatar-tag avatar-tag--html">
                         REACT
@@ -325,10 +333,9 @@
                             <span>METALLICA</span>
                             <h3>Black Album</h3>
                         </div>
-                        <iframe width="280" height="157"
-                            style="display: block; margin-left: auto; margin-right: 10px;"
+                        <iframe width="280" height="157"                            
                             src="https://www.youtube.com/embed/tAGnKpE4NCI?si=DPfTCQD2pvoXlmFS"
-                            title="YouTube video player" frameborder="0" frameborder="0"
+                            title="Reproductor de YouTube: Metallica - Black Album" loading="lazy"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                         </iframe>
@@ -341,10 +348,9 @@
                             <span>ROXETTE</span>
                             <h3>Joyride</h3>
                         </div>
-                        <iframe width="280" height="157"
-                            style="display: block; margin-left: auto; margin-right: 10px;"
+                        <iframe width="280" height="157"                            
                             src="https://www.youtube.com/embed/xCorJG9mubk?si=LD7g7RuotJ9IFKSt"
-                            title="YouTube video player" frameborder="0"
+                            title="Reproductor de YouTube: Roxette - Joyride" loading="lazy"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                         </iframe>
@@ -357,10 +363,9 @@
                             <span>IMAGINE DRAGONS</span>
                             <h3>Night Visions</h3>
                         </div>
-                        <iframe width="280" height="157"
-                            style="display: block; margin-left: auto; margin-right: 10px;"
+                        <iframe width="280" height="157"                            
                             src="https://www.youtube.com/embed/ktvTqknDobU?si=zFg4XByII9lfIZ5c"
-                            title="YouTube video player" frameborder="0"
+                            title="Reproductor de YouTube: Imagine Dragons - Night Visions" loading="lazy"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                         </iframe>
@@ -416,27 +421,27 @@
                 </div>
                 <div class="interests-grid">
                     <article class="interest-card">
-                        <span>🎬</span>
+                        <span aria-hidden="true">🎬</span>
                         <h3>Películas</h3>
                     </article>
                     <article class="interest-card">
-                        <span>📺</span>
+                        <span aria-hidden="true">📺</span>
                         <h3>Series</h3>
                     </article>
                     <article class="interest-card">
-                        <span>🗾</span>
+                        <span aria-hidden="true">🗾</span>
                         <h3>Anime</h3>
                     </article>
                     <article class="interest-card">
-                        <span>🎮</span>
+                        <span aria-hidden="true">🎮</span>
                         <h3>Videojuegos</h3>
                     </article>
                     <article class="interest-card">
-                        <span>🎵</span>
+                        <span aria-hidden="true">🎵</span>
                         <h3>Música</h3>
                     </article>
                     <article class="interest-card">
-                        <span>✈️</span>
+                        <span aria-hidden="true">✈️</span>
                         <h3>Viajes</h3>
                     </article>
                 </div>
@@ -455,42 +460,42 @@
                 </div>
                 <div class="martin-facts">
                     <article>
-                        <span>🎮</span>
+                        <span aria-hidden="true">🎮</span>
                         <div>
                             <h3>Blizzard fan</h3>
                             <p>Mis favoritos son StarCraft y Diablo.</p>
                         </div>
                     </article>
                     <article>
-                        <span>🐶</span>
+                        <span aria-hidden="true">🐶</span>
                         <div>
                             <h3>3 perros</h3>
                             <p>Y eso no es todo...</p>
                         </div>
                     </article>
                     <article>
-                        <span>🐈</span>
+                        <span aria-hidden="true">🐈</span>
                         <div>
                             <h3>8 gatos</h3>
                             <p>Sí. Ocho.</p>
                         </div>
                     </article>
                     <article>
-                        <span>🍽️</span>
+                        <span aria-hidden="true">🍽️</span>
                         <div>
                             <h3>Milanesa napolitana</h3>
                             <p>Comida favorita.</p>
                         </div>
                     </article>
                     <article>
-                        <span>📺</span>
+                        <span aria-hidden="true">📺</span>
                         <div>
                             <h3>Mirar series</h3>
                             <p>Uno de mis hobbies principales.</p>
                         </div>
                     </article>
                     <article>
-                        <span>🚀</span>
+                        <span aria-hidden="true">🚀</span>
                         <div>
                             <h3>Próxima misión</h3>
                             <p>Trabajar como desarrollador fullstack.</p>
@@ -513,12 +518,12 @@
                 <div class="martin-console">
                     <!-- CABECERA -->
                     <div class="martin-console__header">
-                        <span>●</span>
+                        <span aria-hidden="true">●</span>
                         <p>tincho@fullstack:~$</p>
                         <span class="martin-console__status">ONLINE</span>
                     </div>
                     <!-- PANTALLA -->
-                    <div class="martin-console__screen" id="martinConsole" aria-live="polite">
+                    <div class="martin-console__screen" id="martinConsole" aria-live="polite" aria-atomic="true">
                         <p>MARTIN OS v1.0</p>
                         <p>Sistema listo.</p>
                         <p>Seleccioná un comando_</p>

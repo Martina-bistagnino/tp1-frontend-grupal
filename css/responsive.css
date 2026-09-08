@@ -60,7 +60,7 @@
     }
 
     .nav.active {
-        max-height: 350px;
+        max-height: 520px;
 
         border-color: var(--border);
     }

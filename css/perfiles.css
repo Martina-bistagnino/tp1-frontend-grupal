@@ -33,16 +33,12 @@
 .martina-theme {
 
     background:
-        radial-gradient(
-            circle at 85% 10%,
+        radial-gradient(circle at 85% 10%,
             rgba(122, 24, 198, 0.15),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 10% 40%,
+            transparent 30%),
+        radial-gradient(circle at 10% 40%,
             rgba(49, 175, 230, 0.08),
-            transparent 30%
-        ),
+            transparent 30%),
         var(--profile-bg);
 
 }
@@ -75,8 +71,7 @@
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.1fr)
-        minmax(350px, 0.9fr);
+        minmax(0, 1.1fr) minmax(350px, 0.9fr);
 
     align-items: center;
 
@@ -168,12 +163,10 @@
     display: block;
 
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             var(--profile-accent),
             var(--profile-purple),
-            var(--profile-accent-secondary)
-        );
+            var(--profile-accent-secondary));
 
     background-clip: text;
 
@@ -289,11 +282,9 @@
 .button--profile {
 
     background:
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             var(--profile-accent),
-            var(--profile-purple)
-        );
+            var(--profile-purple));
 
 }
 
@@ -345,12 +336,10 @@
     border-radius: 50%;
 
     background:
-        radial-gradient(
-            circle,
+        radial-gradient(circle,
             rgba(122, 24, 198, 0.28),
             rgba(49, 175, 230, 0.08),
-            transparent 70%
-        );
+            transparent 70%);
 
     filter: blur(15px);
 
@@ -374,12 +363,10 @@
     border-radius: 30px;
 
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             var(--profile-accent),
             var(--profile-purple),
-            var(--profile-accent-secondary)
-        );
+            var(--profile-accent-secondary));
 
     box-shadow:
         0 35px 80px rgba(0, 0, 0, 0.4);
@@ -414,11 +401,9 @@
     place-items: center;
 
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #11173a,
-            #080d2c
-        );
+            #080d2c);
 
 }
 
@@ -576,7 +561,7 @@
 
 
 
-.profile-section__heading > span {
+.profile-section__heading>span {
 
     padding-top: 7px;
 
@@ -670,7 +655,7 @@
 
 
 
-.about-profile-card p + p {
+.about-profile-card p+p {
 
     margin-top: 20px;
 
@@ -980,7 +965,7 @@
 
 
 
-.interest-card > span {
+.interest-card>span {
 
     margin-bottom: 10px;
 
@@ -1190,7 +1175,7 @@
 
 
 
-.terminal__output > span {
+.terminal__output>span {
 
     color: var(--profile-accent-secondary);
 
@@ -1458,6 +1443,7 @@
     }
 
 }
+
 /* ==========================================
    TEMA DALILA
 ========================================== */
@@ -1485,17 +1471,13 @@
 
     background:
 
-        radial-gradient(
-            circle at 85% 10%,
+        radial-gradient(circle at 85% 10%,
             rgba(157, 98, 255, 0.17),
-            transparent 30%
-        ),
+            transparent 30%),
 
-        radial-gradient(
-            circle at 12% 50%,
+        radial-gradient(circle at 12% 50%,
             rgba(100, 216, 255, 0.09),
-            transparent 35%
-        ),
+            transparent 35%),
 
         var(--profile-bg);
 
@@ -1550,6 +1532,7 @@
     0% {
         opacity: 0.1;
     }
+
     100% {
         opacity: 0.9;
     }
@@ -1567,16 +1550,12 @@
     --profile-purple: #d9480f;
 
     background:
-        radial-gradient(
-            circle at 85% 10%,
+        radial-gradient(circle at 85% 10%,
             rgba(255, 138, 61, 0.18),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 12% 50%,
+            transparent 30%),
+        radial-gradient(circle at 12% 50%,
             rgba(217, 72, 15, 0.12),
-            transparent 35%
-        ),
+            transparent 35%),
         var(--profile-bg);
 }
 
@@ -1632,12 +1611,10 @@
 
     background:
 
-        radial-gradient(
-            circle,
+        radial-gradient(circle,
             rgba(157, 98, 255, 0.28),
             rgba(100, 216, 255, 0.12),
-            transparent 70%
-        );
+            transparent 70%);
 
 }
 
@@ -1682,17 +1659,14 @@
     overflow: hidden;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 18px;
 
     background:
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             rgba(16, 23, 53, 0.9),
-            rgba(20, 28, 67, 0.6)
-        );
+            rgba(20, 28, 67, 0.6));
 
     transition:
         transform 0.3s ease,
@@ -1772,8 +1746,7 @@
     padding: 30px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 18px;
 
@@ -1797,11 +1770,9 @@
 
     background:
 
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             var(--profile-purple),
-            var(--profile-accent)
-        );
+            var(--profile-accent));
 
     color: white;
 
@@ -1889,8 +1860,7 @@
     padding: 14px 16px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 10px;
 
@@ -1945,18 +1915,15 @@
     padding: 40px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 20px;
 
     background:
 
-        radial-gradient(
-            circle at 80% 20%,
+        radial-gradient(circle at 80% 20%,
             rgba(157, 98, 255, 0.1),
-            transparent 45%
-        ),
+            transparent 45%),
 
         rgba(16, 23, 53, 0.7);
 
@@ -2107,6 +2074,7 @@
     }
 
 }
+
 /* ==========================================
    TEMA JORGE
 ========================================== */
@@ -2135,17 +2103,13 @@
 
     background:
 
-        radial-gradient(
-            circle at 85% 10%,
+        radial-gradient(circle at 85% 10%,
             rgba(136, 8, 8, 0.25),
-            transparent 32%
-        ),
+            transparent 32%),
 
-        radial-gradient(
-            circle at 5% 45%,
+        radial-gradient(circle at 5% 45%,
             rgba(255, 109, 0, 0.08),
-            transparent 30%
-        ),
+            transparent 30%),
 
         #000000;
 
@@ -2172,8 +2136,7 @@
         var(--profile-accent);
 
     box-shadow:
-        0 0 15px
-        var(--profile-accent);
+        0 0 15px var(--profile-accent);
 
 }
 
@@ -2185,12 +2148,10 @@
 
     background:
 
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             #880808,
             #ff6d00,
-            #ffde21
-        );
+            #ffde21);
 
     background-clip: text;
 
@@ -2206,12 +2167,10 @@
 
     background:
 
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #880808,
             #ff6d00,
-            #ffde21
-        );
+            #ffde21);
 
 }
 
@@ -2220,11 +2179,9 @@
 
     background:
 
-        radial-gradient(
-            circle,
+        radial-gradient(circle,
             #1a0805,
-            #000
-        );
+            #000);
 
 }
 
@@ -2243,12 +2200,10 @@
 
     background:
 
-        radial-gradient(
-            circle,
+        radial-gradient(circle,
             rgba(255, 109, 0, 0.22),
             rgba(136, 8, 8, 0.18),
-            transparent 70%
-        );
+            transparent 70%);
 
 }
 
@@ -2270,17 +2225,12 @@
     font-size: 5rem;
 
     filter:
-        drop-shadow(
-            0 0 18px
-            rgba(255, 109, 0, 0.5)
-        );
+        drop-shadow(0 0 18px rgba(255, 109, 0, 0.5));
 
     transform: rotate(-8deg);
 
     animation:
-        dragonFloat
-        4s ease-in-out
-        infinite;
+        dragonFloat 4s ease-in-out infinite;
 
 }
 
@@ -2291,16 +2241,14 @@
     100% {
 
         transform:
-            translateY(0)
-            rotate(-8deg);
+            translateY(0) rotate(-8deg);
 
     }
 
     50% {
 
         transform:
-            translateY(-12px)
-            rotate(-5deg);
+            translateY(-12px) rotate(-5deg);
 
     }
 
@@ -2329,8 +2277,7 @@
     padding: 30px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 18px;
 
@@ -2340,7 +2287,7 @@
 }
 
 
-.jorge-personality article > span {
+.jorge-personality article>span {
 
     color:
         var(--profile-accent);
@@ -2404,18 +2351,15 @@
     padding: 28px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 18px;
 
     background:
 
-        linear-gradient(
-            150deg,
+        linear-gradient(150deg,
             rgba(28, 9, 5, 0.95),
-            rgba(5, 5, 5, 0.85)
-        );
+            rgba(5, 5, 5, 0.85));
 
     transition:
         transform 0.3s ease,
@@ -2445,8 +2389,7 @@
         4px 8px;
 
     border:
-        1px solid
-        rgba(255, 222, 33, 0.2);
+        1px solid rgba(255, 222, 33, 0.2);
 
     border-radius: 5px;
 
@@ -2514,23 +2457,20 @@
     padding: 25px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 18px;
 
     background:
 
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             rgba(136, 8, 8, 0.2),
-            rgba(255, 109, 0, 0.03)
-        );
+            rgba(255, 109, 0, 0.03));
 
 }
 
 
-.jorge-album-card > span {
+.jorge-album-card>span {
 
     color:
         var(--profile-accent);
@@ -2591,8 +2531,7 @@
     padding: 25px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 16px;
 
@@ -2602,7 +2541,7 @@
 }
 
 
-.jorge-facts article > span {
+.jorge-facts article>span {
 
     font-size: 2rem;
 
@@ -2639,8 +2578,7 @@
     max-width: 950px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 18px;
 
@@ -2648,11 +2586,9 @@
 
     box-shadow:
 
-        0 30px 70px
-        rgba(0, 0, 0, 0.5),
+        0 30px 70px rgba(0, 0, 0, 0.5),
 
-        0 0 30px
-        rgba(136, 8, 8, 0.08);
+        0 0 30px rgba(136, 8, 8, 0.08);
 
 }
 
@@ -2672,8 +2608,7 @@
         0 18px;
 
     border-bottom:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     color:
         var(--profile-muted);
@@ -2714,8 +2649,7 @@
         10px 14px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 6px;
 
@@ -2766,8 +2700,7 @@
     padding: 25px;
 
     border:
-        1px dashed
-        rgba(255, 109, 0, 0.2);
+        1px dashed rgba(255, 109, 0, 0.2);
 
     background:
         rgba(255, 109, 0, 0.025);
@@ -2802,8 +2735,14 @@
     --profile-border:
         rgba(255, 222, 33, 0.25);
 
-    background: 
+    background:
         linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.85)),
+        radial-gradient(circle at 50% 20%,
+            rgba(255, 0, 0, 0.18),
+            transparent 35%),
+        radial-gradient(circle at 80% 70%,
+            rgba(255, 109, 0, 0.15),
+            transparent 35%),
         url('../img/Scorpion_Lair.jpg') center / cover no-repeat fixed;
 
 }
@@ -2894,6 +2833,7 @@
     }
 
 }
+
 /* ==========================================
    TEMA MARTÍN
 ========================================== */
@@ -2922,17 +2862,13 @@
 
     background:
 
-        radial-gradient(
-            circle at 85% 12%,
+        radial-gradient(circle at 85% 12%,
             rgba(33, 136, 201, 0.17),
-            transparent 30%
-        ),
+            transparent 30%),
 
-        radial-gradient(
-            circle at 5% 55%,
+        radial-gradient(circle at 5% 55%,
             rgba(66, 232, 122, 0.07),
-            transparent 35%
-        ),
+            transparent 35%),
 
         #071015;
 
@@ -2990,12 +2926,10 @@
 
     background:
 
-        repeating-linear-gradient(
-            0deg,
+        repeating-linear-gradient(0deg,
             transparent,
             transparent 3px,
-            #ffffff 4px
-        );
+            #ffffff 4px);
 
 }
 
@@ -3007,8 +2941,7 @@
         var(--profile-accent-secondary);
 
     box-shadow:
-        0 0 14px
-        var(--profile-accent-secondary);
+        0 0 14px var(--profile-accent-secondary);
 
 }
 
@@ -3018,12 +2951,10 @@
 
     background:
 
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             #42d9ff,
             #2188c9,
-            #42e87a
-        );
+            #42e87a);
 
     background-clip: text;
 
@@ -3039,12 +2970,10 @@
 
     background:
 
-        linear-gradient(
-            135deg,
+        linear-gradient(135deg,
             #42d9ff,
             #2188c9,
-            #42e87a
-        );
+            #42e87a);
 
 }
 
@@ -3087,12 +3016,10 @@
 
     background:
 
-        radial-gradient(
-            circle,
+        radial-gradient(circle,
             rgba(66, 217, 255, 0.2),
             rgba(66, 232, 122, 0.1),
-            transparent 70%
-        );
+            transparent 70%);
 
 }
 
@@ -3122,8 +3049,7 @@
     padding: 23px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 8px;
 
@@ -3131,8 +3057,7 @@
         rgba(17, 28, 34, 0.8);
 
     box-shadow:
-        inset 0 0 20px
-        rgba(66, 217, 255, 0.015);
+        inset 0 0 20px rgba(66, 217, 255, 0.015);
 
     transition:
         transform 0.25s ease,
@@ -3225,8 +3150,7 @@
     padding: 25px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 10px;
 
@@ -3237,7 +3161,7 @@
 
 
 
-.martin-sidequests article > span {
+.martin-sidequests article>span {
 
     font-size: 2rem;
 
@@ -3294,18 +3218,15 @@
     padding: 28px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 8px;
 
     background:
 
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             rgba(17, 28, 34, 0.95),
-            rgba(7, 16, 21, 0.9)
-        );
+            rgba(7, 16, 21, 0.9));
 
     transition:
         transform 0.3s ease,
@@ -3351,8 +3272,7 @@
     padding: 5px 8px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     color:
         var(--profile-accent);
@@ -3409,24 +3329,22 @@
 
 
 .martin-track {
-
     display: flex;
-
     align-items: center;
-
     gap: 20px;
-
     padding: 18px;
-
-    border:
-        1px solid
-        var(--profile-border);
-
+    border: 1px solid var(--profile-border);
     border-radius: 8px;
+    background: rgba(17, 28, 34, 0.6);
+}
 
-    background:
-        rgba(17, 28, 34, 0.6);
-
+/* Permitir que el iframe se adapte */
+.martin-track iframe {
+    margin-left: auto;
+    max-width: 280px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
 }
 
 
@@ -3442,8 +3360,7 @@
     place-items: center;
 
     border:
-        1px solid
-        var(--profile-accent);
+        1px solid var(--profile-accent);
 
     background:
         #091217;
@@ -3486,6 +3403,8 @@
 
 
 
+
+
 /* ==========================================
    PLAYER STATS
 ========================================== */
@@ -3514,8 +3433,7 @@
     padding: 22px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 8px;
 
@@ -3577,8 +3495,7 @@
     padding: 25px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 8px;
 
@@ -3589,7 +3506,7 @@
 
 
 
-.martin-facts article > span {
+.martin-facts article>span {
 
     font-size: 2rem;
 
@@ -3633,8 +3550,7 @@
     max-width: 950px;
 
     border:
-        1px solid
-        var(--profile-accent);
+        1px solid var(--profile-accent);
 
     border-radius: 8px;
 
@@ -3643,11 +3559,9 @@
 
     box-shadow:
 
-        0 0 30px
-        rgba(66, 217, 255, 0.08),
+        0 0 30px rgba(66, 217, 255, 0.08),
 
-        inset 0 0 30px
-        rgba(66, 232, 122, 0.02);
+        inset 0 0 30px rgba(66, 232, 122, 0.02);
 
 }
 
@@ -3667,8 +3581,7 @@
         0 18px;
 
     border-bottom:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     background:
         rgba(66, 217, 255, 0.04);
@@ -3683,7 +3596,7 @@
 
 
 
-.martin-console__header > span:first-child {
+.martin-console__header>span:first-child {
 
     color:
         var(--profile-accent-secondary);
@@ -3731,8 +3644,7 @@
     margin-left: 5px;
 
     animation:
-        martinCursor
-        0.8s infinite;
+        martinCursor 0.8s infinite;
 
 }
 
@@ -3759,8 +3671,7 @@
     padding: 20px;
 
     border-top:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
 }
 
@@ -3772,8 +3683,7 @@
         9px 13px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 4px;
 
@@ -3830,11 +3740,9 @@
 
     background:
 
-        radial-gradient(
-            circle at 85% 10%,
+        radial-gradient(circle at 85% 10%,
             rgba(57, 211, 110, 0.15),
-            transparent 32%
-        ),
+            transparent 32%),
 
         #050d08;
 
@@ -3915,8 +3823,18 @@
         min-height: 42px;
 
     }
+    .martin-track {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .martin-track iframe {
+        margin: 15px 0 0 0;
+        max-width: 100%;
+    }
 
 }
+
 /* ==========================================
    TEMA LUIS
 ========================================== */
@@ -3939,17 +3857,13 @@
 
     background:
 
-        radial-gradient(
-            circle at 85% 10%,
+        radial-gradient(circle at 85% 10%,
             rgba(61, 165, 217, 0.12),
-            transparent 30%
-        ),
+            transparent 30%),
 
-        radial-gradient(
-            circle at 10% 50%,
+        radial-gradient(circle at 10% 50%,
             rgba(72, 199, 116, 0.07),
-            transparent 35%
-        ),
+            transparent 35%),
 
         #080b0d;
 
@@ -3973,12 +3887,10 @@
 
     background:
 
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             #f4d03f,
             #48c774,
-            #3da5d9
-        );
+            #3da5d9);
 
     background-clip: text;
     -webkit-background-clip: text;
@@ -3999,8 +3911,7 @@
         var(--profile-accent-secondary);
 
     box-shadow:
-        0 0 14px
-        var(--profile-accent-secondary);
+        0 0 14px var(--profile-accent-secondary);
 
 }
 
@@ -4009,12 +3920,10 @@
 
     background:
 
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #f4d03f,
             #48c774,
-            #3da5d9
-        );
+            #3da5d9);
 
 }
 
@@ -4023,11 +3932,9 @@
 
     background:
 
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #15191a,
-            #070909
-        );
+            #070909);
 
 }
 
@@ -4048,12 +3955,10 @@
 
     background:
 
-        radial-gradient(
-            circle,
+        radial-gradient(circle,
             rgba(244, 208, 63, 0.15),
             rgba(61, 165, 217, 0.08),
-            transparent 70%
-        );
+            transparent 70%);
 
 }
 
@@ -4082,8 +3987,7 @@
     padding: 26px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 14px;
 
@@ -4093,7 +3997,7 @@
 }
 
 
-.luis-experience-grid article > span {
+.luis-experience-grid article>span {
 
     color:
         var(--profile-accent);
@@ -4154,18 +4058,15 @@
     padding: 30px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 14px;
 
     background:
 
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             rgba(24, 30, 31, 0.95),
-            rgba(8, 11, 13, 0.9)
-        );
+            rgba(8, 11, 13, 0.9));
 
     transition:
         transform 0.3s ease,
@@ -4185,7 +4086,7 @@
 }
 
 
-.luis-movie-card > span {
+.luis-movie-card>span {
 
     color:
         var(--profile-accent-secondary);
@@ -4253,8 +4154,7 @@
     padding: 25px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 14px;
 
@@ -4277,8 +4177,7 @@
     border-radius: 50%;
 
     border:
-        2px solid
-        var(--profile-accent);
+        2px solid var(--profile-accent);
 
     background:
         #050606;
@@ -4291,8 +4190,7 @@
         monospace;
 
     box-shadow:
-        inset 0 0 0 7px
-        #131719;
+        inset 0 0 0 7px #131719;
 
 }
 
@@ -4345,8 +4243,7 @@
     overflow: hidden;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     background:
         #000;
@@ -4393,8 +4290,7 @@
     padding: 22px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 12px;
 
@@ -4446,8 +4342,7 @@
     padding: 24px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 14px;
 
@@ -4457,7 +4352,7 @@
 }
 
 
-.luis-facts article > span {
+.luis-facts article>span {
 
     font-size: 2rem;
 
@@ -4497,22 +4392,18 @@
     max-width: 950px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 18px;
 
     background:
 
-        linear-gradient(
-            145deg,
+        linear-gradient(145deg,
             #111617,
-            #080a0b
-        );
+            #080a0b);
 
     box-shadow:
-        0 30px 70px
-        rgba(0, 0, 0, 0.4);
+        0 30px 70px rgba(0, 0, 0, 0.4);
 
 }
 
@@ -4531,11 +4422,9 @@
 
     background:
 
-        radial-gradient(
-            circle at 80% 20%,
+        radial-gradient(circle at 80% 20%,
             rgba(244, 208, 63, 0.08),
-            transparent 40%
-        );
+            transparent 40%);
 
 }
 
@@ -4553,8 +4442,7 @@
     border-radius: 50%;
 
     border:
-        2px solid
-        var(--profile-accent);
+        2px solid var(--profile-accent);
 
     background:
         #050606;
@@ -4563,11 +4451,9 @@
 
     box-shadow:
 
-        inset 0 0 0 12px
-        #151a1b,
+        inset 0 0 0 12px #151a1b,
 
-        0 0 25px
-        rgba(244, 208, 63, 0.08);
+        0 0 25px rgba(244, 208, 63, 0.08);
 
 }
 
@@ -4624,8 +4510,7 @@
     padding: 20px;
 
     border-top:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
 }
 
@@ -4635,8 +4520,7 @@
     padding: 10px 15px;
 
     border:
-        1px solid
-        var(--profile-border);
+        1px solid var(--profile-border);
 
     border-radius: 6px;
 

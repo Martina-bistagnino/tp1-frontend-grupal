@@ -137,7 +137,18 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 ![Perfil de Luis](img/capturas/capturaperfilluis.png)
 
 ### 6. Perfil de Martín (`js/martin.js`)
-* **Retro System Console:** Consola arcade interactiva que imprime respuestas a comandos del sistema y conmuta temas cromáticos con `.green-mode`.
+* **Retro System Console:** Consola interactiva con estética *arcade/retro terminal* (`MARTIN OS v1.0`) que procesa comandos mediante botones con `data-command`. Actualiza en tiempo real el contenido en `#martinConsole` (con soporte accesible vía `aria-live="polite"` y `aria-atomic="true"`) y permite conmutar dinámicamente el tema visual activando la clase `.green-mode`.
+* **Optimización de Rendimiento y Multimedia:**
+  * Implementación de carga diferida (`loading="lazy"`) y supresión de atributos obsoletos en los reproductores de YouTube embebidos, evitando bloqueos en la carga inicial y mejorando el score en métricas web.
+  * Incorporación de atributos explícitos de proporción y tamaño en la imagen de avatar para prevenir saltos de diseño (*Cumulative Layout Shift* - CLS).
+* **Accesibilidad (A11y) y Navegación por Teclado:**
+  * Indicador de foco personalizado (`:focus-visible`) estilizado con estética neón/glow difuminado y bordes redondeados, garantizando un recorrido nítido y sin solapamientos en enlaces y botones interactivos.
+  * Corrección de la maquetación en enlaces de tarjetas para ceñir el área activa al texto y evitar áreas de foco desproporcionadas.
+  * Incorporación de `scroll-padding-top` en el documento base para evitar que el header fijo tape los encabezados al saltar entre secciones internas (`#sobre-mi`, `#habilidades`, `#interactivo`, etc.).
+  * Navegación semántica e inclusiva con `<nav aria-label="Navegación entre perfiles">` y atributos contextuales en enlaces externos y decoraciones.
+* **Diseño Responsivo Reforzado:**
+  * Adaptación fluida de la sección musical (`.martin-track`), reorganizando la disposición de elementos en pantalla completa a columnas verticales en móviles sin desbordes horizontales.
+  * Ajuste en el menú desplegable mobile (`responsive.css`) ampliando la altura máxima admisible para albergar la totalidad de enlaces del perfil sin recortes.
 
 ![Perfil de Martín](img/capturas/capturaperfilmartin.png)
 

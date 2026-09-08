@@ -1,406 +1,262 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description"
-        content="Trabajo Práctico Grupal 1 de Desarrollo Frontend. Sitio web desarrollado por cinco estudiantes de Desarrollo de Software.">
+    <meta
+      name="description"
+      content="Trabajo Práctico Grupal 1 de Desarrollo Frontend. Sitio web desarrollado por cinco estudiantes de Desarrollo de Software."
+    />
 
     <title>TP1 | Equipo Frontend</title>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/responsive.css">
-</head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
 
-
-<body>
-
+  <body>
     <!-- ========================================
         HEADER
     ========================================= -->
 
     <header class="header">
+      <div class="container header__container">
+        <!-- LOGO -->
 
-        <div class="container header__container">
+        <a href="index.html" class="logo" aria-label="Ir al inicio">
+          &lt;Equipo<span>Dev</span>/&gt;
+        </a>
 
-            <!-- LOGO -->
+        <!-- BOTÓN MENÚ MOBILE -->
 
-            <a href="index.html" class="logo" aria-label="Ir al inicio">
-                &lt;Equipo<span>Dev</span>/&gt;
-            </a>
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Abrir menú de navegación"
+          aria-expanded="false"
+          aria-controls="mainNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
+        <!-- NAVEGACIÓN -->
 
-            <!-- BOTÓN MENÚ MOBILE -->
+        <nav class="nav" id="mainNav" aria-label="Navegación principal">
+          <ul class="nav__list">
+            <li>
+              <a href="#inicio" class="nav__link"> Inicio </a>
+            </li>
 
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false"
-                aria-controls="mainNav">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <li>
+              <a href="#equipo" class="nav__link"> Equipo </a>
+            </li>
 
+            <li>
+              <a href="#proyecto" class="nav__link"> Proyecto </a>
+            </li>
 
-            <!-- NAVEGACIÓN -->
-
-            <nav class="nav" id="mainNav" aria-label="Navegación principal">
-
-                <ul class="nav__list">
-
-                    <li>
-                        <a href="#inicio" class="nav__link">
-                            Inicio
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#equipo" class="nav__link">
-                            Equipo
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="#proyecto" class="nav__link">
-                            Proyecto
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="bitacora.html" class="nav__link">
-                            Bitácora
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
-
-        </div>
-
+            <li>
+              <a href="bitacora.html" class="nav__link"> Bitácora </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
-
-
 
     <!-- ========================================
         CONTENIDO PRINCIPAL
     ========================================= -->
 
     <main>
-
-
-        <!-- ====================================
+      <!-- ====================================
             HERO
         ===================================== -->
 
-        <section class="hero" id="inicio">
+      <section class="hero" id="inicio">
+        <!-- Decoraciones -->
 
-            <!-- Decoraciones -->
+        <div class="hero__decoration hero__decoration--one" aria-hidden="true">
+          &lt;/&gt;
+        </div>
 
-            <div class="hero__decoration hero__decoration--one" aria-hidden="true">
-                &lt;/&gt;
+        <div class="hero__decoration hero__decoration--two" aria-hidden="true">
+          { }
+        </div>
+
+        <div class="container hero__container">
+          <!-- TEXTO -->
+
+          <div class="hero__content">
+            <span class="hero__eyebrow"> TP1 · Desarrollo Frontend </span>
+
+            <h1 class="hero__title">
+              Cinco perfiles.
+
+              <span> Un mismo proyecto. </span>
+            </h1>
+
+            <p class="hero__description">
+              Somos un equipo de estudiantes de Desarrollo de Software. Creamos
+              este sitio para presentar quiénes somos, nuestras habilidades,
+              intereses y el proceso colaborativo detrás del proyecto.
+            </p>
+
+            <!-- TEXTO DINÁMICO CON JAVASCRIPT -->
+
+            <div class="hero__dynamic" aria-live="polite">
+              <span> &gt; </span>
+
+              <p id="dynamicText">HTML · CSS · JavaScript</p>
             </div>
 
+            <div class="hero__actions">
+              <a href="#equipo" class="button button--primary">
+                Conocé al equipo
+              </a>
 
-            <div class="hero__decoration hero__decoration--two" aria-hidden="true">
-                { }
+              <a href="bitacora.html" class="button button--secondary">
+                Ver bitácora
+              </a>
             </div>
+          </div>
 
+          <!-- VENTANA DE CÓDIGO -->
 
-            <div class="container hero__container">
-
-
-                <!-- TEXTO -->
-
-                <div class="hero__content">
-
-                    <span class="hero__eyebrow">
-                        TP1 · Desarrollo Frontend
-                    </span>
-
-
-                    <h1 class="hero__title">
-
-                        Cinco perfiles.
-
-                        <span>
-                            Un mismo proyecto.
-                        </span>
-
-                    </h1>
-
-
-                    <p class="hero__description">
-
-                        Somos un equipo de estudiantes de Desarrollo
-                        de Software.
-
-                        Creamos este sitio para presentar quiénes somos,
-                        nuestras habilidades, intereses y el proceso
-                        colaborativo detrás del proyecto.
-
-                    </p>
-
-
-                    <!-- TEXTO DINÁMICO CON JAVASCRIPT -->
-
-                    <div class="hero__dynamic" aria-live="polite">
-                        <span>
-                            &gt;
-                        </span>
-
-                        <p id="dynamicText">
-                            HTML · CSS · JavaScript
-                        </p>
-                    </div>
-
-
-                    <div class="hero__actions">
-
-                        <a href="#equipo" class="button button--primary">
-                            Conocé al equipo
-                        </a>
-
-
-                        <a href="bitacora.html" class="button button--secondary">
-                            Ver bitácora
-                        </a>
-
-                    </div>
-
+          <div class="hero__code" aria-hidden="true">
+            <div class="code-window">
+              <div class="code-window__header">
+                <div class="code-window__dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
 
+                <span class="code-window__filename"> equipo.js </span>
+              </div>
 
+              <div class="code-window__body">
+                <p>
+                  <span class="code-purple"> const </span>
 
-                <!-- VENTANA DE CÓDIGO -->
+                  <span class="code-blue"> equipo </span>
 
-                <div class="hero__code" aria-hidden="true">
+                  = [
+                </p>
 
-                    <div class="code-window">
+                <p class="code-indent">
+                  <span class="code-green"> "Martina" </span>,
+                </p>
 
-                        <div class="code-window__header">
+                <p class="code-indent">
+                  <span class="code-green"> "Dalila" </span>,
+                </p>
 
-                            <div class="code-window__dots">
+                <p class="code-indent">
+                  <span class="code-green"> "Jorge" </span>,
+                </p>
 
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                <p class="code-indent">
+                  <span class="code-green"> "Luis" </span>,
+                </p>
 
-                            </div>
+                <p class="code-indent">
+                  <span class="code-green"> "Martín" </span>
+                </p>
 
+                <p>];</p>
 
-                            <span class="code-window__filename">
-                                equipo.js
-                            </span>
+                <br />
 
-                        </div>
+                <p>
+                  <span class="code-purple"> const </span>
 
+                  <span class="code-blue"> tecnologias </span>
 
-                        <div class="code-window__body">
+                  = [
+                </p>
 
-                            <p>
+                <p class="code-indent">
+                  <span class="code-green"> "HTML" </span>,
+                </p>
 
-                                <span class="code-purple">
-                                    const
-                                </span>
+                <p class="code-indent">
+                  <span class="code-green"> "CSS" </span>,
+                </p>
 
-                                <span class="code-blue">
-                                    equipo
-                                </span>
+                <p class="code-indent">
+                  <span class="code-green"> "JavaScript" </span>
+                </p>
 
-                                = [
+                <p>];</p>
 
-                            </p>
+                <br />
 
+                <p>
+                  <span class="code-purple"> function </span>
 
-                            <p class="code-indent">
-                                <span class="code-green">
-                                    "Martina"
-                                </span>,
-                            </p>
+                  <span class="code-blue"> crearProyecto </span>() {
+                </p>
 
+                <p class="code-indent">
+                  <span class="code-purple"> return </span>
 
-                            <p class="code-indent">
-                                <span class="code-green">
-                                    "Dalila"
-                                </span>,
-                            </p>
+                  <span class="code-green"> "ideas + código + equipo"; </span>
+                </p>
 
-
-                            <p class="code-indent">
-                                <span class="code-green">
-                                    "Jorge"
-                                </span>,
-                            </p>
-
-
-                            <p class="code-indent">
-                                <span class="code-green">
-                                    "Luis"
-                                </span>,
-                            </p>
-
-
-                            <p class="code-indent">
-                                <span class="code-green">
-                                    "Martín"
-                                </span>
-                            </p>
-
-
-                            <p>];</p>
-
-
-                            <br>
-
-
-                            <p>
-
-                                <span class="code-purple">
-                                    const
-                                </span>
-
-                                <span class="code-blue">
-                                    tecnologias
-                                </span>
-
-                                = [
-
-                            </p>
-
-
-                            <p class="code-indent">
-                                <span class="code-green">
-                                    "HTML"
-                                </span>,
-                            </p>
-
-
-                            <p class="code-indent">
-                                <span class="code-green">
-                                    "CSS"
-                                </span>,
-                            </p>
-
-
-                            <p class="code-indent">
-                                <span class="code-green">
-                                    "JavaScript"
-                                </span>
-                            </p>
-
-
-                            <p>];</p>
-
-
-                            <br>
-
-
-                            <p>
-
-                                <span class="code-purple">
-                                    function
-                                </span>
-
-                                <span class="code-blue">
-                                    crearProyecto
-                                </span>() {
-
-                            </p>
-
-
-                            <p class="code-indent">
-
-                                <span class="code-purple">
-                                    return
-                                </span>
-
-                                <span class="code-green">
-                                    "ideas + código + equipo";
-                                </span>
-
-                            </p>
-
-
-                            <p>}</p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+                <p>}</p>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-        </section>
-
-
-
-        <!-- ====================================
+      <!-- ====================================
             EQUIPO
         ===================================== -->
 
-        <section class="team section" id="equipo">
+      <section class="team section" id="equipo">
+        <div class="container">
+          <!-- TÍTULO -->
 
-            <div class="container">
+          <div class="section-heading">
+            <span class="section-heading__eyebrow"> 01 · Nuestro equipo </span>
 
+            <h2>Cinco personas, cinco perfiles</h2>
 
-                <!-- TÍTULO -->
+            <p>
+              Cada integrante cuenta con su propia página donde presenta sus
+              habilidades, intereses, películas, música y otros aspectos
+              personales.
+            </p>
+          </div>
 
-                <div class="section-heading">
-
-                    <span class="section-heading__eyebrow">
-                        01 · Nuestro equipo
-                    </span>
-
-
-                    <h2>
-                        Cinco personas, cinco perfiles
-                    </h2>
-
-
-                    <p>
-
-                        Cada integrante cuenta con su propia página
-                        donde presenta sus habilidades, intereses,
-                        películas, música y otros aspectos personales.
-
-                    </p>
-
-                </div>
-
-
-
-                <!-- =================================
+          <!-- =================================
                     CARDS DE INTEGRANTES
                 ================================== -->
 
-                <div class="team-grid">
-
-
-                    <!-- =============================
+          <div class="team-grid">
+            <!-- =============================
                         MARTINA
                     ============================== -->
 
-                    <article class="member-card">
-
-                        <div class="member-card__avatar">
-
-                            <!--
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <!--
                             Cuando tengamos la imagen:
 
                             <img
@@ -409,556 +265,309 @@
                             >
                             -->
 
-                            <img src="img/avatares/martina.jpg" alt="Imagen de Martina Bistagnino">
+                <img
+                  src="img/avatares/martina.jpg"
+                  alt="Imagen de Martina Bistagnino"
+                />
+              </div>
 
-                        </div>
+              <div class="member-card__content">
+                <span class="member-card__number"> 01 </span>
 
+                <h3>Martina Bistagnino</h3>
 
-                        <div class="member-card__content">
+                <p>Desarrollo Web · UI/UX</p>
 
-                            <span class="member-card__number">
-                                01
-                            </span>
+                <div class="member-card__skills">
+                  <span> HTML </span>
 
+                  <span> CSS </span>
 
-                            <h3>
-                                Martina Bistagnino
-                            </h3>
+                  <span> JavaScript </span>
+                </div>
 
+                <a
+                  href="martina.html"
+                  class="member-card__link"
+                  aria-label="Ver perfil de Martina Bistagnino"
+                >
+                  Ver perfil <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
 
-                            <p>
-                                Desarrollo Web · UI/UX
-                            </p>
-
-
-                            <div class="member-card__skills">
-
-                                <span>
-                                    HTML
-                                </span>
-
-                                <span>
-                                    CSS
-                                </span>
-
-                                <span>
-                                    JavaScript
-                                </span>
-
-                            </div>
-
-
-                            <a href="martina.html" class="member-card__link">
-
-                                Ver perfil
-
-                                <span>
-                                    →
-                                </span>
-
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =============================
+            <!-- =============================
     DALILA
 ============================== -->
 
-                    <article class="member-card">
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <img
+                  src="img/avatares/dalila.jpg"
+                  alt="Avatar de Gabriela Dalila Contrera"
+                />
+              </div>
 
-                        <div class="member-card__avatar">
+              <div class="member-card__content">
+                <span class="member-card__number"> 02 </span>
 
-                            <img src="img/avatares/dalila.jpg" alt="Avatar de Gabriela Dalila Contrera">
+                <h3>Gabriela Dalila Contrera</h3>
 
-                        </div>
+                <p>Desarrollo de Software · Creatividad</p>
 
+                <div class="member-card__skills">
+                  <span> HTML </span>
 
-                        <div class="member-card__content">
+                  <span> C# </span>
 
-                            <span class="member-card__number">
-                                02
-                            </span>
+                  <span> Java </span>
 
+                  <span> Kotlin </span>
+                </div>
 
-                            <h3>
-                                Gabriela Dalila Contrera
-                            </h3>
-
-
-                            <p>
-                                Desarrollo de Software · Creatividad
-                            </p>
-
-
-                            <div class="member-card__skills">
-
-                                <span>
-                                    HTML
-                                </span>
-
-                                <span>
-                                    C#
-                                </span>
-
-                                <span>
-                                    Java
-                                </span>
-
-                                <span>
-                                    Kotlin
-                                </span>
-
-                            </div>
-
-
-                            <a href="dalila.html" class="member-card__link">
-
-                                Ver perfil
-
-                                <span>
-                                    →
-                                </span>
-
-                            </a>
-
-                        </div>
-
-                    </article>
-                    <!-- =============================
+                <a
+                  href="dalila.html"
+                  class="member-card__link"
+                  aria-label="Ver perfil de Gabriela Dalila Contrera"
+                >
+                  Ver perfil <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+            <!-- =============================
     JORGE
 ============================== -->
 
-                    <article class="member-card">
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <img src="img/avatares/jorge.jpg" alt="Imagen de Jorge Caliz" />
+              </div>
 
-                        <div class="member-card__avatar">
+              <div class="member-card__content">
+                <span class="member-card__number"> 03 </span>
 
-                            <img src="img/avatares/jorge.jpg" alt="Imagen de Jorge Caliz">
+                <h3>Jorge Caliz</h3>
 
-                        </div>
+                <p>Python · Game Development</p>
 
+                <div class="member-card__skills">
+                  <span> Python </span>
 
-                        <div class="member-card__content">
+                  <span> Videojuegos </span>
 
-                            <span class="member-card__number">
-                                03
-                            </span>
+                  <span> Creatividad </span>
+                </div>
 
+                <a
+                  href="jorge.html"
+                  class="member-card__link"
+                  aria-label="Ver perfil de Jorge Caliz"
+                >
+                  Ver perfil <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
 
-                            <h3>
-                                Jorge Caliz
-                            </h3>
-
-
-                            <p>
-                                Python · Game Development
-                            </p>
-
-
-                            <div class="member-card__skills">
-
-                                <span>
-                                    Python
-                                </span>
-
-                                <span>
-                                    Videojuegos
-                                </span>
-
-                                <span>
-                                    Creatividad
-                                </span>
-
-                            </div>
-
-
-                            <a href="jorge.html" class="member-card__link">
-
-                                Ver perfil
-
-                                <span>
-                                    →
-                                </span>
-
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <!-- =============================
+            <!-- =============================
                         LUIS
                     ============================== -->
 
-                    <article class="member-card">
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <img src="img/avatares/luis.jpg" alt="Imagen de Luis Bronzi" />
+              </div>
 
-                        <div class="member-card__avatar">
+              <div class="member-card__content">
+                <span class="member-card__number"> 04 </span>
 
-                            <img src="img/avatares/luis.jpg" alt="Imagen de Luis Bronzi">
+                <h3>Francisco Luis Bronzi</h3>
 
+                <p>Desarrollo Web · Infraestructura</p>
 
-                        </div>
+                <div class="member-card__skills">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JavaScript</span>
+                  <span>Bases de datos</span>
+                </div>
 
+                <a
+                  href="luis.html"
+                  class="member-card__link"
+                  aria-label="Ver perfil de Francisco Luis Bronzi"
+                >
+                  Ver perfil <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
 
-                        <div class="member-card__content">
-
-                            <span class="member-card__number">
-                                04
-                            </span>
-
-<h3>
-    Francisco Luis Bronzi
-</h3>
-
-<p>
-    Desarrollo Web · Infraestructura
-</p>
-
-<div class="member-card__skills">
-
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>Bases de datos</span>
-
-</div>
-
-
-                            <a href="luis.html" class="member-card__link">
-
-                                Ver perfil
-
-                                <span>
-                                    →
-                                </span>
-
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- =============================
+            <!-- =============================
     MARTÍN
 ============================== -->
 
-                    <article class="member-card">
+            <article class="member-card">
+              <div class="member-card__avatar">
+                <img
+                  src="img/avatares/martin.jpg"
+                  alt="Imagen de Martín Roige"
+                />
+              </div>
 
-                        <div class="member-card__avatar">
+              <div class="member-card__content">
+                <span class="member-card__number"> 05 </span>
 
-                            <img src="img/avatares/martin.jpg" alt="Imagen de Martín Roige">
+                <h3>Martín Roige</h3>
 
-                        </div>
+                <p>WebApps · Fullstack</p>
 
+                <div class="member-card__skills">
+                  <span> React </span>
 
-                        <div class="member-card__content">
+                  <span> Node </span>
 
-                            <span class="member-card__number">
-                                05
-                            </span>
+                  <span> Python </span>
 
-
-                            <h3>
-                                Martín Roige
-                            </h3>
-
-
-                            <p>
-                                WebApps · Fullstack
-                            </p>
-
-
-                            <div class="member-card__skills">
-
-                                <span>
-                                    React
-                                </span>
-
-                                <span>
-                                    Node
-                                </span>
-
-                                <span>
-                                    Python
-                                </span>
-
-                                <span>
-                                    Django
-                                </span>
-
-                            </div>
-
-
-                            <a href="martin.html" class="member-card__link">
-
-                                Ver perfil
-
-                                <span>
-                                    →
-                                </span>
-
-                            </a>
-
-                        </div>
-
-                    </article>
-
+                  <span> Django </span>
                 </div>
 
-            </div>
+                <a
+                  href="martin.html"
+                  class="member-card__link"
+                  aria-label="Ver perfil de Martín Roige"
+                >
+                  Ver perfil <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        </section>
-
-
-
-        <!-- ====================================
+      <!-- ====================================
             PROYECTO
         ===================================== -->
 
-        <section class="project section" id="proyecto">
+      <section class="project section" id="proyecto">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-heading__eyebrow"> 02 · El proyecto </span>
 
-            <div class="container">
+            <h2>Construido con tecnologías web</h2>
 
+            <p>
+              El sitio fue desarrollado utilizando tecnologías fundamentales del
+              desarrollo frontend y herramientas de trabajo colaborativo.
+            </p>
+          </div>
 
-                <div class="section-heading">
+          <div class="project-grid">
+            <!-- HTML -->
 
-                    <span class="section-heading__eyebrow">
-                        02 · El proyecto
-                    </span>
+            <article class="project-card">
+              <span class="project-card__icon"> &lt;/&gt; </span>
 
+              <h3>HTML</h3>
 
-                    <h2>
-                        Construido con tecnologías web
-                    </h2>
+              <p>
+                Utilizamos HTML semántico para organizar correctamente la
+                estructura y el contenido de todas las páginas.
+              </p>
+            </article>
 
+            <!-- CSS -->
 
-                    <p>
+            <article class="project-card">
+              <span class="project-card__icon"> # </span>
 
-                        El sitio fue desarrollado utilizando tecnologías
-                        fundamentales del desarrollo frontend y herramientas
-                        de trabajo colaborativo.
+              <h3>CSS</h3>
 
-                    </p>
+              <p>
+                Diseñamos una interfaz adaptable y consistente para celulares,
+                tablets, notebooks y pantallas de escritorio.
+              </p>
+            </article>
 
-                </div>
+            <!-- JAVASCRIPT -->
 
+            <article class="project-card">
+              <span class="project-card__icon"> JS </span>
 
+              <h3>JavaScript</h3>
 
-                <div class="project-grid">
+              <p>
+                Incorporamos funcionalidades dinámicas tanto en la portada como
+                en los perfiles individuales.
+              </p>
+            </article>
 
+            <!-- GIT -->
 
-                    <!-- HTML -->
+            <article class="project-card">
+              <span class="project-card__icon"> Git </span>
 
-                    <article class="project-card">
+              <h3>Git & GitHub</h3>
 
-                        <span class="project-card__icon">
-                            &lt;/&gt;
-                        </span>
+              <p>
+                Utilizamos control de versiones para registrar los cambios y
+                evidenciar el trabajo colaborativo del equipo.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-
-                        <h3>
-                            HTML
-                        </h3>
-
-
-                        <p>
-
-                            Utilizamos HTML semántico para organizar
-                            correctamente la estructura y el contenido
-                            de todas las páginas.
-
-                        </p>
-
-                    </article>
-
-
-
-                    <!-- CSS -->
-
-                    <article class="project-card">
-
-                        <span class="project-card__icon">
-                            #
-                        </span>
-
-
-                        <h3>
-                            CSS
-                        </h3>
-
-
-                        <p>
-
-                            Diseñamos una interfaz adaptable y consistente
-                            para celulares, tablets, notebooks y pantallas
-                            de escritorio.
-
-                        </p>
-
-                    </article>
-
-
-
-                    <!-- JAVASCRIPT -->
-
-                    <article class="project-card">
-
-                        <span class="project-card__icon">
-                            JS
-                        </span>
-
-
-                        <h3>
-                            JavaScript
-                        </h3>
-
-
-                        <p>
-
-                            Incorporamos funcionalidades dinámicas
-                            tanto en la portada como en los perfiles
-                            individuales.
-
-                        </p>
-
-                    </article>
-
-
-
-                    <!-- GIT -->
-
-                    <article class="project-card">
-
-                        <span class="project-card__icon">
-                            Git
-                        </span>
-
-
-                        <h3>
-                            Git & GitHub
-                        </h3>
-
-
-                        <p>
-
-                            Utilizamos control de versiones para registrar
-                            los cambios y evidenciar el trabajo colaborativo
-                            del equipo.
-
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- ====================================
+      <!-- ====================================
             PROCESO
         ===================================== -->
 
-        <section class="process section">
+      <section class="process section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-heading__eyebrow"> 03 · Nuestro proceso </span>
 
-            <div class="container">
+            <h2>Diseñar también es documentar</h2>
 
+            <p>
+              Las decisiones, cambios, problemas y soluciones que surjan durante
+              el desarrollo quedarán registrados en nuestra bitácora.
+            </p>
+          </div>
 
-                <div class="section-heading">
-
-                    <span class="section-heading__eyebrow">
-                        03 · Nuestro proceso
-                    </span>
-
-
-                    <h2>
-                        Diseñar también es documentar
-                    </h2>
-
-
-                    <p>
-
-                        Las decisiones, cambios, problemas y soluciones
-                        que surjan durante el desarrollo quedarán
-                        registrados en nuestra bitácora.
-
-                    </p>
-
-                </div>
-
-
-                <a href="bitacora.html" class="button button--primary">
-                    Ir a la bitácora
-                </a>
-
-            </div>
-
-        </section>
-
+          <a href="bitacora.html" class="button button--primary">
+            Ir a la bitácora
+          </a>
+        </div>
+      </section>
     </main>
-
-
 
     <!-- ========================================
         FOOTER
     ========================================= -->
 
     <footer class="footer">
+      <div class="container footer__container">
+        <div class="footer__brand">
+          <a href="index.html" class="logo">
+            &lt;Equipo<span>Dev</span>/&gt;
+          </a>
 
-        <div class="container footer__container">
-
-
-            <div class="footer__brand">
-
-                <a href="index.html" class="logo">
-                    &lt;Equipo<span>Dev</span>/&gt;
-                </a>
-
-
-                <p>
-                    Trabajo Práctico Grupal 1
-                </p>
-
-            </div>
-
-
-
-            <div class="footer__info">
-
-                <p>
-                    Desarrollo Frontend
-                </p>
-
-                <p>
-                    IFTS N.º 29 · 2026
-                </p>
-
-                <p>
-                    HTML · CSS · JavaScript
-                </p>
-
-            </div>
-
+          <p>Trabajo Práctico Grupal 1</p>
         </div>
 
+        <div class="footer__info">
+          <p>Desarrollo Frontend</p>
+
+          <p>IFTS N.º 29 · 2026</p>
+
+          <p>HTML · CSS · JavaScript</p>
+        </div>
+      </div>
     </footer>
-
-
 
     <!-- ========================================
         JAVASCRIPT
     ========================================= -->
 
     <script src="js/main.js"></script>
-
-</body>
-
+  </body>
 </html>
