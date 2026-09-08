@@ -17,6 +17,8 @@ const jorgePage =
         ".jorge-theme"
     );
 
+const infernoAudio = new Audio('audio/shao_kahn_laugh.mp3');
+
 /* ==========================================
    RESPUESTAS
 ========================================== */
@@ -114,13 +116,11 @@ function toggleInfernoMode() {
         return;
     }
 
-
     jorgePage
         .classList
         .toggle(
             "inferno-mode"
         );
-
 
     const active =
         jorgePage
@@ -129,8 +129,15 @@ function toggleInfernoMode() {
                 "inferno-mode"
             );
 
-
     if (active) {
+
+        infernoAudio.currentTime = 0;
+        infernoAudio.play().catch((e) => console.log("Audio pendiente de interacción:", e));
+
+        jorgePage.classList.add("inferno-flash");
+        setTimeout(() => {
+            jorgePage.classList.remove("inferno-flash");
+        }, 300);
 
         showJorgeOutput(
             "INFERNO MODE ACTIVATED 🔥"
@@ -145,7 +152,6 @@ function toggleInfernoMode() {
     }
 
 }
-
 
 /* ==========================================
    EVENTOS

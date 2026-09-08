@@ -126,7 +126,8 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 ![Perfil de Dalila](img/capturas/capturaperfildaly.png)
 
 ### 4. Perfil de Jorge (`js/jorge.js`)
-* **Cyber Console & Modo Inferno:** Procesador de comandos que escribe logs en `#jorgeConsoleOutput` y conmuta la clase `.inferno-mode` en el `body` alterando las variables CSS.
+
+* **Cyber Console & Modo Inferno:** Procesador de comandos interactivo que escribe registros dinámicos en `#jorgeConsoleOutput` y conmuta la clase `.inferno-mode` en la página, alterando las variables CSS, aplicando un fondo estático de la guarida de Scorpion (Scorpion_Lair.jpg) y disparando efectos multimedia (reproducción de audio de Shao Kahn y destello visual al activarse).
 
 ![Perfil de Jorge](img/capturas/capturaperfiljorge.png)
 
