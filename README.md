@@ -108,12 +108,12 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 * **Menú Mobile Responsive:** Control del evento click sobre `#menuToggle` para alternar la visibilidad de `.nav` y su animación.
 * **Hero Dinámico:** Rotación temporizada de texto sobre `#dynamicText` con transición de desvanecimiento (`fade-out`).
 
-*(Insertar captura: `![Captura Portada](img/capturas/portada.png)`)*
+![Captura Portada](img/capturas/capturaportada.png)
 
 ### 2. Perfil de Martina (`js/martina.js`)
 * **Terminal Interactiva:** Botones con atributo `data-terminal` que inyectan respuestas sobre código, creatividad y hobbies dentro de `#terminalOutput`.
 
-*(Insertar captura: `![Captura Martina](img/capturas/martina.png)`)*
+![Perfil de Martina](img/capturas/capturaperfilmartina.png)
 
 ### 3. Perfil de Dalila (`js/dalila.js`)
 
@@ -123,22 +123,22 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 
 * **Revisión y adaptación:** las sugerencias generadas por IA fueron revisadas y adaptadas por el equipo antes de incorporarlas al proyecto. Se realizaron pruebas para comprobar que el código funcionara correctamente y que los cambios mantuvieran la estética y estructura definida para el perfil.
 
-*(Insertar captura: `![Captura Dalila](img/capturas/dalila.png)`)*
+![Perfil de Dalila](img/capturas/capturaperfildaly.png)
 
 ### 4. Perfil de Jorge (`js/jorge.js`)
 * **Cyber Console & Modo Inferno:** Procesador de comandos que escribe logs en `#jorgeConsoleOutput` y conmuta la clase `.inferno-mode` en el `body` alterando las variables CSS.
 
-*(Insertar captura: `![Captura Jorge](img/capturas/jorge.png)`)*
+![Perfil de Jorge](img/capturas/capturaperfiljorge.png)
 
 ### 5. Perfil de Luis (`js/luis.js`)
 * **Vintage Player:** Botonera interactiva con `data-luis` que actualiza la carátula, categoría, título y descripción dentro de `#luisPlayerDisplay`.
 
-*(Insertar captura: `![Captura Luis](img/capturas/luis.png)`)*
+![Perfil de Luis](img/capturas/capturaperfilluis.png)
 
 ### 6. Perfil de Martín (`js/martin.js`)
 * **Retro System Console:** Consola arcade interactiva que imprime respuestas a comandos del sistema y conmuta temas cromáticos con `.green-mode`.
 
-*(Insertar captura: `![Captura Martín](img/capturas/martin.png)`)*
+![Perfil de Martín](img/capturas/capturaperfilmartin.png)
 
 ---
 
