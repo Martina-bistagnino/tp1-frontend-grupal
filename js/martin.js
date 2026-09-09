@@ -322,3 +322,52 @@ martinButtons.forEach((button) => {
     );
 
 });
+
+// ============================================================
+// FLIP CARDS CON VIDEO BAJO DEMANDA (Watch List)
+// ============================================================
+document.querySelectorAll('.martin-media-card').forEach(card => {
+    const btnFlip = card.querySelector('.btn-flip');
+    const btnClose = card.querySelector('.btn-flip-back');
+    const videoWrapper = card.querySelector('.media-video-wrapper');
+    const videoSrc = card.getAttribute('data-video');
+
+    // Girar y cargar video
+    btnFlip?.addEventListener('click', (e) => {
+        e.stopPropagation();
+
+        // Cerrar otras tarjetas abiertas
+        document.querySelectorAll('.martin-media-card.is-flipped').forEach(otherCard => {
+            if (otherCard !== card) {
+                otherCard.classList.remove('is-flipped');
+                const otherWrapper = otherCard.querySelector('.media-video-wrapper');
+                if (otherWrapper) otherWrapper.innerHTML = '';
+            }
+        });
+
+        // Insertar el iframe solo al voltear (autoplay activado con mute o sonido estándar)
+        if (videoWrapper && !videoWrapper.querySelector('iframe')) {
+            videoWrapper.innerHTML = `
+                <iframe 
+                    src="${videoSrc}?autoplay=1&rel=0" 
+                    title="Trailer" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            `;
+        }
+
+        card.classList.add('is-flipped');
+    });
+
+    // Cerrar y detener reproducción
+    btnClose?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        card.classList.remove('is-flipped');
+        
+        // Vaciar el wrapper para cortar el audio del video
+        setTimeout(() => {
+            if (videoWrapper) videoWrapper.innerHTML = '';
+        }, 300);
+    });
+});
