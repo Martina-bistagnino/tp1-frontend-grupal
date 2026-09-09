@@ -133,6 +133,11 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 
 ### 5. Perfil de Luis (`js/luis.js`)
 * **Vintage Player:** Botonera interactiva con `data-luis` que actualiza la carátula, categoría, título y descripción dentro de `#luisPlayerDisplay`.
+* **Accesibilidad (A11y) y Atributos ARIA (Completado):**
+  * **Región Dinámica Accesible:** Implementación de `aria-live="polite"` en `#luisPlayerDisplay` para anunciar en tiempo real y sin interrupciones los cambios de categoría a usuarios de lectores de pantalla.
+  * **Controles y Estados Interactivos:** Incorporación de `aria-controls="luisPlayerDisplay"` y alternancia dinámica de estado mediante `aria-pressed="true|false"` en todos los botones del reproductor sincronizados vía JavaScript.
+  * **Navegación Semántica y Accesible:** Menú mobile accesible con `aria-label`, `aria-expanded` y `aria-controls`, y marcado semántico de paginación entre integrantes mediante `<nav class="profile-navigation" aria-label="Navegación entre perfiles">`.
+  * **Etiquetado y Ocultamiento Decorativo:** Enlaces de retorno al inicio con `aria-label="Volver al inicio"` (header y footer) y elementos puramente estéticos del hero protegidos con `aria-hidden="true"`.
 
 ![Perfil de Luis](img/capturas/capturaperfilluis.png)
 

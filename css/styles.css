@@ -59,7 +59,7 @@ button {
   margin-inline: auto;
 }
 .section {
-  padding: 110px 0;
+  padding: 50px 0;
 }
 /* ===================================
    HEADER
@@ -153,7 +153,7 @@ button {
     minmax(350px, 0.9fr);
   gap: 80px;
   align-items: center;
-  padding: 80px 0;
+  padding: 50px 0;
 }
 .hero__eyebrow,
 .section-heading__eyebrow {
