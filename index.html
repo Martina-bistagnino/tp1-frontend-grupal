@@ -31,7 +31,119 @@
     <!-- ========================================
         HEADER
     ========================================= -->
+      <!-- ========================================
+    INTRO DE BIENVENIDA
+========================================= -->
 
+<div
+  class="welcome-overlay"
+  id="welcomeOverlay"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="welcomeTitle"
+  aria-describedby="welcomeDescription"
+  hidden
+>
+
+  <div
+    class="welcome-particles"
+    aria-hidden="true"
+  ></div>
+
+
+  <div class="welcome-content">
+
+    <p class="welcome-eyebrow">
+      TP1 · Desarrollo Frontend
+    </p>
+
+
+    <h1
+      class="welcome-title"
+      id="welcomeTitle"
+    >
+      Bienvenidos a
+
+      <span>
+        &lt;EquipoDev/&gt;
+      </span>
+    </h1>
+
+
+    <p
+      class="welcome-subtitle"
+      id="welcomeDescription"
+    >
+      Construimos este sitio como equipo.
+    </p>
+
+
+    <div
+      class="welcome-avatars"
+      aria-label="Integrantes de EquipoDev"
+    >
+
+      <div class="welcome-avatar">
+        <img
+          src="img/avatares/martina.jpg"
+          alt="Avatar de Martina"
+        >
+      </div>
+
+
+      <div class="welcome-avatar">
+        <img
+          src="img/avatares/dalila.jpg"
+          alt="Avatar de Dalila"
+        >
+      </div>
+
+
+      <div class="welcome-avatar">
+        <img
+          src="img/avatares/jorge.jpg"
+          alt="Avatar de Jorge"
+        >
+      </div>
+
+
+      <div class="welcome-avatar">
+        <img
+          src="img/avatares/luis.jpg"
+          alt="Avatar de Luis"
+        >
+      </div>
+
+
+      <div class="welcome-avatar">
+        <img
+          src="img/avatares/martin.jpg"
+          alt="Avatar de Martín"
+        >
+      </div>
+
+    </div>
+
+
+    <p class="welcome-message">
+      Cinco perfiles. Cinco estilos. Un solo equipo.
+    </p>
+
+
+    <button
+      type="button"
+      class="welcome-enter"
+      id="welcomeEnter"
+    >
+      Ingresar
+      <span aria-hidden="true">→</span>
+    </button>
+
+  </div>
+
+</div>
+
+    <a href="#mainContent" class="skip-link">Saltar al contenido principal</a>
     <header class="header">
       <div class="container header__container">
         <!-- LOGO -->
@@ -42,7 +154,8 @@
 
         <!-- BOTÓN MENÚ MOBILE -->
 
-        <button
+          <button
+          type="button"
           class="menu-toggle"
           id="menuToggle"
           aria-label="Abrir menú de navegación"
@@ -82,10 +195,8 @@
         CONTENIDO PRINCIPAL
     ========================================= -->
 
-    <main>
-      <!-- ====================================
-            HERO
-        ===================================== -->
+
+      <main id="mainContent"> 
 
       <section class="hero" id="inicio">
         <!-- Decoraciones -->
@@ -118,7 +229,11 @@
 
             <!-- TEXTO DINÁMICO CON JAVASCRIPT -->
 
-            <div class="hero__dynamic" aria-live="polite">
+                  <div
+        class="hero__dynamic"
+        aria-live="polite"
+        aria-atomic="true"
+              >
               <span> &gt; </span>
 
               <p id="dynamicText">HTML · CSS · JavaScript</p>

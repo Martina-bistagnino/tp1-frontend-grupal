@@ -35,6 +35,47 @@ button {
   font-family: inherit;
 }
 /* ===================================
+   SKIP LINK
+=================================== */
+
+.skip-link {
+
+    position: fixed;
+
+    z-index: 10000;
+
+    top: 12px;
+    left: 12px;
+
+    padding:
+        10px 16px;
+
+    border-radius: 8px;
+
+    background:
+        var(--accent-secondary);
+
+    color:
+        #080b18;
+
+    font-weight: 700;
+
+    transform:
+        translateY(-150%);
+
+    transition:
+        transform .2s ease;
+
+}
+
+
+.skip-link:focus {
+
+    transform:
+        translateY(0);
+
+}
+/* ===================================
    VARIABLES
 =================================== */
 :root {
@@ -822,7 +863,26 @@ button {
   .breakpoint-grid {
     grid-template-columns: 1fr;
   }
+.welcome-overlay {
+    padding: 20px;
 }
+
+
+.welcome-avatars {
+    gap: 8px;
+}
+
+
+.welcome-avatar {
+    width: 62px;
+}
+
+
+.welcome-message {
+    margin-top: 25px;
+}
+}
+
 @media (max-width: 400px) {
   .logbook-hero__title {
     font-size: 3rem;
@@ -836,6 +896,19 @@ button {
   .timeline-entry__marker {
     margin-bottom: -10px;
   }
+  .welcome-avatar {
+    width: 52px;
+}
+
+
+.welcome-title {
+    font-size: 2.4rem;
+}
+
+
+.welcome-enter {
+    width: 100%;
+}
 }
 /* ==========================================
    IDENTIDAD VINTAGE
@@ -1179,4 +1252,527 @@ button:focus-visible {
   transition:
     box-shadow 0.2s ease,
     outline-color 0.2s ease;
+}
+
+/* ==========================================
+   INTRO DE BIENVENIDA
+========================================== */
+
+body.intro-open {
+    overflow: hidden;
+}
+
+
+.welcome-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: grid;
+
+    place-items: center;
+
+    overflow: hidden;
+
+    padding: 30px;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(99, 102, 241, 0.2),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 75% 65%,
+            rgba(34, 211, 238, 0.12),
+            transparent 35%
+        ),
+        #050711;
+
+}
+
+
+.welcome-overlay[hidden] {
+    display: none;
+}
+
+
+/* PARTÍCULAS */
+
+.welcome-particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.5;
+
+}
+
+
+.welcome-particles::before,
+.welcome-particles::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -20%;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.7) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        65px 65px;
+
+    animation:
+        particlesMove
+        18s linear
+        infinite;
+
+}
+
+
+.welcome-particles::after {
+
+    opacity: 0.4;
+
+    background-size:
+        100px 100px;
+
+    animation-duration:
+        28s;
+
+    transform:
+        rotate(20deg);
+
+}
+
+
+@keyframes particlesMove {
+
+    from {
+        transform:
+            translateY(0);
+    }
+
+    to {
+        transform:
+            translateY(80px);
+    }
+
+}
+
+
+/* CONTENIDO */
+
+.welcome-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(100%, 1050px);
+
+    text-align: center;
+
+}
+
+
+.welcome-eyebrow {
+
+    color:
+        var(--accent-secondary);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.78rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+
+}
+
+
+.welcome-title {
+
+    margin-top: 20px;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size:
+        clamp(2.5rem, 7vw, 6.5rem);
+
+    line-height: 1;
+
+    letter-spacing: -0.06em;
+
+    animation:
+        welcomeTitleReveal
+        0.9s ease
+        both;
+
+}
+
+
+.welcome-title span {
+
+    display: block;
+
+    margin-top: 12px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--accent-primary),
+            var(--accent-secondary),
+            var(--accent-purple)
+        );
+
+    background-size:
+        200% auto;
+
+    background-clip: text;
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+
+    filter:
+        drop-shadow(
+            0 0 16px
+            rgba(34, 211, 238, 0.25)
+        );
+
+    animation:
+        welcomeGlow
+        4s linear
+        infinite;
+
+}
+
+
+@keyframes welcomeTitleReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+@keyframes welcomeGlow {
+
+    to {
+
+        background-position:
+            200% center;
+
+    }
+
+}
+
+
+.welcome-subtitle {
+
+    margin-top: 22px;
+
+    color:
+        var(--text-secondary);
+
+    font-size:
+        clamp(1rem, 2vw, 1.25rem);
+
+}
+
+
+/* AVATARES */
+
+.welcome-avatars {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 45px;
+
+}
+
+
+.welcome-avatar {
+
+    width:
+        clamp(72px, 10vw, 120px);
+
+    aspect-ratio: 1;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-radius: 50%;
+
+    background:
+        var(--bg-secondary);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.35);
+
+    opacity: 0;
+
+    transform:
+        translateY(30px)
+        scale(.8);
+
+    animation:
+        avatarEntrance
+        .65s ease
+        forwards;
+
+}
+
+
+.welcome-avatar:nth-child(1) {
+    animation-delay: .25s;
+}
+
+
+.welcome-avatar:nth-child(2) {
+    animation-delay: .4s;
+}
+
+
+.welcome-avatar:nth-child(3) {
+    animation-delay: .55s;
+}
+
+
+.welcome-avatar:nth-child(4) {
+    animation-delay: .7s;
+}
+
+
+.welcome-avatar:nth-child(5) {
+    animation-delay: .85s;
+}
+
+
+.welcome-avatar img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+}
+
+
+@keyframes avatarEntrance {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* MENSAJE */
+
+.welcome-message {
+
+    margin-top: 30px;
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size:
+        clamp(.95rem, 2vw, 1.2rem);
+
+    font-weight: 600;
+
+}
+.sr-only {
+
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip:
+        rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+
+}
+
+/* BOTÓN */
+
+.welcome-enter {
+
+    min-height: 52px;
+
+    margin-top: 30px;
+
+    padding:
+        0 30px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent-primary),
+            var(--accent-purple)
+        );
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 35px
+        rgba(99, 102, 241, .22);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+.welcome-enter:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 20px 40px
+        rgba(99, 102, 241, .32);
+
+}
+
+/* ==========================================
+   ACCESIBILIDAD - MOVIMIENTO REDUCIDO
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+
+    }
+
+
+    .hero__dynamic,
+    .welcome-avatar,
+    .welcome-title,
+    .welcome-subtitle,
+    .welcome-particles,
+    .music-card,
+    .martina-now-playing__icon,
+    .terminal,
+    .martina-live-card {
+
+        animation: none !important;
+        transition: none !important;
+
+    }
+
+
+    .music-card:hover {
+
+        transform: none;
+
+    }
+    .odin-assistant__avatar,
+.odin-assistant__message {
+
+    animation: none !important;
+
+    transition: none !important;
+
+    opacity: 1 !important;
+
+    transform: none !important;
+
+}
+
 }

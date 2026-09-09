@@ -234,14 +234,287 @@ function changeDynamicMessage() {
 
 
 /* ==========================================
-   INTERVALO AUTOMÁTICO
+   PREFERENCIAS DE MOVIMIENTO
 ========================================== */
 
-if (dynamicText) {
-
-    setInterval(
-        changeDynamicMessage,
-        3000
+const reducedMotion =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
     );
 
+
+let dynamicTextInterval;
+
+
+/* ==========================================
+   INICIAR TEXTO DINÁMICO
+========================================== */
+
+function startDynamicMessages() {
+
+    if (
+        !dynamicText ||
+        reducedMotion.matches
+    ) {
+        return;
+    }
+
+
+    dynamicTextInterval =
+        setInterval(
+            changeDynamicMessage,
+            3000
+        );
+
 }
+
+
+/* ==========================================
+   DETENER TEXTO DINÁMICO
+========================================== */
+
+function stopDynamicMessages() {
+
+    if (!dynamicTextInterval) {
+        return;
+    }
+
+
+    clearInterval(
+        dynamicTextInterval
+    );
+
+
+    dynamicTextInterval = null;
+
+}
+
+
+/* Iniciamos si está permitido */
+
+startDynamicMessages();
+
+
+/* Si el usuario cambia la preferencia
+   mientras la página está abierta */
+
+reducedMotion.addEventListener(
+    "change",
+    () => {
+
+        if (reducedMotion.matches) {
+
+            stopDynamicMessages();
+
+            dynamicText.classList.remove(
+                "fade-out"
+            );
+
+            dynamicText.textContent =
+                dynamicMessages[0];
+
+        } else {
+
+            startDynamicMessages();
+
+        }
+
+    }
+);
+/* ==========================================
+   INTRO DE BIENVENIDA
+========================================== */
+
+const welcomeOverlay =
+    document.querySelector(
+        "#welcomeOverlay"
+    );
+
+
+const welcomeEnter =
+    document.querySelector(
+        "#welcomeEnter"
+    );
+
+
+/*
+    Verificamos si la intro ya se mostró
+    durante esta sesión.
+*/
+
+let introWasSeen = false;
+
+
+try {
+
+    introWasSeen =
+        sessionStorage.getItem(
+            "equipoDevIntroSeen"
+        ) === "true";
+
+} catch (error) {
+
+    introWasSeen = false;
+
+}
+
+
+
+/* ==========================================
+   MOSTRAR INTRO
+========================================== */
+
+function showWelcomeIntro() {
+
+    if (
+        !welcomeOverlay ||
+        introWasSeen
+    ) {
+        return;
+    }
+
+
+    welcomeOverlay.hidden = false;
+
+
+    document.body.classList.add(
+        "intro-open"
+    );
+
+
+    /*
+        Llevamos el foco al botón
+        después de mostrar el diálogo.
+    */
+
+    requestAnimationFrame(() => {
+
+        welcomeEnter?.focus();
+
+    });
+
+}
+
+
+
+/* ==========================================
+   CERRAR INTRO
+========================================== */
+
+function closeWelcomeIntro() {
+
+    if (!welcomeOverlay) {
+        return;
+    }
+
+
+    welcomeOverlay.hidden = true;
+
+
+    document.body.classList.remove(
+        "intro-open"
+    );
+
+
+    try {
+
+        sessionStorage.setItem(
+            "equipoDevIntroSeen",
+            "true"
+        );
+
+    } catch (error) {
+
+        /* Si sessionStorage no está disponible,
+           simplemente continuamos. */
+
+    }
+
+
+    /*
+        Dejamos el foco en el contenido principal.
+    */
+
+    const mainContent =
+        document.querySelector(
+            "#mainContent"
+        );
+
+
+    if (mainContent) {
+
+        mainContent.setAttribute(
+            "tabindex",
+            "-1"
+        );
+
+        mainContent.focus();
+
+    }
+
+}
+
+
+
+/* ==========================================
+   EVENTO BOTÓN
+========================================== */
+
+welcomeEnter?.addEventListener(
+    "click",
+    closeWelcomeIntro
+);
+
+
+
+/* ==========================================
+   ESCAPE + CONTROL DE FOCO
+========================================== */
+
+document.addEventListener(
+    "keydown",
+    (event) => {
+
+        if (
+            !welcomeOverlay ||
+            welcomeOverlay.hidden
+        ) {
+            return;
+        }
+
+
+        /*
+            Escape cierra la intro.
+        */
+
+        if (event.key === "Escape") {
+
+            closeWelcomeIntro();
+
+            return;
+
+        }
+
+
+        /*
+            Como el diálogo tiene un solo
+            elemento interactivo, mantenemos
+            el foco en ese botón.
+        */
+
+        if (event.key === "Tab") {
+
+            event.preventDefault();
+
+            welcomeEnter?.focus();
+
+        }
+
+    }
+);
+
+
+
+/* Mostrar al cargar */
+
+showWelcomeIntro();

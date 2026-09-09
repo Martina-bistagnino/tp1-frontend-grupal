@@ -925,7 +925,171 @@
 
 }
 
+/* ==========================================
+   MARTINA MUSIC
+========================================== */
 
+.music-card {
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.music-card:hover,
+.music-card:focus-visible,
+.music-card.is-playing {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--profile-accent);
+
+    box-shadow:
+        0 18px 40px
+        rgba(49, 175, 230, .12);
+
+}
+
+
+.music-card__hint {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: .65rem;
+
+    opacity: .6;
+
+}
+
+
+.music-card:hover
+.music-card__hint {
+
+    opacity: 1;
+
+}
+
+
+.martina-now-playing {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, .17);
+
+    border-radius: 12px;
+
+    background:
+        rgba(8, 13, 44, .7);
+
+}
+
+
+.martina-now-playing__icon {
+
+    width: 54px;
+    height: 54px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        var(--profile-accent);
+
+    color:
+        var(--profile-accent);
+
+    font-size: 1.4rem;
+
+}
+
+
+.music-card.is-playing
+~ .martina-now-playing
+.martina-now-playing__icon {
+
+    animation:
+        martinaRecordSpin
+        3s linear
+        infinite;
+
+}
+
+
+@keyframes martinaRecordSpin {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+
+.martina-now-playing__label {
+
+    display: block;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: .65rem;
+
+}
+
+
+.martina-now-playing strong {
+
+    display: block;
+
+    margin-top: 3px;
+
+}
+
+
+.martina-now-playing p {
+
+    color:
+        var(--profile-muted);
+
+    font-size: .82rem;
+
+}
 
 /* ==========================================
    INTERESES
@@ -1141,6 +1305,7 @@
 
 
 
+
 .terminal-button:hover {
 
     border-color: var(--profile-accent);
@@ -1269,61 +1434,57 @@
 @media (max-width: 900px) {
 
     .profile-hero {
-
         min-height: auto;
-
     }
 
 
     .profile-hero__container {
-
         grid-template-columns: 1fr;
-
         padding: 90px 0;
-
     }
 
 
     .profile-hero__visual {
-
         min-height: 500px;
-
     }
 
 
     .profile-avatar {
-
         width: min(370px, 85vw);
-
     }
 
 
     .about-profile-grid {
-
         grid-template-columns: 1fr;
-
     }
 
 
     .about-profile-card--large {
-
         grid-row: auto;
-
     }
 
 
     .skills-grid {
-
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
-
     }
 
 
     .favorites-layout {
-
         grid-template-columns: 1fr;
+    }
 
+
+    /* NUEVO */
+
+    .martina-live-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .martina-system {
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 
 }
@@ -1337,30 +1498,79 @@
 @media (max-width: 600px) {
 
     .interests-grid {
-
         grid-template-columns:
             repeat(2, minmax(0, 1fr));
-
     }
 
 
     .profile-section__heading {
-
         grid-template-columns: 1fr;
-
         gap: 8px;
-
     }
 
 
     .profile-meta {
-
         gap: 20px;
-
     }
+
+
+    /* TERMINAL MARTINA */
+
+    .terminal-command {
+        grid-template-columns: 1fr;
+    }
+
+
+    .terminal-command .terminal__prompt {
+        display: block;
+    }
+
+
+    .terminal-command__send {
+        width: 100%;
+    }
+
+
+    .martina-system {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+.odin-assistant {
+
+    right: 14px;
+    bottom: 14px;
+
+    width:
+        calc(100vw - 28px);
 
 }
 
+
+.odin-assistant__avatar {
+
+    width: 95px;
+    height: 95px;
+
+}
+
+
+.odin-assistant__message {
+
+    max-width: none;
+
+    flex: 1;
+
+    padding: 13px 14px;
+
+}
+
+
+.odin-assistant__message p {
+
+    font-size: 0.72rem;
+
+}
+}
 
 
 /* ==========================================
@@ -1439,6 +1649,754 @@
         flex-direction: column;
 
         align-items: flex-start;
+
+    }
+
+}
+/* ==========================================
+   MARTINA - LIVE STATUS
+========================================== */
+
+.martina-live-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.martina-live-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 24px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.2);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 13, 44, 0.9),
+            rgba(15, 23, 55, 0.75)
+        );
+
+}
+
+
+.martina-live-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background:
+        var(--profile-accent);
+
+}
+
+
+.martina-live-card__label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.72rem;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.martina-live-card strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 1.05rem;
+
+}
+
+
+.martina-live-card p {
+
+    margin-top: 7px;
+
+    color:
+        var(--profile-muted);
+
+    font-size: 0.86rem;
+
+}
+/* ==========================================
+   MARTINA SYSTEM DASHBOARD
+========================================== */
+
+.martina-system {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 1px;
+
+    border-bottom:
+        1px solid
+        rgba(49, 175, 230, 0.15);
+
+    background:
+        rgba(49, 175, 230, 0.1);
+
+}
+
+
+.martina-system__item {
+
+    padding: 15px;
+
+    background:
+        rgba(5, 10, 35, 0.96);
+
+}
+
+
+.martina-system__item span {
+
+    display: block;
+
+    color:
+        var(--profile-muted);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.64rem;
+
+}
+
+
+.martina-system__item strong {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.76rem;
+
+}
+
+
+.terminal__status {
+
+    margin-left: auto;
+
+    color: #42e87a;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.65rem;
+
+}
+/* ==========================================
+   TERMINAL HISTORY
+========================================== */
+
+.terminal-history {
+
+    height: 320px;
+
+    overflow-y: auto;
+
+    margin-top: 22px;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.13);
+
+    border-radius: 10px;
+
+    background:
+        rgba(1, 5, 22, 0.85);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.82rem;
+
+    scrollbar-width: thin;
+
+}
+
+
+.terminal-history__entry {
+
+    margin-bottom: 18px;
+
+}
+
+
+.terminal-history__command {
+
+    color:
+        var(--profile-accent);
+
+}
+
+
+.terminal-history__response {
+
+    margin-top: 5px;
+
+    color:
+        #dbeafe;
+
+    white-space: pre-line;
+
+}
+
+
+.terminal-history__error {
+
+    color:
+        #ff6b81;
+
+}
+
+
+.terminal-history__system {
+
+    color:
+        #42e87a;
+
+}
+
+
+.terminal-history__secret {
+
+    color:
+        var(--profile-accent-secondary);
+
+    text-shadow:
+        0 0 12px
+        rgba(223, 60, 93, 0.45);
+
+}
+/* ==========================================
+   TERMINAL INPUT
+========================================== */
+
+.terminal-command {
+
+    display: grid;
+
+    grid-template-columns:
+        auto 1fr auto;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+    padding: 12px 14px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.2);
+
+    border-radius: 10px;
+
+    background:
+        rgba(1, 5, 22, 0.95);
+
+}
+
+
+.terminal-command__input {
+
+    width: 100%;
+
+    border: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.86rem;
+
+    caret-color:
+        var(--profile-accent);
+
+}
+
+
+.terminal-command__input::placeholder {
+
+    color:
+        rgba(168, 176, 199, 0.55);
+
+}
+
+
+.terminal-command__send {
+
+    padding: 8px 12px;
+
+    border:
+        1px solid
+        var(--profile-accent);
+
+    border-radius: 6px;
+
+    background:
+        rgba(49, 175, 230, 0.08);
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.68rem;
+
+    cursor: pointer;
+
+}
+
+
+.terminal-command__send:hover {
+
+    background:
+        rgba(49, 175, 230, 0.17);
+
+}
+
+
+.terminal-command__hint {
+
+    margin-top: 10px;
+
+    color:
+        var(--profile-muted);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.68rem;
+
+}
+.terminal-button.is-active {
+
+    border-color:
+        var(--profile-accent);
+
+    background:
+        rgba(49, 175, 230, 0.13);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 0 18px
+        rgba(49, 175, 230, 0.12);
+
+}
+/* ==========================================
+   MARTINA TERMINAL THEMES
+========================================== */
+
+.martina-theme.martina-pink {
+
+    --profile-accent: #df3c5d;
+    --profile-accent-secondary: #31afe6;
+
+}
+
+
+.martina-theme.martina-purple {
+
+    --profile-accent: #7a18c6;
+    --profile-accent-secondary: #df3c5d;
+
+}
+/* ==========================================
+   MARTINA EASTER EGG
+========================================== */
+
+.martina-theme.fatality-mode .terminal {
+
+    animation:
+        fatalityPulse
+        0.22s ease
+        3;
+
+}
+
+
+@keyframes fatalityPulse {
+
+    0%,
+    100% {
+
+        box-shadow:
+            0 0 0
+            rgba(223, 60, 93, 0);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 45px
+            rgba(223, 60, 93, 0.45);
+
+    }
+
+}
+/* ==========================================
+   ODIN ASSISTANT
+========================================== */
+
+.odin-assistant {
+
+    position: fixed;
+
+    right: 24px;
+    bottom: 24px;
+
+    z-index: 5000;
+
+    width:
+        min(370px, calc(100vw - 32px));
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    pointer-events: none;
+
+}
+
+
+.odin-assistant[hidden] {
+
+    display: none;
+
+}
+
+
+/* ==========================================
+   BURBUJA
+========================================== */
+
+.odin-assistant__message {
+
+    position: relative;
+
+    max-width: 230px;
+
+    padding: 16px 18px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.28);
+
+    border-radius:
+        16px 16px 4px 16px;
+
+    background:
+        rgba(5, 9, 30, 0.96);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0, 0, 0, 0.38);
+
+    backdrop-filter:
+        blur(12px);
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    animation:
+        odinMessageIn
+        0.45s ease
+        0.25s
+        forwards;
+
+}
+
+
+.odin-assistant__message::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -8px;
+    bottom: 18px;
+
+    width: 15px;
+    height: 15px;
+
+    border-top:
+        1px solid
+        rgba(49, 175, 230, 0.28);
+
+    border-right:
+        1px solid
+        rgba(49, 175, 230, 0.28);
+
+    background:
+        rgba(5, 9, 30, 0.96);
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+.odin-assistant__label {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.odin-assistant__message p {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.78rem;
+
+    line-height: 1.55;
+
+}
+
+
+/* ==========================================
+   AVATAR
+========================================== */
+
+.odin-assistant__avatar {
+
+    position: relative;
+
+    width: 145px;
+
+    flex-shrink: 0;
+
+    opacity: 0;
+
+    transform:
+        translateX(160px)
+        rotate(12deg)
+        scale(0.7);
+
+    animation:
+        odinEntrance
+        0.65s
+        cubic-bezier(.2, .8, .2, 1.2)
+        forwards;
+
+}
+
+
+.odin-assistant__avatar img {
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 15px 25px
+            rgba(0, 0, 0, 0.45)
+        );
+
+}
+
+
+
+
+/* ONLINE DOT */
+
+.odin-assistant__online {
+
+    position: absolute;
+
+    right: 11px;
+    bottom: 10px;
+
+    width: 13px;
+    height: 13px;
+
+    border:
+        2px solid
+        #080d2c;
+
+    border-radius: 50%;
+
+    background:
+        #42e87a;
+
+    box-shadow:
+        0 0 12px
+        rgba(66, 232, 122, 0.8);
+
+}
+
+
+/* ==========================================
+   STATUS
+========================================== */
+
+.odin-status {
+
+    color:
+        var(--profile-muted);
+
+}
+
+
+.odin-status.is-online {
+
+    color:
+        #42e87a;
+
+    text-shadow:
+        0 0 10px
+        rgba(66, 232, 122, 0.45);
+
+}
+
+
+/* ==========================================
+   ANIMACIONES
+========================================== */
+
+@keyframes odinEntrance {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateX(160px)
+            rotate(12deg)
+            scale(0.7);
+
+    }
+
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            translateX(-8px)
+            rotate(-3deg)
+            scale(1.04);
+
+    }
+
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            rotate(0)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes odinMessageIn {
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
 
     }
 

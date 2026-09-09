@@ -74,7 +74,8 @@
 
             <!-- MENÚ MOBILE -->
 
-            <button
+                <button
+                type="button"
                 class="menu-toggle"
                 id="menuToggle"
                 aria-label="Abrir menú de navegación"
@@ -789,70 +790,124 @@
                         <div class="favorites-cards">
 
 
-                            <article class="favorite-card">
+<article
+    class="favorite-card music-card"
+    data-album="Por Colectora"
+    data-artist="Las Pastillas del Abuelo"
+    tabindex="0"
+>
 
-                                <span class="favorite-card__number">
-                                    01
-                                </span>
+    <span class="favorite-card__number">
+        01
+    </span>
 
-                                <div>
+    <div>
 
-                                    <h4>
-                                        Por Colectora
-                                    </h4>
+        <h4>
+            Por Colectora
+        </h4>
 
-                                    <p>
-                                        Las Pastillas del Abuelo
-                                    </p>
+        <p>
+            Las Pastillas del Abuelo
+        </p>
 
-                                </div>
+        <span class="music-card__hint">
+            Pasá el mouse, usá Tab o tocá para explorar
+        </span>
 
-                            </article>
+    </div>
 
-
-
-                            <article class="favorite-card">
-
-                                <span class="favorite-card__number">
-                                    02
-                                </span>
-
-                                <div>
-
-                                    <h4>
-                                        Paradojas
-                                    </h4>
-
-                                    <p>
-                                        Las Pastillas del Abuelo
-                                    </p>
-
-                                </div>
-
-                            </article>
+</article>
 
 
 
-                            <article class="favorite-card">
+                        <article
+    class="favorite-card music-card"
+    data-album="Paradojas"
+    data-artist="Las Pastillas del Abuelo"
+    tabindex="0"
+>
 
-                                <span class="favorite-card__number">
-                                    03
-                                </span>
+    <span class="favorite-card__number">
+        02
+    </span>
 
-                                <div>
+    <div>
 
-                                    <h4>
-                                        2020
-                                    </h4>
+        <h4>
+            Paradojas
+        </h4>
 
-                                    <p>
-                                        Las Pastillas del Abuelo
-                                    </p>
+        <p>
+            Las Pastillas del Abuelo
+        </p>
 
-                                </div>
+        <span class="music-card__hint">
+            Pasá el mouse para explorar
+        </span>
 
-                            </article>
+    </div>
 
+</article>
+
+
+
+                         <article
+    class="favorite-card music-card"
+    data-album="2020"
+    data-artist="Las Pastillas del Abuelo"
+    tabindex="0"
+>
+
+    <span class="favorite-card__number">
+        03
+    </span>
+
+    <div>
+
+        <h4>
+            2020
+        </h4>
+
+        <p>
+            Las Pastillas del Abuelo
+        </p>
+
+        <span class="music-card__hint">
+            Pasá el mouse para explorar
+        </span>
+
+    </div>
+
+</article>
+<div
+    class="martina-now-playing"
+    id="martinaNowPlaying"
+    aria-live="polite"
+>
+
+    <span class="martina-now-playing__icon">
+        ♪
+    </span>
+
+
+    <div>
+
+        <span class="martina-now-playing__label">
+            NOW_EXPLORING
+        </span>
+
+        <strong id="nowPlayingAlbum">
+            Elegí un álbum
+        </strong>
+
+        <p id="nowPlayingArtist">
+            Pasá el mouse o usá Tab sobre una tarjeta.
+        </p>
+
+    </div>
+
+</div>
                         </div>
 
                     </div>
@@ -1006,131 +1061,343 @@
             <div class="container">
 
 
-                <div class="profile-section__heading">
+               <div class="profile-section__heading">
 
-                    <span>
-                        05
-                    </span>
+    <span>
+        05
+    </span>
 
+    <div>
 
-                    <div>
+        <p class="profile-kicker">
+            JAVASCRIPT
+        </p>
 
-                        <p class="profile-kicker">
-                            JAVASCRIPT
-                        </p>
+        <h2>
+            Explorá mi perfil
+        </h2>
 
+    </div>
 
-                        <h2>
-                            Explorá mi perfil
-                        </h2>
-
-                    </div>
-
-                </div>
+</div>
 
 
+<!-- ====================================
+    ESTADO ACTUAL
+===================================== -->
 
-                <div class="terminal">
+<div class="martina-live-grid">
 
+    <article class="martina-live-card">
 
-                    <!-- CABECERA -->
+        <span class="martina-live-card__label">
+            CURRENT_STACK
+        </span>
 
-                    <div class="terminal__header">
+        <strong>
+            HTML · CSS · JavaScript
+        </strong>
 
-                        <div class="terminal__dots">
+        <p>
+            Tecnologías principales que estoy trabajando.
+        </p>
 
-                            <span></span>
-                            <span></span>
-                            <span></span>
-
-                        </div>
-
-
-                        <span>
-                            martina.exe
-                        </span>
-
-                    </div>
-
+    </article>
 
 
-                    <!-- CUERPO -->
+    <article class="martina-live-card">
 
-                    <div class="terminal__body">
+        <span class="martina-live-card__label">
+            CURRENT_INTEREST
+        </span>
 
+        <strong>
+            Psicología 🧠
+        </strong>
 
-                        <p class="terminal__line">
+        <p>
+            Actualmente me interesa profundizar en este tema.
+        </p>
 
-                            <span class="terminal__prompt">
-                                martina@perfil:~$
-                            </span>
+    </article>
 
-                            seleccioná una opción
-
-                        </p>
-
-
-
-                        <!-- BOTONES -->
-
-                        <div class="terminal__options">
-
-                            <button
-                                class="terminal-button"
-                                data-terminal="codigo"
-                            >
-                                código
-                            </button>
+</div>
 
 
-                            <button
-                                class="terminal-button"
-                                data-terminal="creatividad"
-                            >
-                                creatividad
-                            </button>
+<!-- ====================================
+    TERMINAL
+===================================== -->
+
+<div class="terminal"  id="martinaTerminal">
 
 
-                            <button
-                                class="terminal-button"
-                                data-terminal="personal"
-                            >
-                                fuera_del_codigo
-                            </button>
+    <!-- =================================
+        CABECERA
+    ================================== -->
+
+    <div class="terminal__header">
+
+        <div
+            class="terminal__dots"
+            aria-hidden="true"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <span>
+            martina.exe
+        </span>
+
+        <span
+            class="terminal__status"
+            id="terminalSystemStatus"
+        >
+            ONLINE
+        </span>
+
+    </div>
 
 
-                            <button
-                                class="terminal-button"
-                                data-terminal="random"
-                            >
-                                random
-                            </button>
+    <!-- =================================
+        DASHBOARD
+    ================================== -->
 
-                        </div>
+<div class="martina-system">
+
+    <div class="martina-system__item">
+
+        <span>
+            FRONTEND
+        </span>
+
+        <strong>
+            ONLINE
+        </strong>
+
+    </div>
 
 
+    <div class="martina-system__item">
 
-                        <!-- RESPUESTA -->
+        <span>
+            CREATIVITY
+        </span>
 
-                        <div
-                            class="terminal__output"
-                            id="terminalOutput"
-                            aria-live="polite"
-                        >
+        <strong>
+            ONLINE
+        </strong>
 
-                            <span>
-                                &gt;
-                            </span>
+    </div>
 
-                            <p>
-                                Esperando comando...
-                            </p>
 
-                        </div>
+    <div class="martina-system__item">
 
-                    </div>
+        <span>
+            LEARNING
+        </span>
 
-                </div>
+        <strong>
+            ACTIVE
+        </strong>
+
+    </div>
+
+
+    <div class="martina-system__item">
+
+        <span>
+            COMMANDS
+        </span>
+
+        <strong id="commandCounter">
+            00
+        </strong>
+
+    </div>
+
+
+    <div class="martina-system__item martina-system__item--odin">
+
+        <span>
+            ODIN
+        </span>
+
+        <strong
+            id="odinStatus"
+            class="odin-status"
+        >
+            SLEEPING
+        </strong>
+
+    </div>
+
+</div>
+
+            <strong id="commandCounter">
+                00
+            </strong>
+        </div>
+
+    </div>
+
+
+    <!-- =================================
+        CUERPO
+    ================================== -->
+
+    <div class="terminal__body">
+
+
+        <!-- ACCESOS RÁPIDOS -->
+
+        <div
+            class="terminal__options"
+            role="group"
+            aria-label="Comandos rápidos de la terminal de Martina"
+        >
+
+            <button
+                type="button"
+                class="terminal-button"
+                data-command="about"
+                aria-controls="terminalHistory"
+                aria-pressed="false"
+            >
+                about
+            </button>
+
+            <button
+                type="button"
+                class="terminal-button"
+                data-command="skills"
+                aria-controls="terminalHistory"
+                aria-pressed="false"
+            >
+                skills
+            </button>
+
+            <button
+                type="button"
+                class="terminal-button"
+                data-command="study"
+                aria-controls="terminalHistory"
+                aria-pressed="false"
+            >
+                study
+            </button>
+
+            <button
+                type="button"
+                class="terminal-button"
+                data-command="random"
+                aria-controls="terminalHistory"
+                aria-pressed="false"
+            >
+                random
+            </button>
+
+            <button
+                type="button"
+                class="terminal-button"
+                data-command="theme"
+                aria-controls="terminalHistory"
+                aria-pressed="false"
+            >
+                theme
+            </button>
+
+            <button
+                type="button"
+                class="terminal-button"
+                data-command="help"
+                aria-controls="terminalHistory"
+                aria-pressed="false"
+            >
+                help
+            </button>
+
+        </div>
+
+
+        <!-- =================================
+            HISTORIAL
+        ================================== -->
+
+        <div
+            class="terminal-history"
+            id="terminalHistory"
+            role="log"
+            aria-live="polite"
+            aria-relevant="additions"
+        >
+
+            <p class="terminal-history__boot">
+                Iniciando sistema...
+            </p>
+
+        </div>
+
+
+        <!-- =================================
+            INPUT REAL
+        ================================== -->
+
+        <form
+            class="terminal-command"
+            id="terminalForm"
+            autocomplete="off"
+        >
+
+            <label
+                for="terminalInput"
+                class="sr-only"
+            >
+                Escribí un comando para la terminal
+            </label>
+
+
+            <span
+                class="terminal__prompt"
+                aria-hidden="true"
+            >
+                martina@perfil:~$
+            </span>
+
+
+            <input
+                type="text"
+                id="terminalInput"
+                class="terminal-command__input"
+                placeholder="escribí help..."
+                spellcheck="false"
+                autocomplete="off"
+                aria-describedby="terminalHint"
+            >
+
+
+            <button
+                type="submit"
+                class="terminal-command__send"
+                aria-label="Ejecutar comando"
+            >
+                RUN
+            </button>
+
+        </form>
+
+
+        <p
+            class="terminal-command__hint"
+            id="terminalHint"
+        >
+            Probá: help · skills · game · psychology · theme · random
+        </p>
+
+    </div>
+
+</div>
 
             </div>
 
@@ -1166,6 +1433,54 @@
 </div>
 
         </section>
+
+<!-- ========================================
+    ODIN EASTER EGG
+========================================= -->
+
+<aside
+    class="odin-assistant"
+    id="odinAssistant"
+    aria-label="Odin, asistente secreto de Martina"
+    hidden
+>
+
+    <div
+        class="odin-assistant__message"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+    >
+
+        <span
+            class="odin-assistant__label"
+            aria-hidden="true"
+        >
+            ODIN.exe
+        </span>
+
+        <p id="odinMessage">
+            Miau.exe ejecutado correctamente.
+        </p>
+
+    </div>
+
+
+    <div class="odin-assistant__avatar">
+
+        <img
+            src="img/avatares/odin.png"
+            alt="Caricatura de Odin, el gato de Martina"
+        >
+
+        <span
+            class="odin-assistant__online"
+            aria-hidden="true"
+        ></span>
+
+    </div>
+
+</aside>
 
     </main>
 
