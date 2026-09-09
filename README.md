@@ -190,10 +190,13 @@ Propuestas proyectadas para futuras etapas del proyecto:
 
 ## 🤖 10. Uso de IA y Criterio de Privacidad (Autoría)
 
-* **Herramientas y Modelos:** Se utilizaron modelos de lenguaje (ChatGPT de OpenAI y Claude de Anthropic) en sus planes gratuitos para consulta técnica y asistencia en redacción.
+* **Herramientas y Modelos:** Se utilizaron modelos de lenguaje (ChatGPT de OpenAI y Claude de Anthropic) en sus planes gratuitos para consulta técnica y asistencia en redacción. Para la generación de los avatares se utilizó además **Gemini** (Google, plan gratuito) y **ChatGPT Plus** (OpenAI, plan pago).
+* **Experiencia previa del equipo:** los integrantes cuentan con distintos niveles de experiencia previa en el uso de herramientas de IA generativa — algunos ya las habían utilizado en trabajos anteriores, mientras que para otros fue una de las primeras veces aplicándolas a un proyecto de código.
 * **Asistencia Técnica:**
   * Estructuración inicial de plantillas semánticas en HTML5 y atributos ARIA de accesibilidad.
   * Optimización de variables CSS y reglas de especificidad en los selectores temáticos.
   * Debugging de lógica en event listeners para los módulos interactivos en JavaScript Vanilla.
 * **Avatares y Recursos Gráficos:** Las imágenes de avatares fueron tratadas y optimizadas para web en formato `.jpg`/`.webp`, priorizando una identidad visual uniforme.
+  * Los avatares de **Martina Bistagnino, Jorge Caliz, Francisco Luis Bronzi y Martín Roige** se generaron con **ChatGPT Plus** (plan pago), a cargo de Martina Bistagnino, con un criterio visual de estilo **cyberpunk** aplicado como fondo/ambientación en los cuatro casos.
+  * El avatar de **Gabriela Dalila Contrera** se generó con **Gemini** (plan gratuito), proporcionando como referencia una foto propia, una foto de su mascota y la imagen de estilo del avatar de Martina, solicitando un resultado visual similar.
 * **Criterio de Validación y Autoría:** Cada sugerencia producida por herramientas de IA fue revisada, modificada y probada individualmente por el equipo. El código CSS, la arquitectura de archivos y la lógica de interacción final reflejan decisiones y desarrollo propio de los integrantes del grupo.
