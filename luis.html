@@ -1573,6 +1573,8 @@
                         <button
                             class="luis-player-button active"
                             data-luis="jazz"
+                            aria-controls="luisPlayerDisplay"
+                            aria-pressed="true"
                         >
                             JAZZ
                         </button>
@@ -1581,6 +1583,8 @@
                         <button
                             class="luis-player-button"
                             data-luis="cine"
+                            aria-controls="luisPlayerDisplay"
+                            aria-pressed="false"
                         >
                             CINE
                         </button>
@@ -1589,6 +1593,8 @@
                         <button
                             class="luis-player-button"
                             data-luis="escape"
+                            aria-controls="luisPlayerDisplay"
+                            aria-pressed="false"
                         >
                             GAME
                         </button>
@@ -1597,6 +1603,8 @@
                         <button
                             class="luis-player-button"
                             data-luis="gastronomia"
+                            aria-controls="luisPlayerDisplay"
+                            aria-pressed="false"
                         >
                             FOOD
                         </button>
@@ -1605,6 +1613,8 @@
                         <button
                             class="luis-player-button"
                             data-luis="objetivo"
+                            aria-controls="luisPlayerDisplay"
+                            aria-pressed="false"
                         >
                             GOAL
                         </button>
@@ -1613,6 +1623,8 @@
                         <button
                             class="luis-player-button"
                             data-luis="random"
+                            aria-controls="luisPlayerDisplay"
+                            aria-pressed="false"
                         >
                             RANDOM
                         </button>
@@ -1631,7 +1643,7 @@
             NAVEGACIÓN
         ========================================= -->
 
-        <section class="profile-navigation">
+        <nav class="profile-navigation" aria-label="Navegación entre perfiles">
 
             <div class="container profile-navigation__container">
 
@@ -1660,7 +1672,7 @@
 
             </div>
 
-        </section>
+        </nav>
 
     </main>
 
@@ -1676,7 +1688,7 @@
 
             <div>
 
-                <a href="index.html" class="logo">
+                <a href="index.html" class="logo" aria-label="Volver al inicio">
                     &lt;Equipo<span>Dev</span>/&gt;
                 </a>
 

@@ -206,6 +206,12 @@ luisButtons.forEach((button) => {
                         .classList
                         .remove("active");
 
+                    currentButton
+                        .setAttribute(
+                            "aria-pressed",
+                            "false"
+                        );
+
                 }
             );
 
@@ -215,6 +221,12 @@ luisButtons.forEach((button) => {
             button
                 .classList
                 .add("active");
+
+            button
+                .setAttribute(
+                    "aria-pressed",
+                    "true"
+                );
 
 
             if (option === "random") {
