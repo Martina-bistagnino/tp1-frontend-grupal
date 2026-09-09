@@ -117,11 +117,17 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 
 ### 3. Perfil de Dalila (`js/dalila.js`)
 
-* **Curiosity Explorer:** menú interactivo con opciones identificadas mediante `data-interest`. Al seleccionar una opción, JavaScript actualiza dinámicamente el ícono, título y descripción de la sección (`#dalilaExplorerIcon`, `#dalilaExplorerTitle` y `#dalilaExplorerText`). La información presenta diferentes intereses relacionados con astronomía, tortugas y creatividad.
+* **Curiosity Explorer:** Menú interactivo con opciones identificadas mediante `data-interest`. Al seleccionar una opción, JavaScript actualiza dinámicamente el ícono, el título y la descripción de la sección (`#dalilaExplorerIcon`, `#dalilaExplorerTitle` y `#dalilaExplorerText`). Presenta información sobre diferentes intereses relacionados con la astronomía, las tortugas y la creatividad, acompañada de un efecto visual de tipeo con cursor parpadeante.
 
-* **Uso de IA:** se utilizaron ChatGPT y Claude Code, ambos con planes gratuitos, principalmente como herramientas de asistencia para verificar código HTML, CSS y JavaScript, proponer modificaciones y ayudar en la creación de avatares. También se utilizaron como apoyo para explorar estilos visuales y seleccionar paletas de colores para el perfil.
+* **Accesibilidad Web (Atributos ARIA):** Implementación de estados dinámicos `aria-selected="true/false"` o `aria-expanded` en los botones del explorador interactivo para notificar a los lectores de pantalla sobre el elemento activo. Además, se definieron roles semánticos y regiones accesibles para garantizar la navegabilidad con teclado.
 
-* **Revisión y adaptación:** las sugerencias generadas por IA fueron revisadas y adaptadas por el equipo antes de incorporarlas al proyecto. Se realizaron pruebas para comprobar que el código funcionara correctamente y que los cambios mantuvieran la estética y estructura definida para el perfil.
+* **Modo Eclipse:** Funcionalidad en JavaScript que permite conmutar el tema visual principal (`.dalila-theme`) hacia una paleta de colores alternativa (`.eclipse-mode`), modificando dinámicamente las variables de CSS en tiempo real.
+
+* **Diseño y Efectos Visuales CSS:** 
+  * **Efecto Neón:** Aplicación de sombreados y bordes neón resplandecientes (`box-shadow` en tonos rosa/magenta) con transiciones suaves al interactuar con las tarjetas (`:hover`).
+  * **Fondo Espacial Animado:** Generación de estrellas titilantes en el fondo mediante pseudoelementos (`::before` y `::after`) y animaciones fotograma a fotograma (`@keyframes`).
+
+* **Sección Multimedia:** Tarjetas estructuradas mediante CSS Grid con reproductores de video incrustados (`<iframe>`) para mostrar la selección de contenido musical y cinematográfico.
 
 ![Perfil de Dalila](img/capturas/capturaperfildaly.png)
 
@@ -190,13 +196,14 @@ Propuestas proyectadas para futuras etapas del proyecto:
 
 ## 🤖 10. Uso de IA y Criterio de Privacidad (Autoría)
 
-* **Herramientas y Modelos:** Se utilizaron modelos de lenguaje (ChatGPT de OpenAI y Claude de Anthropic) en sus planes gratuitos para consulta técnica y asistencia en redacción. Para la generación de los avatares se utilizó además **Gemini** (Google, plan gratuito) y **ChatGPT Plus** (OpenAI, plan pago).
-* **Experiencia previa del equipo:** los integrantes cuentan con distintos niveles de experiencia previa en el uso de herramientas de IA generativa — algunos ya las habían utilizado en trabajos anteriores, mientras que para otros fue una de las primeras veces aplicándolas a un proyecto de código.
-* **Asistencia Técnica:**
+* *Herramientas y Modelos:* Se utilizaron modelos de lenguaje (ChatGPT de OpenAI y Claude de Anthropic) en sus planes gratuitos para consulta técnica y asistencia en redacción. Para la generación de los avatares se utilizó además *Gemini* (Google, plan gratuito) y *ChatGPT Plus* (OpenAI, plan pago).
+* *Experiencia previa del equipo:* los integrantes cuentan con distintos niveles de experiencia previa en el uso de herramientas de IA generativa — algunos ya las habían utilizado en trabajos anteriores, mientras que para otros fue una de las primeras veces aplicándolas a un proyecto de código.
+* *Asistencia Técnica:*
   * Estructuración inicial de plantillas semánticas en HTML5 y atributos ARIA de accesibilidad.
   * Optimización de variables CSS y reglas de especificidad en los selectores temáticos.
   * Debugging de lógica en event listeners para los módulos interactivos en JavaScript Vanilla.
-* **Avatares y Recursos Gráficos:** Las imágenes de avatares fueron tratadas y optimizadas para web en formato `.jpg`/`.webp`, priorizando una identidad visual uniforme.
-  * Los avatares de **Martina Bistagnino, Jorge Caliz, Francisco Luis Bronzi y Martín Roige** se generaron con **ChatGPT Plus** (plan pago), a cargo de Martina Bistagnino, con un criterio visual de estilo **cyberpunk** aplicado como fondo/ambientación en los cuatro casos.
-  * El avatar de **Gabriela Dalila Contrera** se generó con **Gemini** (plan gratuito), proporcionando como referencia una foto propia, una foto de su mascota y la imagen de estilo del avatar de Martina, solicitando un resultado visual similar.
-* **Criterio de Validación y Autoría:** Cada sugerencia producida por herramientas de IA fue revisada, modificada y probada individualmente por el equipo. El código CSS, la arquitectura de archivos y la lógica de interacción final reflejan decisiones y desarrollo propio de los integrantes del grupo.
+* *Avatares y Recursos Gráficos:* Las imágenes de avatares fueron tratadas y optimizadas para web en formato .jpg/.webp, priorizando una identidad visual uniforme.
+  * Los avatares de *Martina Bistagnino, Jorge Caliz, Francisco Luis Bronzi y Martín Roige* se generaron con *ChatGPT Plus* (plan pago), a cargo de Martina Bistagnino, con un criterio visual de estilo *cyberpunk* aplicado como fondo/ambientación en los cuatro casos.
+  * El avatar de *Gabriela Dalila Contrera* se generó con *Gemini* (plan gratuito), proporcionando como referencia una foto propia, una foto de su mascota y la imagen de estilo del avatar de Martina, solicitando un resultado visual similar.
+* *Criterio de Validación y Autoría:* Cada sugerencia producida por herramientas de IA fue revisada, modificada y probada individualmente por el equipo. El código CSS, la arquitectura de archivos y la lógica de interacción final reflejan decisiones y desarrollo propio de los integrantes del grupo.
+*
