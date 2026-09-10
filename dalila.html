@@ -1147,90 +1147,74 @@
 
 
 
-                <div class="dalila-explorer">
+                <div class="dalila-terminal">
 
+                    <div class="dalila-terminal__header">
 
-                    <div class="dalila-explorer__menu">
+                        <div class="dalila-terminal__dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
 
-
-                        <button
-                            class="dalila-interest-button active"
-                            data-interest="tortugas"
-                            aria-label="Mostrar curiosidad sobre tortugas"
-                            aria-pressed="true"
-                        >
-                            🐢 Tortugas
-                        </button>
-
-                        <button
-                            class="dalila-interest-button"
-                            data-interest="astronomia"
-                            aria-label="Mostrar curiosidad sobre astronomía"
-                            aria-pressed="false"
-                        >
-                            🔭 Astronomía
-                        </button>
-
-                        <button
-                            class="dalila-interest-button"
-                            data-interest="egipto"
-                            aria-label="Mostrar curiosidad sobre civilizaciones antiguas"
-                            aria-pressed="false"
-                        >
-                            🏺 Civilizaciones
-                        </button>
-
-                        <button
-                            class="dalila-interest-button"
-                            data-interest="creatividad"
-                            aria-label="Mostrar curiosidad sobre creatividad"
-                            aria-pressed="false"
-                        >
-                            🧶 Creatividad
-                        </button>
-
-                        <button
-                            class="dalila-interest-button"
-                            data-interest="random"
-                            aria-label="Mostrar una curiosidad aleatoria"
-                            aria-pressed="false"
-                        >
-                            ✨ Sorprendeme
-                        </button>
-                    </div>
-
-
-
-                    <div
-                        class="dalila-explorer__content"
-                        id="dalilaExplorer"
-                        aria-live="polite"
-                    >
-
-                        <span
-                            class="dalila-explorer__icon"
-                            id="dalilaExplorerIcon"
-                        >
-                            🐢
+                        <span class="dalila-terminal__filename">
+                            dalila_explorer.sh
                         </span>
 
+                        <span class="dalila-terminal__status">
+                            ONLINE
+                        </span>
 
-                        <div>
+                    </div>
 
-                            <span class="profile-kicker">
-                                CURIOSIDAD
+                    <div class="dalila-terminal__boot">
+                        <p>&gt; initializing dalila.exe...</p>
+                        <p>&gt; loading curiosity.module... OK</p>
+                        <p>&gt; loading creativity.module... OK</p>
+                        <p>&gt; accessibility.check... OK</p>
+                        <p>&gt; system ready.</p>
+                        <p>&gt; seleccioná una curiosidad para continuar_</p>
+                    </div>
+
+                    <div class="dalila-explorer">
+
+                        <div class="dalila-explorer__menu">
+
+                            <button class="dalila-interest-button active" data-interest="tortugas">
+                                🐢 Tortugas
+                            </button>
+
+                            <button class="dalila-interest-button" data-interest="astronomia">
+                                🔭 Astronomía
+                            </button>
+
+                            <button class="dalila-interest-button" data-interest="egipto">
+                                🏺 Civilizaciones
+                            </button>
+
+                            <button class="dalila-interest-button" data-interest="creatividad">
+                                🧶 Creatividad
+                            </button>
+
+                            <button class="dalila-interest-button" data-interest="random">
+                                ✨ Sorprendeme
+                            </button>
+
+                        </div>
+
+                        <div class="dalila-explorer__content" id="dalilaExplorer" aria-live="polite">
+
+                            <span class="dalila-explorer__icon" id="dalilaExplorerIcon">
+                                🐢
                             </span>
 
-                            <h3 id="dalilaExplorerTitle">
-                                Tortugas
-                            </h3>
-
-                            <p id="dalilaExplorerText">
-
-                                Las tortugas son uno de los animales
-                                que más me gustan.
-
-                            </p>
+                            <div>
+                                <span class="profile-kicker">CURIOSIDAD</span>
+                                <h3 id="dalilaExplorerTitle">Tortugas</h3>
+                                <p id="dalilaExplorerText">
+                                    Las tortugas son uno de los animales que más me gustan.
+                                </p>
+                            </div>
 
                         </div>
 

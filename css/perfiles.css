@@ -2576,6 +2576,97 @@
 
 }
 
+/* ==========================================
+   TERMINAL DALILA (carcasa tipo consola)
+========================================== */
+
+.dalila-terminal {
+
+    max-width: 950px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--profile-neon);
+
+    border-radius: 16px;
+
+    background: #05050f;
+
+    box-shadow:
+        0 0 14px rgba(255, 46, 196, 0.25),
+        0 30px 70px rgba(0, 0, 0, 0.4);
+}
+
+.dalila-terminal__header {
+
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 0 18px;
+
+    min-height: 46px;
+
+    border-bottom: 1px solid var(--profile-border);
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.dalila-terminal__dots {
+    display: flex;
+    gap: 7px;
+}
+
+.dalila-terminal__dots span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+.dalila-terminal__dots span:nth-child(1) { background: #ff5f57; }
+.dalila-terminal__dots span:nth-child(2) { background: #febc2e; }
+.dalila-terminal__dots span:nth-child(3) { background: #28c840; }
+
+.dalila-terminal__filename {
+    color: var(--profile-muted);
+    font-family: "Space Mono", monospace;
+    font-size: 0.72rem;
+}
+
+.dalila-terminal__status {
+    margin-left: auto;
+
+    color: #4ade80;
+
+    font-family: "Space Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+}
+
+.dalila-terminal__boot {
+
+    padding: 20px 24px;
+
+    border-bottom: 1px solid var(--profile-border);
+
+    background: #030308;
+
+    font-family: "Space Mono", monospace;
+    font-size: 0.82rem;
+    line-height: 1.9;
+
+    color: #4ade80;
+}
+
+.dalila-terminal .dalila-explorer {
+    padding: 24px;
+}
+
+.dalila-terminal .dalila-interest-button {
+    font-family: "Space Mono", monospace;
+    text-transform: lowercase;
+}
 
 /* ==========================================
    PELÍCULAS DALILA
