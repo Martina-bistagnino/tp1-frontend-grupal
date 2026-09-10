@@ -827,6 +827,26 @@
 }
 
 
+/* Martina: equilibrar visualmente cine y música */
+
+#martinaCinema,
+#martinaMusic {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#martinaCinema .favorites-cards,
+#martinaMusic .favorites-cards {
+    flex: 0 0 auto;
+}
+
+#martinaCinema .martina-cinema-screen,
+#martinaMusic .martina-now-playing {
+    margin-top: 20px;
+}
+
+
 
 .favorites-group__header {
 
@@ -976,8 +996,6 @@
     opacity: .6;
 
 }
-
-
 .music-card:hover
 .music-card__hint {
 
@@ -1009,11 +1027,16 @@
 
 }
 
+/* ==========================================
+   MUSIC RECORD
+========================================== */
 
-.martina-now-playing__icon {
+.martina-now-playing__record {
 
-    width: 54px;
-    height: 54px;
+    position: relative;
+
+    width: 72px;
+    height: 72px;
 
     display: grid;
 
@@ -1021,40 +1044,86 @@
 
     flex-shrink: 0;
 
+    border:
+        2px solid
+        rgba(49, 175, 230, 0.65);
+
     border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            var(--profile-accent) 0 6px,
+            #080D2C 7px 13px,
+            rgba(49, 175, 230, 0.18) 14px 16px,
+            #050816 17px
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(49, 175, 230, 0.14);
+
+}
+
+
+.martina-now-playing__record::before,
+.martina-now-playing__record::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 9px;
 
     border:
         1px solid
-        var(--profile-accent);
+        rgba(255, 255, 255, 0.08);
 
-    color:
-        var(--profile-accent);
-
-    font-size: 1.4rem;
+    border-radius: 50%;
 
 }
 
 
-.music-card.is-playing
-~ .martina-now-playing
-.martina-now-playing__icon {
+.martina-now-playing__record::after {
 
-    animation:
-        martinaRecordSpin
-        3s linear
-        infinite;
+    inset: 18px;
 
 }
 
 
-@keyframes martinaRecordSpin {
+.martina-now-playing__record span {
 
-    to {
-        transform:
-            rotate(360deg);
-    }
+    position: relative;
+
+    z-index: 2;
+
+    color: #ffffff;
+
+    font-size: 1rem;
 
 }
+/* ==========================================
+   MUSIC PROGRESS
+========================================== */
+
+.martina-now-playing__info {
+
+    flex: 1;
+
+    min-width: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 .martina-now-playing__label {
@@ -1147,8 +1216,558 @@
 
 }
 
+/* ==========================================
+   MARTINA - CINEMA EXPLORER
+========================================== */
+
+.cinema-card {
+
+    position: relative;
+
+    min-height: 112px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+}
 
 
+/* LUZ QUE PASA POR LA CARD */
+
+.cinema-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: -70%;
+
+    width: 50%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.08),
+            transparent
+        );
+
+    transform:
+        skewX(-18deg);
+
+    transition:
+        left 0.55s ease;
+
+}
+
+
+.cinema-card:hover::before,
+.cinema-card:focus-visible::before,
+.cinema-card.is-active::before {
+
+    left: 130%;
+
+}
+
+
+/* CARD ACTIVA */
+
+.cinema-card:hover,
+.cinema-card:focus-visible,
+.cinema-card.is-active {
+
+    transform:
+        translateX(6px)
+        scale(1.015);
+
+    border-color:
+        var(--cinema-color);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    box-shadow:
+        0 12px 28px
+        rgba(0, 0, 0, 0.25),
+
+        0 0 22px
+        var(--cinema-glow);
+
+}
+
+
+/* COLOR INDIVIDUAL */
+
+.cinema-card[data-cinema="speed"] {
+
+    --cinema-color:
+        #DF3C5D;
+
+    --cinema-glow:
+        rgba(223, 60, 93, 0.18);
+
+}
+
+
+.cinema-card[data-cinema="science"] {
+
+    --cinema-color:
+        #31AFE6;
+
+    --cinema-glow:
+        rgba(49, 175, 230, 0.18);
+
+}
+
+
+.cinema-card[data-cinema="city"] {
+
+    --cinema-color:
+        #7A18C6;
+
+    --cinema-glow:
+        rgba(122, 24, 198, 0.20);
+
+}
+
+
+/* HINT */
+
+.cinema-card__hint {
+
+    display: inline-block;
+
+    margin-top: 7px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.08em;
+
+    opacity: 0;
+
+    transform:
+        translateY(4px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+
+}
+
+
+.cinema-card:hover
+.cinema-card__hint,
+
+.cinema-card:focus-visible
+.cinema-card__hint,
+
+.cinema-card.is-active
+.cinema-card__hint {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+/* ==========================================
+   CINEMA SCREEN
+========================================== */
+
+.martina-cinema-screen {
+
+    position: relative;
+
+    min-height: 145px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    overflow: hidden;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(8, 13, 44, 0.95),
+            rgba(5, 8, 22, 0.96)
+        );
+
+    transition:
+        border-color 0.35s ease,
+        box-shadow 0.35s ease,
+        background 0.35s ease;
+
+}
+
+
+/* LÍNEAS ESTILO PANTALLA */
+
+.martina-cinema-screen::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.25;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            transparent 0,
+            transparent 3px,
+            rgba(255, 255, 255, 0.025) 4px
+        );
+
+}
+
+
+/* ICONO */
+
+.martina-cinema-screen__icon {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 70px;
+    height: 70px;
+
+    display: grid;
+
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    font-size: 2rem;
+
+    transition:
+        transform 0.35s ease;
+
+}
+
+
+/* CONTENIDO */
+
+.martina-cinema-screen__content {
+
+    position: relative;
+
+    z-index: 2;
+
+    flex: 1;
+
+}
+
+
+.martina-cinema-screen__mode {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.62rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.martina-cinema-screen__content strong {
+
+    display: block;
+
+    color: #ffffff;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 1rem;
+
+}
+
+
+.martina-cinema-screen__content p {
+
+    margin-top: 5px;
+
+    color:
+        var(--profile-muted);
+
+    font-size: 0.78rem;
+
+}
+
+
+/* ONLINE */
+
+.martina-cinema-screen__status {
+
+    position: absolute;
+
+    top: 12px;
+    right: 14px;
+
+    color:
+        #42e87a;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.5rem;
+
+    letter-spacing: 0.08em;
+
+}
+/* ==========================================
+   CINEMA DETAILS
+========================================== */
+
+.cinema-details {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.cinema-detail {
+    min-width: 0;
+    padding: 9px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 9px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.cinema-detail span {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--profile-muted);
+    font-family: "Space Mono", monospace;
+    font-size: 0.52rem;
+    letter-spacing: 0.08em;
+}
+
+.cinema-detail strong {
+    overflow: hidden;
+    color: #ffffff;
+    font-family: "Space Mono", monospace;
+    font-size: 0.62rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   CINEMA MODES
+========================================== */
+
+
+/* RÁPIDOS Y FURIOSOS */
+
+.martina-cinema-screen[
+    data-cinema-mode="speed"
+] {
+
+    border-color:
+        rgba(223, 60, 93, 0.35);
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(223, 60, 93, 0.18),
+            transparent 38%
+        ),
+        #070916;
+
+    box-shadow:
+        0 15px 35px
+        rgba(223, 60, 93, 0.08);
+
+}
+
+
+.martina-cinema-screen[
+    data-cinema-mode="speed"
+]
+.martina-cinema-screen__mode {
+
+    color:
+        #DF3C5D;
+
+}
+
+
+
+/* THE BIG BANG THEORY */
+
+.martina-cinema-screen[
+    data-cinema-mode="science"
+] {
+
+    border-color:
+        rgba(49, 175, 230, 0.35);
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(49, 175, 230, 0.18),
+            transparent 38%
+        ),
+        #070916;
+
+    box-shadow:
+        0 15px 35px
+        rgba(49, 175, 230, 0.08);
+
+}
+
+
+.martina-cinema-screen[
+    data-cinema-mode="science"
+]
+.martina-cinema-screen__mode {
+
+    color:
+        #31AFE6;
+
+}
+
+
+
+/* SEX AND THE CITY */
+
+.martina-cinema-screen[
+    data-cinema-mode="city"
+] {
+
+    border-color:
+        rgba(122, 24, 198, 0.4);
+
+    background:
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(122, 24, 198, 0.22),
+            transparent 38%
+        ),
+        #070916;
+
+    box-shadow:
+        0 15px 35px
+        rgba(122, 24, 198, 0.1);
+
+}
+
+
+.martina-cinema-screen[
+    data-cinema-mode="city"
+]
+.martina-cinema-screen__mode {
+
+    color:
+        #DF3C5D;
+
+}
+.martina-cinema-screen.is-changing
+.martina-cinema-screen__icon {
+
+    animation:
+        cinemaIconPop
+        0.35s ease;
+
+}
+
+
+@keyframes cinemaIconPop {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.6)
+            rotate(-8deg);
+
+    }
+
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.1)
+            rotate(3deg);
+
+    }
+
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+    }
+
+}
 /* ==========================================
    TERMINAL
 ========================================== */
@@ -1507,7 +2126,15 @@
         grid-template-columns: 1fr;
         gap: 8px;
     }
+    .martina-mode-panel {
 
+    left: 14px;
+    bottom: 14px;
+
+    width:
+        calc(100vw - 28px);
+
+}
 
     .profile-meta {
         gap: 20px;
@@ -1535,6 +2162,7 @@
         grid-template-columns:
             repeat(2, 1fr);
     }
+
 .odin-assistant {
 
     right: 14px;
@@ -1568,6 +2196,61 @@
 .odin-assistant__message p {
 
     font-size: 0.72rem;
+
+}
+.martina-now-playing {
+
+    align-items:
+        flex-start;
+
+}
+
+
+.martina-now-playing__record {
+
+    width: 58px;
+    height: 58px;
+
+}
+
+
+
+
+.martina-cinema-screen {
+
+    align-items:
+        flex-start;
+
+    min-height: auto;
+
+    padding: 16px;
+
+}
+
+
+.martina-cinema-screen__icon {
+
+    width: 52px;
+    height: 52px;
+
+    font-size: 1.45rem;
+
+}
+
+
+.martina-cinema-screen__status {
+
+    display: none;
+
+}
+
+
+.cinema-card:hover,
+.cinema-card:focus-visible,
+.cinema-card.is-active {
+
+    transform:
+        translateY(-3px);
 
 }
 }
@@ -2343,8 +3026,524 @@
         rgba(66, 232, 122, 0.45);
 
 }
+/* ==========================================
+   MARTINA - MODOS INTERACTIVOS
+========================================== */
+
+.martina-mode-panel {
+
+    position: fixed;
+
+    left: 24px;
+    bottom: 24px;
+
+    z-index: 4900;
+
+    width:
+        min(
+            360px,
+            calc(100vw - 32px)
+        );
+
+    padding: 18px;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.28);
+
+    border-radius: 16px;
+
+    background:
+        rgba(5, 9, 30, 0.96);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.4);
+
+    backdrop-filter:
+        blur(14px);
+
+    animation:
+        martinaModeEntrance
+        0.4s ease
+        forwards;
+
+}
 
 
+.martina-mode-panel[hidden] {
+
+    display: none;
+
+}
+
+
+.martina-mode-panel__header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 10px;
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+}
+
+
+.martina-mode-panel__status {
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background:
+        #42e87a;
+
+    box-shadow:
+        0 0 10px
+        rgba(66, 232, 122, 0.8);
+
+}
+
+
+.martina-mode-panel__title {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #ffffff;
+
+    font-size: 1.05rem;
+
+}
+
+
+.martina-mode-panel__text {
+
+    margin: 0 0 16px;
+
+    color:
+        var(--text-secondary);
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+
+}
+
+
+.martina-mode-visual {
+
+    display: none;
+
+}
+
+
+@keyframes martinaModeEntrance {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(18px)
+            scale(0.97);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+/* ==========================================
+   CAMERA MODE
+========================================== */
+
+.martina-mode-panel[data-mode="photography"]
+.martina-mode-visual--camera {
+
+    display: block;
+
+}
+
+
+.camera-viewfinder {
+
+    position: relative;
+
+    height: 120px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.4);
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(49, 175, 230, 0.06),
+            rgba(122, 24, 198, 0.08)
+        );
+
+}
+
+
+.camera-viewfinder::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 14px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.12);
+
+}
+
+
+.camera-rec {
+
+    position: absolute;
+
+    top: 10px;
+    left: 12px;
+
+    color:
+        #DF3C5D;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.68rem;
+
+    font-weight: 700;
+
+}
+
+
+.camera-focus {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color:
+        rgba(255, 255, 255, 0.8);
+
+    font-family: monospace;
+
+    font-size: 1.5rem;
+
+}
+
+
+.camera-info {
+
+    position: absolute;
+
+    right: 12px;
+    bottom: 8px;
+    left: 12px;
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    color:
+        rgba(255, 255, 255, 0.6);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.58rem;
+
+}
+/* ==========================================
+   TRAVEL MODE
+========================================== */
+
+.martina-mode-panel[data-mode="travel"]
+.martina-mode-visual--travel {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.travel-radar {
+
+    position: relative;
+
+    width: 105px;
+    height: 105px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.4);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(49, 175, 230, 0.13),
+            transparent 68%
+        );
+
+}
+
+
+.travel-radar::before,
+.travel-radar::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 20%;
+
+    border:
+        1px solid
+        rgba(49, 175, 230, 0.18);
+
+    border-radius: 50%;
+
+}
+
+
+.travel-radar::after {
+
+    inset: 38%;
+
+}
+
+
+.travel-radar__center {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    z-index: 2;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: 1.4rem;
+
+}
+
+
+.travel-radar::selection {
+
+    background: transparent;
+
+}
+
+
+.travel-coordinates {
+
+    color:
+        var(--profile-accent);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.08em;
+
+}
+.travel-radar {
+
+    background:
+        conic-gradient(
+            from 0deg,
+            rgba(49, 175, 230, 0.38),
+            transparent 22%,
+            transparent
+        ),
+
+        radial-gradient(
+            circle,
+            rgba(49, 175, 230, 0.13),
+            transparent 68%
+        );
+
+    animation:
+        travelRadarSweep
+        2.5s linear infinite;
+
+}
+
+
+@keyframes travelRadarSweep {
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+/* ==========================================
+   DESIGN MODE
+========================================== */
+
+.martina-mode-panel[data-mode="design"]
+.martina-mode-visual--design {
+
+    display: block;
+
+}
+
+
+.design-palette {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 7px;
+
+}
+
+
+.design-color {
+
+    height: 55px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.13);
+
+    border-radius: 8px;
+
+}
+
+
+.design-color--1 {
+    background: #080D2C;
+}
+
+
+.design-color--2 {
+    background: #31AFE6;
+}
+
+
+.design-color--3 {
+    background: #DF3C5D;
+}
+
+
+.design-color--4 {
+    background: #7A18C6;
+}
+
+
+.design-palette__label {
+
+    display: block;
+
+    margin-top: 9px;
+
+    color:
+        var(--text-secondary);
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.62rem;
+
+    letter-spacing: 0.1em;
+
+}
+/* ==========================================
+   TERMINAL TARGET
+========================================== */
+
+.terminal-target {
+
+    animation:
+        terminalTargetFlash
+        1.1s ease;
+
+}
+
+
+@keyframes terminalTargetFlash {
+
+    0%,
+    100% {
+
+        filter:
+            drop-shadow(
+                0 0 0
+                transparent
+            );
+
+    }
+
+
+    45% {
+
+        filter:
+            drop-shadow(
+                0 0 18px
+                rgba(49, 175, 230, 0.35)
+            );
+
+    }
+
+}
 /* ==========================================
    ANIMACIONES
 ========================================== */
@@ -2398,6 +3597,90 @@
         transform:
             translateY(0);
 
+    }
+
+}
+/* ==========================================
+   YOUTUBE MUSIC BUTTON
+========================================== */
+
+.music-youtube-button {
+
+    min-height: 40px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin-top: 14px;
+
+    padding:
+        0 15px;
+
+    border:
+        1px solid
+        rgba(223, 60, 93, 0.45);
+
+    border-radius: 8px;
+
+    background:
+        rgba(223, 60, 93, 0.08);
+
+    color:
+        #ffffff;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 0.64rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.music-youtube-button:hover,
+.music-youtube-button:focus-visible {
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        var(--profile-accent-secondary);
+
+    background:
+        rgba(223, 60, 93, 0.16);
+
+    box-shadow:
+        0 0 20px
+        rgba(223, 60, 93, 0.15);
+
+}
+
+
+@media (max-width: 600px) {
+
+    .cinema-details {
+        grid-template-columns: 1fr;
+    }
+
+    .cinema-detail strong {
+        white-space: normal;
     }
 
 }

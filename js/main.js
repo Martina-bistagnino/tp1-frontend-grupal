@@ -254,7 +254,8 @@ function startDynamicMessages() {
 
     if (
         !dynamicText ||
-        reducedMotion.matches
+        reducedMotion.matches ||
+        dynamicTextInterval
     ) {
         return;
     }
@@ -301,6 +302,11 @@ startDynamicMessages();
 reducedMotion.addEventListener(
     "change",
     () => {
+
+        if (!dynamicText) {
+            return;
+        }
+
 
         if (reducedMotion.matches) {
 

@@ -362,21 +362,6 @@ button {
   font-size: 1.02rem;
 }
 /* ===================================
-   FILTROS
-=================================== */
-.filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 35px;
-}
-.filter-button:hover,
-.filter-button.active {
-  border-color: var(--accent-secondary);
-  background: rgba(34, 211, 238, 0.1);
-  color: var(--accent-secondary);
-}
-/* ===================================
    CARDS DEL EQUIPO
 =================================== */
 .team-grid {
@@ -1726,20 +1711,14 @@ body.intro-open {
         scroll-behavior: auto;
     }
 
-
     *,
     *::before,
     *::after {
-
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
-
         transition-duration: 0.01ms !important;
-
         scroll-behavior: auto !important;
-
     }
-
 
     .hero__dynamic,
     .welcome-avatar,
@@ -1747,32 +1726,33 @@ body.intro-open {
     .welcome-subtitle,
     .welcome-particles,
     .music-card,
-    .martina-now-playing__icon,
+    .martina-now-playing__record,
     .terminal,
-    .martina-live-card {
-
+    .martina-live-card,
+    .odin-assistant__avatar,
+    .odin-assistant__message,
+    .martina-mode-panel,
+    .travel-radar,
+    .terminal-target,
+    .music-youtube-button,
+    .cinema-card,
+    .cinema-card::before,
+    .martina-cinema-screen,
+    .martina-cinema-screen__icon {
         animation: none !important;
         transition: none !important;
-
     }
 
-
-    .music-card:hover {
-
+    .music-card:hover,
+    .music-youtube-button:hover,
+    .music-youtube-button:focus-visible {
         transform: none;
-
     }
+
     .odin-assistant__avatar,
-.odin-assistant__message {
-
-    animation: none !important;
-
-    transition: none !important;
-
-    opacity: 1 !important;
-
-    transform: none !important;
-
-}
+    .odin-assistant__message {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 
 }

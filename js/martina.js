@@ -41,6 +41,28 @@ const terminalButtons =
 const commandCounter =
     document.querySelector("#commandCounter");
 
+const martinaModePanel =
+    document.querySelector(
+        "#martinaModePanel"
+    );
+
+
+const martinaModeLabel =
+    document.querySelector(
+        "#martinaModeLabel"
+    );
+
+
+const martinaModeTitle =
+    document.querySelector(
+        "#martinaModeTitle"
+    );
+
+
+const martinaModeText =
+    document.querySelector(
+        "#martinaModeText"
+    );
 
 
 /* ==========================================
@@ -126,17 +148,22 @@ const commands = {
     help: `
 Comandos disponibles:
 
-about       → quién soy
-skills      → habilidades técnicas
-work        → experiencia actual
-game        → videojuego favorito
-study       → qué me gusta aprender
-psychology  → interés actual
-music       → música
-status      → estado del sistema
-theme       → cambiar colores
-random      → dato aleatorio
-clear       → limpiar terminal
+about        → quién soy
+personal     → cosas que me gustan
+skills       → habilidades técnicas
+work         → experiencia actual
+game         → videojuego favorito
+study        → qué me gusta aprender
+psychology   → interés actual
+photography  → activar CAMERA_MODE
+travel       → activar TRAVEL_MODE
+design       → activar DESIGN_MODE
+music        → abrir Music Explorer
+status       → estado del sistema
+theme        → cambiar colores
+random       → dato aleatorio
+clear        → limpiar terminal
+tip          → descubrir una pista
     `,
 
 
@@ -197,6 +224,38 @@ Paradojas
 2020
     `,
 
+    photography: `
+La fotografía es uno de mis hobbies 📸.
+
+Me gusta su lado visual y creativo,
+y la posibilidad de capturar momentos
+desde una mirada propia.
+    `,
+
+
+    travel: `
+Me gusta viajar y conocer lugares nuevos ✈️.
+
+Disfruto descubrir nuevos ambientes,
+experiencias y perspectivas.
+    `,
+
+
+    design: `
+El diseño es una de las áreas que más
+me interesa combinar con desarrollo web 🎨.
+
+Me gusta trabajar con colores,
+composición, interfaces y experiencia de usuario.
+    `,
+
+
+    tip: `
+No todas las funciones del sistema
+aparecen documentadas...
+
+Tal vez existan módulos ocultos 👀.
+    `,
 
     status: `
 FRONTEND    ONLINE
@@ -496,7 +555,15 @@ function activateOdin() {
         return;
     }
 
+if (martinaModePanel) {
 
+    martinaModePanel.hidden = true;
+
+    clearTimeout(
+        martinaModeTimeout
+    );
+
+}
     /* Cancelamos ocultado anterior */
 
     clearTimeout(
@@ -678,15 +745,216 @@ function clearTerminal() {
 
 }
 
+/* ==========================================
+   MODOS VISUALES
+========================================== */
 
+const profileModes = {
+
+    photography: {
+
+        label:
+            "CAMERA_MODE",
+
+        title:
+            "Fotografía 📸",
+
+        text:
+            "Capturando creatividad, detalles y nuevas perspectivas."
+
+    },
+
+
+    travel: {
+
+        label:
+            "TRAVEL_MODE",
+
+        title:
+            "Explorar ✈️",
+
+        text:
+            "Buscando nuevos lugares, experiencias y formas de ver el mundo."
+
+    },
+
+
+    design: {
+
+        label:
+            "DESIGN_MODE",
+
+        title:
+            "Diseño 🎨",
+
+        text:
+            "Cargando la identidad visual del perfil de Martina."
+
+    }
+
+};
+
+
+let martinaModeTimeout;
+
+
+function activateProfileMode(
+    mode
+) {
+
+    const modeData =
+        profileModes[mode];
+
+
+    if (
+        !modeData ||
+        !martinaModePanel
+    ) {
+        return;
+    }
+if (odinAssistant) {
+
+    odinAssistant.hidden = true;
+
+    clearTimeout(
+        odinHideTimeout
+    );
+
+}
+
+
+if (odinStatus) {
+
+    odinStatus.textContent =
+        "SLEEPING";
+
+    odinStatus.classList.remove(
+        "is-online"
+    );
+
+}
+
+    clearTimeout(
+        martinaModeTimeout
+    );
+
+
+    martinaModePanel.hidden =
+        true;
+
+
+    martinaModePanel.dataset.mode =
+        mode;
+
+
+    if (martinaModeLabel) {
+
+        martinaModeLabel.textContent =
+            modeData.label;
+
+    }
+
+
+    if (martinaModeTitle) {
+
+        martinaModeTitle.textContent =
+            modeData.title;
+
+    }
+
+
+    if (martinaModeText) {
+
+        martinaModeText.textContent =
+            modeData.text;
+
+    }
+
+
+    /*
+        Fuerza el reinicio
+        de la animación.
+    */
+
+    void martinaModePanel.offsetWidth;
+
+
+    martinaModePanel.hidden =
+        false;
+
+
+    martinaModeTimeout =
+        setTimeout(
+            () => {
+
+                martinaModePanel.hidden =
+                    true;
+
+            },
+
+            martinaReducedMotion.matches
+                ? 3000
+                : 5000
+        );
+
+}
+/* ==========================================
+   NAVEGACIÓN DESDE TERMINAL
+========================================== */
+
+function goToSection(
+    selector
+) {
+
+    const section =
+        document.querySelector(
+            selector
+        );
+
+
+    if (!section) {
+        return;
+    }
+
+
+    section.scrollIntoView({
+
+        behavior:
+            martinaReducedMotion.matches
+                ? "auto"
+                : "smooth",
+
+        block: "center"
+
+    });
+
+
+    section.classList.add(
+        "terminal-target"
+    );
+
+
+    setTimeout(
+        () => {
+
+            section.classList.remove(
+                "terminal-target"
+            );
+
+        },
+
+        martinaReducedMotion.matches
+            ? 0
+            : 1200
+    );
+
+}
 
 /* ==========================================
    EJECUTAR COMANDO
 ========================================== */
 
-async function executeCommand(
-    rawCommand
-) {
+async function executeCommand(rawCommand) {
 
     const command =
         rawCommand
@@ -699,32 +967,15 @@ async function executeCommand(
     }
 
 
-
-    /*
-        Guardamos historial
-    */
-
-    commandHistory.push(
-        command
-    );
-
+    commandHistory.push(command);
 
     historyPosition =
         commandHistory.length;
 
 
-
-    /*
-        Contador
-    */
-
     updateCommandCounter();
 
-
-    updateActiveButton(
-        command
-    );
-
+    updateActiveButton(command);
 
 
     /* CLEAR */
@@ -736,7 +987,6 @@ async function executeCommand(
         return;
 
     }
-
 
 
     /* RANDOM */
@@ -761,7 +1011,6 @@ async function executeCommand(
     }
 
 
-
     /* THEME */
 
     if (command === "theme") {
@@ -783,23 +1032,24 @@ async function executeCommand(
 
     }
 
-/* ==========================================
-   ODIN EASTER EGG
-========================================== */
 
-if (command === "odin") {
+    /* ======================================
+       ODIN
+    ====================================== */
 
-    const output =
-        createHistoryEntry(
-            command,
-            "",
-            "secret"
-        );
+    if (command === "odin") {
+
+        const output =
+            createHistoryEntry(
+                command,
+                "",
+                "secret"
+            );
 
 
-    await typeText(
-        output,
-        `
+        await typeText(
+            output,
+            `
 > searching hidden modules...
 > feline module detected.
 
@@ -808,19 +1058,21 @@ if (command === "odin") {
 status: ONLINE
 role: frontend supervisor
 priority: treats
-        `,
-        18
-    );
+            `,
+            18
+        );
 
 
-    activateOdin();
+        activateOdin();
+
+        return;
+
+    }
 
 
-    return;
-
-}
-
-    /* EASTER EGG */
+    /* ======================================
+       FATALITY
+    ====================================== */
 
     if (
         command === "finishhim" ||
@@ -847,8 +1099,137 @@ priority: treats
     }
 
 
+    /* ======================================
+       MODOS VISUALES
+    ====================================== */
 
-    /* COMANDOS NORMALES */
+    if (
+        command === "photography" ||
+        command === "travel" ||
+        command === "design"
+    ) {
+
+        const output =
+            createHistoryEntry(
+                command,
+                ""
+            );
+
+
+        await typeText(
+            output,
+            commands[command]
+        );
+
+
+        activateProfileMode(
+            command
+        );
+
+
+        return;
+
+    }
+
+
+    /* ======================================
+       MUSIC
+    ====================================== */
+
+    if (command === "music") {
+
+        const output =
+            createHistoryEntry(
+                command,
+                ""
+            );
+
+
+        await typeText(
+            output,
+            `
+Opening music.module...
+
+Las Pastillas del Abuelo 🎧
+
+Por Colectora
+Paradojas
+2020
+            `
+        );
+
+
+        goToSection(
+            "#martinaMusic"
+        );
+
+
+        return;
+
+    }
+
+
+    /* ======================================
+       SKILLS
+    ====================================== */
+
+    if (command === "skills") {
+
+        const output =
+            createHistoryEntry(
+                command,
+                ""
+            );
+
+
+        await typeText(
+            output,
+            commands.skills
+        );
+
+
+        goToSection(
+            "#habilidades"
+        );
+
+
+        return;
+
+    }
+
+
+    /* ======================================
+       ABOUT
+    ====================================== */
+
+    if (command === "about") {
+
+        const output =
+            createHistoryEntry(
+                command,
+                ""
+            );
+
+
+        await typeText(
+            output,
+            commands.about
+        );
+
+
+        goToSection(
+            "#sobre-mi"
+        );
+
+
+        return;
+
+    }
+
+
+    /* ======================================
+       COMANDOS NORMALES
+    ====================================== */
 
     if (commands[command]) {
 
@@ -870,8 +1251,9 @@ priority: treats
     }
 
 
-
-    /* ERROR */
+    /* ======================================
+       ERROR
+    ====================================== */
 
     const output =
         createHistoryEntry(
@@ -883,12 +1265,7 @@ priority: treats
 
     await typeText(
         output,
-        `Comando no reconocido: "${command}". Escribí "help" para ver los comandos disponibles.
-        tip: 
-Algunas funciones del sistema no aparecen documentadas.
-
-Tal vez haya módulos ocultos... 👀
-`,
+        `Comando no reconocido: "${command}". Escribí "help" para ver los comandos disponibles.`
     );
 
 }
@@ -957,12 +1334,13 @@ terminalInput?.addEventListener(
             event.key !== "ArrowUp" &&
             event.key !== "ArrowDown"
         ) {
+
             return;
+
         }
 
 
         event.preventDefault();
-
 
 
         if (event.key === "ArrowUp") {
@@ -987,7 +1365,6 @@ terminalInput?.addEventListener(
         }
 
 
-
         terminalInput.value =
             commandHistory[
                 historyPosition
@@ -1008,12 +1385,13 @@ async function bootTerminal() {
         bootExecuted ||
         !terminalHistory
     ) {
+
         return;
+
     }
 
 
     bootExecuted = true;
-
 
     terminalHistory.innerHTML = "";
 
@@ -1033,7 +1411,6 @@ async function bootTerminal() {
         "system ready."
 
     ];
-
 
 
     for (
@@ -1074,7 +1451,6 @@ async function bootTerminal() {
         }
 
     }
-
 
 
     const welcome =
@@ -1139,6 +1515,9 @@ if (
     bootTerminal();
 
 }
+
+
+
 /* ==========================================
    MUSIC EXPLORER
 ========================================== */
@@ -1159,7 +1538,6 @@ const nowPlayingArtist =
     document.querySelector(
         "#nowPlayingArtist"
     );
-
 
 
 function exploreAlbum(card) {
@@ -1207,9 +1585,7 @@ function exploreAlbum(card) {
 musicCards.forEach(
     (card) => {
 
-        /*
-            Mouse
-        */
+        /* MOUSE */
 
         card.addEventListener(
             "mouseenter",
@@ -1223,9 +1599,7 @@ musicCards.forEach(
         );
 
 
-        /*
-            Teclado
-        */
+        /* TECLADO */
 
         card.addEventListener(
             "focus",
@@ -1239,15 +1613,248 @@ musicCards.forEach(
         );
 
 
-        /*
-            Touch / click
-        */
+        /* TOUCH / CLICK */
+
+        card.addEventListener(
+            "click",
+            (event) => {
+
+                /*
+                    Si hizo click en YouTube,
+                    dejamos funcionar el enlace.
+                */
+
+                if (
+                    event.target.closest?.(
+                        ".music-youtube-button"
+                    )
+                ) {
+
+                    return;
+
+                }
+
+
+                exploreAlbum(
+                    card
+                );
+
+            }
+        );
+
+    }
+);
+/* ==========================================
+   CINEMA EXPLORER
+========================================== */
+
+const cinemaCards =
+    document.querySelectorAll(
+        ".cinema-card"
+    );
+
+
+const cinemaScreen =
+    document.querySelector(
+        "#martinaCinemaScreen"
+    );
+
+
+const cinemaIcon =
+    document.querySelector(
+        "#cinemaIcon"
+    );
+
+
+const cinemaMode =
+    document.querySelector(
+        "#cinemaMode"
+    );
+
+
+const cinemaTitle =
+    document.querySelector(
+        "#cinemaTitle"
+    );
+
+
+const cinemaDescription =
+    document.querySelector(
+        "#cinemaDescription"
+    );
+
+
+const cinemaFormat =
+    document.querySelector(
+        "#cinemaFormat"
+    );
+
+
+const cinemaVibe =
+    document.querySelector(
+        "#cinemaVibe"
+    );
+
+
+const cinemaFocus =
+    document.querySelector(
+        "#cinemaFocus"
+    );
+
+
+
+/* ==========================================
+   EXPLORAR CINE / SERIES
+========================================== */
+
+function exploreCinema(card) {
+
+    if (
+        !card ||
+        !cinemaScreen
+    ) {
+
+        return;
+
+    }
+
+
+    cinemaCards.forEach(
+        (currentCard) => {
+
+            currentCard.classList.remove(
+                "is-active"
+            );
+
+        }
+    );
+
+
+    card.classList.add(
+        "is-active"
+    );
+
+
+    cinemaScreen.dataset.cinemaMode =
+        card.dataset.cinema;
+
+
+    if (cinemaIcon) {
+
+        cinemaIcon.textContent =
+            card.dataset.icon;
+
+    }
+
+
+    if (cinemaMode) {
+
+        cinemaMode.textContent =
+            card.dataset.type;
+
+    }
+
+
+    if (cinemaTitle) {
+
+        cinemaTitle.textContent =
+            card.dataset.title;
+
+    }
+
+
+    if (cinemaDescription) {
+
+        cinemaDescription.textContent =
+            card.dataset.description;
+
+    }
+
+
+    if (cinemaFormat) {
+
+        cinemaFormat.textContent =
+            card.dataset.format || "—";
+
+    }
+
+
+    if (cinemaVibe) {
+
+        cinemaVibe.textContent =
+            card.dataset.vibe || "—";
+
+    }
+
+
+    if (cinemaFocus) {
+
+        cinemaFocus.textContent =
+            card.dataset.focus || "—";
+
+    }
+
+
+    /* Reiniciamos animación */
+
+    cinemaScreen.classList.remove(
+        "is-changing"
+    );
+
+
+    void cinemaScreen.offsetWidth;
+
+
+    cinemaScreen.classList.add(
+        "is-changing"
+    );
+
+}
+
+
+
+/* ==========================================
+   EVENTOS
+========================================== */
+
+cinemaCards.forEach(
+    (card) => {
+
+        /* MOUSE */
+
+        card.addEventListener(
+            "mouseenter",
+            () => {
+
+                exploreCinema(
+                    card
+                );
+
+            }
+        );
+
+
+        /* TECLADO */
+
+        card.addEventListener(
+            "focus",
+            () => {
+
+                exploreCinema(
+                    card
+                );
+
+            }
+        );
+
+
+        /* CELULAR */
 
         card.addEventListener(
             "click",
             () => {
 
-                exploreAlbum(
+                exploreCinema(
                     card
                 );
 

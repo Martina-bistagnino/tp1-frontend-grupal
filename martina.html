@@ -332,8 +332,6 @@
 
 </div>
 
-                    </div>
-
 
                     <div class="avatar-tag avatar-tag--html">
                         HTML
@@ -680,13 +678,18 @@
                 <div class="favorites-layout">
 
 
-                    <!-- PELÍCULAS / SERIES -->
+                    <!-- ========================================
+                        PELÍCULAS / SERIES
+                    ========================================= -->
 
-                    <div class="favorites-group">
+                    <div
+                        class="favorites-group"
+                        id="martinaCinema"
+                    >
 
                         <div class="favorites-group__header">
 
-                            <span>
+                            <span aria-hidden="true">
                                 🎬
                             </span>
 
@@ -700,7 +703,18 @@
                         <div class="favorites-cards">
 
 
-                            <article class="favorite-card">
+                            <article
+                                class="favorite-card cinema-card"
+                                data-cinema="speed"
+                                data-title="Rápidos y Furiosos"
+                                data-type="ACTION_MODE"
+                                data-description="Autos · Motos · Acción"
+                                data-icon="🏎️"
+                                data-format="Saga"
+                                data-vibe="Adrenalina"
+                                data-focus="Autos & motos"
+                                tabindex="0"
+                            >
 
                                 <span class="favorite-card__number">
                                     01
@@ -716,13 +730,27 @@
                                         Autos · Motos · Acción
                                     </p>
 
+                                    <span class="cinema-card__hint">
+                                        HOVER · TAB · TAP
+                                    </span>
+
                                 </div>
 
                             </article>
 
 
-
-                            <article class="favorite-card">
+                            <article
+                                class="favorite-card cinema-card"
+                                data-cinema="science"
+                                data-title="The Big Bang Theory"
+                                data-type="SCIENCE_MODE"
+                                data-description="Ciencia · Comedia · Curiosidad"
+                                data-icon="⚛️"
+                                data-format="Serie"
+                                data-vibe="Comedia"
+                                data-focus="Ciencia"
+                                tabindex="0"
+                            >
 
                                 <span class="favorite-card__number">
                                     02
@@ -738,13 +766,27 @@
                                         Ciencia · Comedia
                                     </p>
 
+                                    <span class="cinema-card__hint">
+                                        HOVER · TAB · TAP
+                                    </span>
+
                                 </div>
 
                             </article>
 
 
-
-                            <article class="favorite-card">
+                            <article
+                                class="favorite-card cinema-card"
+                                data-cinema="city"
+                                data-title="Sex and the City"
+                                data-type="CITY_MODE"
+                                data-description="Moda · Amistad · Nueva York"
+                                data-icon="👠"
+                                data-format="Serie"
+                                data-vibe="Urbano"
+                                data-focus="Moda & amistad"
+                                tabindex="0"
+                            >
 
                                 <span class="favorite-card__number">
                                     03
@@ -760,23 +802,126 @@
                                         Serie favorita
                                     </p>
 
+                                    <span class="cinema-card__hint">
+                                        HOVER · TAB · TAP
+                                    </span>
+
                                 </div>
 
                             </article>
 
                         </div>
 
+
+                        <!-- CINEMA EXPLORER -->
+
+                        <div
+                            class="martina-cinema-screen"
+                            id="martinaCinemaScreen"
+                            data-cinema-mode=""
+                            aria-live="polite"
+                            aria-atomic="true"
+                        >
+
+                            <div
+                                class="martina-cinema-screen__icon"
+                                id="cinemaIcon"
+                                aria-hidden="true"
+                            >
+                                🎬
+                            </div>
+
+
+                            <div class="martina-cinema-screen__content">
+
+                                <span
+                                    class="martina-cinema-screen__mode"
+                                    id="cinemaMode"
+                                >
+                                    CINEMA_EXPLORER
+                                </span>
+
+                                <strong id="cinemaTitle">
+                                    Elegí una película o serie
+                                </strong>
+
+                                <p id="cinemaDescription">
+                                    Pasá el mouse, usá Tab o tocá una tarjeta.
+                                </p>
+
+
+                                <div
+                                    class="cinema-details"
+                                    aria-label="Detalles de la selección"
+                                >
+
+                                    <div class="cinema-detail">
+
+                                        <span>
+                                            FORMATO
+                                        </span>
+
+                                        <strong id="cinemaFormat">
+                                            —
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="cinema-detail">
+
+                                        <span>
+                                            VIBE
+                                        </span>
+
+                                        <strong id="cinemaVibe">
+                                            —
+                                        </strong>
+
+                                    </div>
+
+
+                                    <div class="cinema-detail">
+
+                                        <span>
+                                            FOCO
+                                        </span>
+
+                                        <strong id="cinemaFocus">
+                                            —
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <span
+                                class="martina-cinema-screen__status"
+                                aria-hidden="true"
+                            >
+                                ● ONLINE
+                            </span>
+
+                        </div>
+
                     </div>
 
 
+                    <!-- ========================================
+                        MÚSICA
+                    ========================================= -->
 
-                    <!-- MÚSICA -->
-
-                    <div class="favorites-group">
+                    <div
+                        class="favorites-group"
+                        id="martinaMusic"
+                    >
 
                         <div class="favorites-group__header">
 
-                            <span>
+                            <span aria-hidden="true">
                                 🎧
                             </span>
 
@@ -790,124 +935,175 @@
                         <div class="favorites-cards">
 
 
-<article
-    class="favorite-card music-card"
-    data-album="Por Colectora"
-    data-artist="Las Pastillas del Abuelo"
-    tabindex="0"
->
+                            <article
+                                class="favorite-card music-card"
+                                data-album="Por Colectora"
+                                data-artist="Las Pastillas del Abuelo"
+                                tabindex="0"
+                            >
 
-    <span class="favorite-card__number">
-        01
-    </span>
+                                <span class="favorite-card__number">
+                                    01
+                                </span>
 
-    <div>
+                                <div class="music-card__content">
 
-        <h4>
-            Por Colectora
-        </h4>
+                                    <h4>
+                                        Por Colectora
+                                    </h4>
 
-        <p>
-            Las Pastillas del Abuelo
-        </p>
+                                    <p>
+                                        Las Pastillas del Abuelo
+                                    </p>
 
-        <span class="music-card__hint">
-            Pasá el mouse, usá Tab o tocá para explorar
-        </span>
+                                    <span class="music-card__hint">
+                                        Pasá el mouse, usá Tab o tocá para explorar
+                                    </span>
 
-    </div>
+                                    <a
+                                        class="music-youtube-button"
+                                        href="https://youtu.be/cqFO_ppcbsw?si=z3RuDshJ_H2MN3h0"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Escuchar Por Colectora de Las Pastillas del Abuelo en YouTube"
+                                    >
+                                        <span aria-hidden="true">
+                                            ▶
+                                        </span>
 
-</article>
+                                        VER EN YOUTUBE
+                                    </a>
 
+                                </div>
 
-
-                        <article
-    class="favorite-card music-card"
-    data-album="Paradojas"
-    data-artist="Las Pastillas del Abuelo"
-    tabindex="0"
->
-
-    <span class="favorite-card__number">
-        02
-    </span>
-
-    <div>
-
-        <h4>
-            Paradojas
-        </h4>
-
-        <p>
-            Las Pastillas del Abuelo
-        </p>
-
-        <span class="music-card__hint">
-            Pasá el mouse para explorar
-        </span>
-
-    </div>
-
-</article>
+                            </article>
 
 
+                            <article
+                                class="favorite-card music-card"
+                                data-album="Paradojas"
+                                data-artist="Las Pastillas del Abuelo"
+                                tabindex="0"
+                            >
 
-                         <article
-    class="favorite-card music-card"
-    data-album="2020"
-    data-artist="Las Pastillas del Abuelo"
-    tabindex="0"
->
+                                <span class="favorite-card__number">
+                                    02
+                                </span>
 
-    <span class="favorite-card__number">
-        03
-    </span>
+                                <div class="music-card__content">
 
-    <div>
+                                    <h4>
+                                        Paradojas
+                                    </h4>
 
-        <h4>
-            2020
-        </h4>
+                                    <p>
+                                        Las Pastillas del Abuelo
+                                    </p>
 
-        <p>
-            Las Pastillas del Abuelo
-        </p>
+                                    <span class="music-card__hint">
+                                        Pasá el mouse, usá Tab o tocá para explorar
+                                    </span>
 
-        <span class="music-card__hint">
-            Pasá el mouse para explorar
-        </span>
+                                    <a
+                                        class="music-youtube-button"
+                                        href="https://youtu.be/GbyE9BFGaws?si=XmqqDMh4e5MM7qa5"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Escuchar Paradojas de Las Pastillas del Abuelo en YouTube"
+                                    >
+                                        <span aria-hidden="true">
+                                            ▶
+                                        </span>
 
-    </div>
+                                        VER EN YOUTUBE
+                                    </a>
 
-</article>
-<div
-    class="martina-now-playing"
-    id="martinaNowPlaying"
-    aria-live="polite"
->
+                                </div>
 
-    <span class="martina-now-playing__icon">
-        ♪
-    </span>
+                            </article>
 
 
-    <div>
+                            <article
+                                class="favorite-card music-card"
+                                data-album="2020"
+                                data-artist="Las Pastillas del Abuelo"
+                                tabindex="0"
+                            >
 
-        <span class="martina-now-playing__label">
-            NOW_EXPLORING
-        </span>
+                                <span class="favorite-card__number">
+                                    03
+                                </span>
 
-        <strong id="nowPlayingAlbum">
-            Elegí un álbum
-        </strong>
+                                <div class="music-card__content">
 
-        <p id="nowPlayingArtist">
-            Pasá el mouse o usá Tab sobre una tarjeta.
-        </p>
+                                    <h4>
+                                        2020
+                                    </h4>
 
-    </div>
+                                    <p>
+                                        Las Pastillas del Abuelo
+                                    </p>
 
-</div>
+                                    <span class="music-card__hint">
+                                        Pasá el mouse, usá Tab o tocá para explorar
+                                    </span>
+
+                                    <a
+                                        class="music-youtube-button"
+                                        href="https://youtu.be/Vz28Lm6Xe_I?si=G5BQRFJ4qXDA2R7k"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Escuchar 2020 de Las Pastillas del Abuelo en YouTube"
+                                    >
+                                        <span aria-hidden="true">
+                                            ▶
+                                        </span>
+
+                                        VER EN YOUTUBE
+                                    </a>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+
+                        <!-- MUSIC EXPLORER -->
+
+                        <div
+                            class="martina-now-playing"
+                            id="martinaNowPlaying"
+                            aria-live="polite"
+                            aria-atomic="true"
+                        >
+
+                            <div
+                                class="martina-now-playing__record"
+                                aria-hidden="true"
+                            >
+                                <span>
+                                    ♪
+                                </span>
+                            </div>
+
+
+                            <div class="martina-now-playing__info">
+
+                                <span class="martina-now-playing__label">
+                                    MUSIC_EXPLORER
+                                </span>
+
+                                <strong id="nowPlayingAlbum">
+                                    Elegí un álbum
+                                </strong>
+
+                                <p id="nowPlayingArtist">
+                                    Explorá mis discos favoritos.
+                                </p>
+
+                            </div>
+
                         </div>
 
                     </div>
@@ -1171,26 +1367,19 @@
         <span>
             FRONTEND
         </span>
+    <span>
+        CREATIVITY
+    </span>
+
+    <strong>
+        ONLINE
+    </strong>
 
         <strong>
             ONLINE
         </strong>
 
     </div>
-
-
-    <div class="martina-system__item">
-
-        <span>
-            CREATIVITY
-        </span>
-
-        <strong>
-            ONLINE
-        </strong>
-
-    </div>
-
 
     <div class="martina-system__item">
 
@@ -1234,14 +1423,6 @@
     </div>
 
 </div>
-
-            <strong id="commandCounter">
-                00
-            </strong>
-        </div>
-
-    </div>
-
 
     <!-- =================================
         CUERPO
@@ -1392,7 +1573,7 @@
             class="terminal-command__hint"
             id="terminalHint"
         >
-            Probá: help · skills · game · psychology · theme · random
+              Probá: help · photography · travel · design · music · theme
         </p>
 
     </div>
@@ -1433,7 +1614,121 @@
 </div>
 
         </section>
+<!-- ========================================
+    MODOS INTERACTIVOS DE MARTINA
+========================================= -->
 
+<aside
+    class="martina-mode-panel"
+    id="martinaModePanel"
+    data-mode=""
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+    hidden
+>
+
+    <div class="martina-mode-panel__header">
+
+        <span
+            class="martina-mode-panel__status"
+            aria-hidden="true"
+        ></span>
+
+        <span id="martinaModeLabel">
+            SYSTEM_MODE
+        </span>
+
+    </div>
+
+
+    <strong
+        class="martina-mode-panel__title"
+        id="martinaModeTitle"
+    >
+        Modo interactivo
+    </strong>
+
+
+    <p
+        class="martina-mode-panel__text"
+        id="martinaModeText"
+    ></p>
+
+
+    <!-- CAMERA MODE -->
+
+    <div
+        class="martina-mode-visual martina-mode-visual--camera"
+        aria-hidden="true"
+    >
+
+        <div class="camera-viewfinder">
+
+            <span class="camera-rec">
+                ● REC
+            </span>
+
+            <span class="camera-focus">
+                +
+            </span>
+
+            <div class="camera-info">
+                <span>ISO 100</span>
+                <span>1/125</span>
+                <span>F2.8</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TRAVEL MODE -->
+
+    <div
+        class="martina-mode-visual martina-mode-visual--travel"
+        aria-hidden="true"
+    >
+
+        <div class="travel-radar">
+
+            <span class="travel-radar__center">
+                ✈
+            </span>
+
+        </div>
+
+        <span class="travel-coordinates">
+            DESTINATION: UNKNOWN
+        </span>
+
+    </div>
+
+
+    <!-- DESIGN MODE -->
+
+    <div
+        class="martina-mode-visual martina-mode-visual--design"
+        aria-hidden="true"
+    >
+
+        <div class="design-palette">
+
+            <span class="design-color design-color--1"></span>
+            <span class="design-color design-color--2"></span>
+            <span class="design-color design-color--3"></span>
+            <span class="design-color design-color--4"></span>
+
+        </div>
+
+        <span class="design-palette__label">
+            MARTINA_PALETTE
+        </span>
+
+    </div>
+
+</aside>
 <!-- ========================================
     ODIN EASTER EGG
 ========================================= -->
@@ -1469,7 +1764,7 @@
     <div class="odin-assistant__avatar">
 
         <img
-            src="img/avatares/odin.png"
+            src="img/avatares/odin.webp"
             alt="Caricatura de Odin, el gato de Martina"
         >
 
