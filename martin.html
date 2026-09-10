@@ -283,14 +283,16 @@
                     <!-- MR ROBOT -->
                     <div class="media-flip-container">
                         <article class="martin-media-card"
-                            data-video="https://www.youtube-nocookie.com/embed/xIBiJ_SzJTA">
+                            data-video="https://www.youtube-nocookie.com/embed/xIBiJ_SzJTA"
+                            data-title="Trailer oficial de Mr. Robot">
                             <!-- FRENTE -->
                             <div class="media-card__front">
                                 <span class="martin-media-card__number">01</span>
                                 <span class="martin-media-card__type">SERIE</span>
                                 <h3>Mr. Robot</h3>
                                 <p>Un muy buen drama ambientado en el mundo hacker.</p>
-                                <button type="button" class="btn-flip" aria-label="Ver trailer de Mr. Robot">
+                                <button type="button" class="btn-flip" aria-expanded="false"
+                                    aria-label="Ver trailer de Mr. Robot">
                                     Ver trailer ▶
                                 </button>
                             </div>
@@ -299,32 +301,33 @@
                                 <div class="media-video-wrapper">
                                     <!-- El iframe se inyecta por JS al girar -->
                                 </div>
-                                <button type="button" class="btn-flip-back" aria-label="Volver a la descripción">
+                                <button type="button" class="btn-flip-back" aria-label="Cerrar trailer de Mr. Robot">
                                     ✕ Cerrar trailer
                                 </button>
                             </div>
                         </article>
                     </div>
 
-                    <!-- SANDMAN -->
+                    <!-- Foundation-->
                     <div class="media-flip-container">
                         <article class="martin-media-card"
-                            data-video="https://www.youtube-nocookie.com/embed/83ClbRPRDXU">
+                            data-video="https://www.youtube-nocookie.com/embed/X4QYV5GTz7c"
+                            data-title="Trailer oficial de Foundation">
                             <!-- FRENTE -->
                             <div class="media-card__front">
                                 <span class="martin-media-card__number">02</span>
                                 <span class="martin-media-card__type">SERIE</span>
-                                <h3>The Sandman</h3>
-                                <p>Fantasía acompañada de una historia y un universo que me resultan muy interesantes.
-                                </p>
-                                <button type="button" class="btn-flip" aria-label="Ver trailer de The Sandman">
+                                <h3>Foundation</h3>
+                                <p>Ciencia ficción épica basada en la monumental obra de Isaac Asimov.</p>
+                                <button type="button" class="btn-flip" aria-expanded="false"
+                                    aria-label="Ver trailer de Foundation">
                                     Ver trailer ▶
                                 </button>
                             </div>
                             <!-- DORSO -->
                             <div class="media-card__back">
                                 <div class="media-video-wrapper"></div>
-                                <button type="button" class="btn-flip-back" aria-label="Volver a la descripción">
+                                <button type="button" class="btn-flip-back" aria-label="Cerrar trailer de Foundation">
                                     ✕ Cerrar trailer
                                 </button>
                             </div>
@@ -334,21 +337,23 @@
                     <!-- ALIEN -->
                     <div class="media-flip-container">
                         <article class="martin-media-card"
-                            data-video="https://www.youtube-nocookie.com/embed/LjLamj-b0I8">
+                            data-video="https://www.youtube-nocookie.com/embed/LjLamj-b0I8"
+                            data-title="Trailer oficial de Alien">
                             <!-- FRENTE -->
                             <div class="media-card__front">
                                 <span class="martin-media-card__number">03</span>
                                 <span class="martin-media-card__type">PELÍCULA</span>
                                 <h3>Alien</h3>
                                 <p>Terror, ciencia ficción y una amenaza en medio del espacio.</p>
-                                <button type="button" class="btn-flip" aria-label="Ver trailer de Alien">
+                                <button type="button" class="btn-flip" aria-expanded="false"
+                                    aria-label="Ver trailer de Alien">
                                     Ver trailer ▶
                                 </button>
                             </div>
                             <!-- DORSO -->
                             <div class="media-card__back">
                                 <div class="media-video-wrapper"></div>
-                                <button type="button" class="btn-flip-back" aria-label="Volver a la descripción">
+                                <button type="button" class="btn-flip-back" aria-label="Cerrar trailer de Alien">
                                     ✕ Cerrar trailer
                                 </button>
                             </div>
@@ -575,24 +580,28 @@
                     </div>
                     <!-- COMANDOS -->
                     <div class="martin-console__commands">
-                        <button class="martin-command" data-command="boot">BOOT</button>
-                        <button class="martin-command" data-command="stack">STACK</button>
-                        <button class="martin-command" data-command="games">GAMES</button>
-                        <button class="martin-command" data-command="pets">PETS</button>
-                        <button class="martin-command" data-command="goal">MISSION</button>
-                        <button class="martin-command" data-command="theme">SWITCH COLOR</button>
+                        <button type="button" class="martin-command" data-command="boot">BOOT</button>
+                        <button type="button" class="martin-command" data-command="stack">STACK</button>
+                        <button type="button" class="martin-command" data-command="games">GAMES</button>
+                        <button type="button" class="martin-command" data-command="pets">PETS</button>
+                        <button type="button" class="martin-command" data-command="goal">MISSION</button>
+                        <button type="button" class="martin-command" data-command="theme">SWITCH COLOR</button>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- ====================================  NAVEGACIÓN   ===================================== -->
-        <section class="profile-navigation">
+        <section class="profile-navigation" aria-label="Navegación entre perfiles">
             <div class="container profile-navigation__container">
-                <a href="luis.html">← Luis</a>
-                <a href="index.html#equipo" class="profile-back">Volver al equipo</a>
+                <a href="luis.html" aria-label="Ir al perfil anterior: Luis">
+                    <span aria-hidden="true">←</span> Luis
+                </a>
+                <a href="index.html#equipo" class="profile-back" aria-label="Volver al equipo">Volver al equipo</a>
                 <span>Perfil 05 / 05</span>
-                <a href="martina.html">Martina →</a>
+                <a href="martina.html" aria-label="Ir al perfil siguiente: Martina">
+                    Martina <span aria-hidden="true">→</span>
+                </a>
             </div>
         </section>
     </main>
