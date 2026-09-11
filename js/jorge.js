@@ -30,14 +30,14 @@ const jorgeCommands = {
 
     music:
         "PLAYLIST LOADED:<br>" +
-        "• Band-Maid (Secret My Lips): <a href='https://www.youtube.com/watch?v=1Vuca7V-5Ec' target='_blank'>[Reproducir en YouTube]</a><br>" +
-        "• Ling Tosite Sigure (Abnormalize): <a href='https://www.youtube.com/watch?v=DOKM9QWJG3g' target='_blank'>[Reproducir en YouTube]</a><br>" +
-        "• Lörihen (Presa Facil): <a href='https://www.youtube.com/watch?v=vT9Kd0noyJ4' target='_blank'>[Reproducir en YouTube]</a>",
+        "• Band-Maid (Secret My Lips): <a href='https://www.youtube.com/watch?v=1Vuca7V-5Ec' target='_blank' rel='noopener noreferrer'>[Reproducir en YouTube]</a><br>" +
+        "• Ling Tosite Sigure (Abnormalize): <a href='https://www.youtube.com/watch?v=DOKM9QWJG3g' target='_blank' rel='noopener noreferrer'>[Reproducir en YouTube]</a><br>" +
+        "• Lörihen (Presa Facil): <a href='https://www.youtube.com/watch?v=vT9Kd0noyJ4' target='_blank' rel='noopener noreferrer'>[Reproducir en YouTube]</a>",
 
     game:
         ">> CARGANDO ROM: D&D: Shadow over Mystara...<br>" +
         ">> Género: Beat 'em up / Rol fantástico (Capcom, 1996).<br>" +
-        ">> Estado: Joyita inigualable. <a href='https://www.youtube.com/watch?v=FaKDO9RyzfU' target='_blank'>[Ver Intro / Arcade]</a>",
+        ">> Estado: Joyita inigualable. <a href='https://www.youtube.com/watch?v=FaKDO9RyzfU' target='_blank' rel='noopener noreferrer'>[Ver Intro / Arcade]</a>",
 
 };
 
