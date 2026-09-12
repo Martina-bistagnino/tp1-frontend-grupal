@@ -1,87 +1,193 @@
-💻 TP1 — <EquipoDev/>
+# 💻 Trabajo Práctico Grupal 1 — `<EquipoDev/>`
 
-Trabajo Práctico Grupal 1 · Desarrollo de Sistemas Web Front End · 2026
-Institución: IFTS N.º 29
-Stack: HTML5 · CSS3 · JavaScript Vanilla
-Repositorio: https://github.com/Martina-bistagnino/tp1-frontend-grupal
-Deploy: https://tp1-frontend-grupal.vercel.app/
+## Desarrollo de Sistemas Web Front End · 2026
 
-1. Descripción
+**Institución:** IFTS N.º 29  
+**Proyecto:** Trabajo Práctico Grupal 1  
+**Tecnologías principales:** HTML5 · CSS3 · JavaScript Vanilla  
+**Publicación:** Vercel  
 
-<EquipoDev/> es un sitio web grupal creado para presentar a cinco integrantes mediante una portada común, perfiles individuales, navegación interna, interacciones JavaScript propias, diseño responsive y una bitácora del proceso.
+---
 
-La propuesta combina una identidad visual compartida con una personalidad propia para cada perfil. El proyecto fue realizado con HTML, CSS y JavaScript sin frameworks ni dependencias externas de ejecución.
+# 📌 1. Descripción del proyecto
 
-El sitio incluye:
+`<EquipoDev/>` es un sitio web grupal desarrollado como Trabajo Práctico Grupal 1 de la materia **Desarrollo de Sistemas Web Front End**.
 
-portada principal con presentación del equipo;
+El objetivo del proyecto es presentar a los cinco integrantes del equipo mediante una experiencia web compuesta por:
 
-cinco perfiles individuales;
+- una portada principal;
+- una presentación general del equipo;
+- cinco perfiles individuales;
+- navegación interna entre todas las páginas;
+- interacciones dinámicas desarrolladas con JavaScript;
+- diseño responsive;
+- criterios de accesibilidad web;
+- una bitácora de desarrollo;
+- documentación técnica del proceso;
+- publicación mediante Vercel.
 
-navegación interna entre páginas y secciones;
+Cada perfil comparte una estructura visual común, pero posee una **identidad, paleta de colores e interacción JavaScript propia**, basada en los intereses y preferencias de cada integrante.
 
-una interacción dinámica en la portada y varias interacciones en los perfiles;
+El proyecto fue desarrollado con un enfoque **responsive y adaptativo**, utilizando CSS Grid, Flexbox y media queries específicas para los breakpoints solicitados de **1200 px, 900 px y 400 px**, además de un breakpoint intermedio de 600 px.
 
-breakpoints específicos para 1200 px, 900 px y 400 px, más un ajuste intermedio de 600 px;
+También se incorporaron criterios de accesibilidad como navegación por teclado, estados ARIA, regiones dinámicas accesibles, indicadores de foco y soporte para usuarios que prefieren movimiento reducido.
 
-criterios de accesibilidad y soporte para prefers-reduced-motion;
+---
 
-bitácora del proceso;
+# 👥 2. Integrantes
 
-publicación en Vercel.
+| Integrante | Perfil | GitHub | Enfoque |
+|---|---|---|---|
+| **Martina Bistagnino** | [Perfil 01](./martina.html) | [@Martina-bistagnino](https://github.com/Martina-bistagnino) | UI/UX · Desarrollo Web |
+| **Gabriela Dalila Contrera** | [Perfil 02](./dalila.html) | [@DalilaContrera](https://github.com/DalilaContrera) | Desarrollo de Software · Creatividad |
+| **Jorge Caliz** | [Perfil 03](./jorge.html) | [@JorgeGabrielCaliz](https://github.com/JorgeGabrielCaliz) | Python · Game Development |
+| **Francisco Luis Bronzi** | [Perfil 04](./luis.html) | [@LuisUnix2100](https://github.com/LuisUnix2100) | Infraestructura · Desarrollo Web |
+| **Martín Roige** | [Perfil 05](./martin.html) | [@TinchoHub](https://github.com/TinchoHub) | WebApps · Full Stack |
 
-2. Integrantes
+Todos los integrantes participaron en el repositorio mediante commits realizados desde sus propias cuentas de GitHub.
 
-Integrante
+El desarrollo se realizó de manera colaborativa mediante sincronización con Git, utilizando principalmente:
 
-Perfil
+```bash
+git pull origin main
+git add .
+git commit -m "descripción del cambio"
+git push origin main
+```
 
-GitHub
+Esto permitió mantener un historial visible de la evolución del trabajo y de la participación individual del equipo.
 
-Martina Bistagnino
+---
 
-martina.html
+# 🧭 3. Arquitectura y navegación
 
-@Martina-bistagnino
+El sitio está compuesto por siete páginas HTML principales:
 
-Gabriela Dalila Contrera
+1. `index.html` — portada del equipo.
+2. `martina.html` — perfil de Martina.
+3. `dalila.html` — perfil de Dalila.
+4. `jorge.html` — perfil de Jorge.
+5. `luis.html` — perfil de Luis.
+6. `martin.html` — perfil de Martín.
+7. `bitacora.html` — registro del proceso de desarrollo.
 
-dalila.html
+La navegación permite recorrer todo el sitio sin depender del botón **Atrás** del navegador.
 
-@DalilaContrera
+Los perfiles se encuentran conectados de manera circular:
 
-Jorge Caliz
+```text
+Martina
+   ↓
+Dalila
+   ↓
+Jorge
+   ↓
+Luis
+   ↓
+Martín
+   ↓
+Martina
+```
 
-jorge.html
+Cada página también permite regresar directamente a la portada o al listado general del equipo.
 
-@JorgeGabrielCaliz
+---
 
-Francisco Luis Bronzi
+# 🛠️ 4. Tecnologías utilizadas
 
-luis.html
+## HTML5
 
-@LuisUnix2100
+Se utilizó marcado semántico mediante elementos como:
 
-Martín Roige
+- `<header>`
+- `<main>`
+- `<section>`
+- `<article>`
+- `<nav>`
+- `<footer>`
+- `<button>`
+- `<blockquote>`
 
-martin.html
+También se incorporaron atributos de accesibilidad como:
 
-@TinchoHub
+```text
+aria-label
+aria-live
+aria-atomic
+aria-expanded
+aria-controls
+aria-pressed
+aria-hidden
+aria-modal
+```
 
-El historial del repositorio registra participación de los cinco integrantes mediante commits propios.
+---
 
-3. Navegación
+## CSS3
 
-La navegación fue diseñada para que el sitio pueda recorrerse sin depender del botón Atrás del navegador.
+El diseño utiliza:
 
-Cada página posee acceso a la portada, al listado del equipo, a secciones internas y a la bitácora. Además, los perfiles están conectados de forma circular:
+- variables CSS;
+- Flexbox;
+- CSS Grid;
+- `clamp()`;
+- gradientes;
+- transparencias;
+- `box-shadow`;
+- efectos glow;
+- pseudoelementos;
+- animaciones;
+- transiciones;
+- media queries;
+- estilos específicos por perfil;
+- `:focus-visible`;
+- `prefers-reduced-motion`.
 
-Martina → Dalila → Jorge → Luis → Martín → Martina
+---
 
-Los enlaces internos y las rutas locales fueron revisados para mantener una navegación consistente.
+## JavaScript Vanilla
 
-4. Estructura del proyecto
+Todo el comportamiento dinámico fue desarrollado sin frameworks ni librerías externas.
 
+JavaScript se utiliza para:
+
+- menú mobile;
+- actualización dinámica del DOM;
+- terminales interactivas;
+- cambio de estados ARIA;
+- selección aleatoria de contenido;
+- cambio de temas;
+- reproducción multimedia bajo interacción del usuario;
+- intro de bienvenida;
+- administración de foco;
+- almacenamiento temporal mediante `sessionStorage`;
+- control de preferencias de movimiento reducido.
+
+---
+
+## Git y GitHub
+
+Git se utilizó para:
+
+- control de versiones;
+- sincronización del proyecto;
+- registro histórico de cambios;
+- participación individual de los integrantes;
+- resolución de actualizaciones realizadas por otros miembros.
+
+GitHub funciona como repositorio público e independiente del TP.
+
+---
+
+## Vercel
+
+Vercel se utiliza para publicar y mantener accesible la versión web del proyecto.
+
+---
+
+# 📂 5. Estructura de archivos
+
+```text
 /
 ├── index.html
 ├── bitacora.html
@@ -111,8 +217,7 @@ Los enlaces internos y las rutas locales fueron revisados para mantener una nave
 │   │   ├── dalila.jpg
 │   │   ├── jorge.jpg
 │   │   ├── luis.jpg
-│   │   ├── martin.jpg
-│   │   └── odin.webp
+│   │   └── martin.jpg
 │   │
 │   ├── capturas/
 │   │   ├── capturaportada.png
@@ -126,495 +231,1087 @@ Los enlaces internos y las rutas locales fueron revisados para mantener una nave
 │
 └── audio/
     └── shao_kahn_laugh.mp3
+```
 
-Organización técnica
+### Organización
 
-styles.css: estilos globales, portada, navegación, bitácora e intro.
+- `styles.css`: estilos globales, portada, navegación, componentes generales e intro.
+- `perfiles.css`: estilos comunes y temáticas específicas de los cinco perfiles.
+- `responsive.css`: adaptación para diferentes tamaños de pantalla.
+- `main.js`: funciones compartidas de la portada.
+- Cada perfil posee su propio archivo JavaScript para evitar mezclar responsabilidades.
 
-perfiles.css: componentes compartidos y estilos específicos de los perfiles.
+---
 
-responsive.css: adaptación general de portada y navegación.
+# 🎨 6. Guía de estilos
 
-main.js: comportamiento compartido y funciones de la portada.
+## Tipografías
 
-cada perfil posee su propio archivo JavaScript para separar responsabilidades.
+Las fuentes fueron incorporadas mediante **Google Fonts**.
 
-5. Tecnologías utilizadas
+### Inter
 
-HTML5
+Utilizada principalmente para:
 
-Se utilizó marcado semántico con elementos como header, main, section, article, nav, footer, button y aside.
+- textos generales;
+- párrafos;
+- navegación;
+- interfaces.
 
-También se incorporaron atributos de accesibilidad cuando correspondía, entre ellos:
+### Poppins
 
-aria-label
-aria-live
-aria-atomic
-aria-expanded
-aria-controls
-aria-pressed
-aria-hidden
-aria-modal
+Utilizada para:
 
-CSS3
+- títulos;
+- encabezados;
+- elementos destacados.
 
-Se utilizaron:
+### Space Mono
 
-variables CSS;
+Utilizada en:
 
-Flexbox y Grid;
+- terminales;
+- comandos;
+- etiquetas técnicas;
+- elementos de estética de programación.
 
-clamp();
+### Playfair Display
 
-gradientes y transparencias;
+Utilizada principalmente en el perfil de Francisco Luis para reforzar su estética clásica y elegante.
 
-pseudoelementos;
+### Press Start 2P
 
-transiciones y animaciones;
+Utilizada en el perfil de Martín para construir una identidad visual retro gamer.
 
-:focus-visible;
+---
 
-media queries;
+# 🎨 7. Paleta global
 
-prefers-reduced-motion.
+Las principales variables globales del proyecto son:
 
-JavaScript Vanilla
-
-No se utilizaron frameworks. JavaScript se emplea para modificar el DOM, administrar estados, ejecutar comandos, cambiar temas, generar selecciones aleatorias, manejar foco y teclado, cargar contenido bajo demanda y responder a preferencias de movimiento.
-
-Git, GitHub y Vercel
-
-Git y GitHub se utilizaron para control de versiones y colaboración. Vercel se utilizó para publicar la versión web del proyecto.
-
-6. Guía de estilos
-
-Tipografías
-
-Las fuentes se incorporaron mediante Google Fonts.
-
-Fuente
-
-Uso principal
-
-Inter
-
-textos generales, navegación e interfaz
-
-Poppins
-
-títulos y destacados
-
-Space Mono
-
-terminales, comandos y etiquetas técnicas
-
-Playfair Display
-
-estética clásica del perfil de Luis
-
-Press Start 2P
-
-identidad retro gamer del perfil de Martín
-
-Paleta global
-
+```css
 --bg-main: #080b18;
 --bg-secondary: #10152b;
 --bg-card: rgba(17, 24, 48, 0.82);
+
 --border: rgba(255, 255, 255, 0.09);
+
 --text-primary: #f8fafc;
 --text-secondary: #a8b0c7;
+
 --accent-primary: #6366f1;
 --accent-secondary: #22d3ee;
 --accent-purple: #a855f7;
+```
 
-Identidad por perfil
+La identidad principal utiliza fondos azulados oscuros combinados con acentos neón en violeta y cyan.
 
-Perfil
+---
 
-Paleta principal
+# 👤 8. Identidad visual de cada perfil
 
-Estética
+## Martina
 
-Martina
+```css
+Base:       #080d2c
+Cyan:       #31afe6
+Rosa:       #df3c5d
+Violeta:    #7a18c6
+```
 
-#080D2C · #31AFE6 · #DF3C5D · #7A18C6
+Estética:
 
-gamer · tecnológica · neón
+**Gamer · tecnológica · profesional · neón**
 
-Dalila
+---
 
-#080B20 · #64D8FF · #9D62FF
+## Dalila
 
-espacial · futurista · creativa
+```css
+Base:       #080b20
+Cyan:       #64d8ff
+Violeta:    #9d62ff
+```
 
-Jorge
+Estética:
 
-#050505 · #880808 · #FF6D00 · #FFDE21
+**Futurista · espacial · tecnológica · creativa**
 
-cyberpunk · gaming · oscura
+---
 
-Luis
+## Jorge
 
-#080B0D · #F4D03F · #48C774 · #3DA5D9
+```css
+Base:       #050505
+Rojo:       #880808
+Naranja:    #ff6d00
+Amarillo:   #ffde21
+```
 
-vintage · elegante · tecnológica
+Estética:
 
-Martín
+**Cyberpunk · retro · gaming · oscura**
 
-#071015 · #42D9FF · #42E87A · #2188C9
+---
 
-retro gamer · arcade
+## Francisco Luis
 
-La iconografía combina caracteres, símbolos, emojis y recursos visuales propios para evitar depender de una biblioteca externa de íconos.
+```css
+Base:       #080b0d
+Dorado:     #f4d03f
+Verde:      #48c774
+Azul:       #3da5d9
+```
 
-7. Interactividad JavaScript
+Estética:
 
-Portada — js/main.js
+**Vintage · elegante · tecnológica**
 
-La portada incorpora varias funciones dinámicas:
+---
 
-menú mobile: abre y cierra la navegación y actualiza aria-expanded;
+## Martín
 
-hero dinámico: rota mensajes del equipo cada pocos segundos;
+```css
+Base:       #071015
+Cyan:       #42d9ff
+Verde:      #42e87a
+Azul:       #2188c9
+```
 
-intro de bienvenida: presenta los cinco avatares, controla foco y permite cerrar con botón o Escape;
+Estética:
 
-sessionStorage: evita repetir la intro durante la misma sesión;
+**Retro gamer · arcade · tecnológica**
 
-movimiento reducido: detiene animaciones automáticas cuando el usuario tiene activa la preferencia prefers-reduced-motion.
+---
 
+# 🎯 9. Iconografía y recursos visuales
 
+Para mantener el proyecto liviano se combinaron:
 
-Martina — js/martina.js
+- símbolos ASCII;
+- caracteres relacionados con programación;
+- emojis nativos;
+- avatares personalizados;
+- efectos construidos mediante CSS.
 
-El perfil de Martina utiliza una Terminal 2.0 que funciona como centro interactivo del perfil.
+Ejemplos:
 
-Incluye:
+```text
+</>
+{ }
+0101
+PY
+FLB
+8BIT
+🎮
+🎬
+🎵
+🐉
+🐶
+💻
+```
 
-entrada de comandos mediante formulario;
+Esto permite aportar identidad visual sin depender de una biblioteca de iconos externa.
 
-historial de comandos y navegación con flechas ↑ y ↓;
+---
 
-contador de comandos ejecutados;
+# ⚡ 10. Interactividad JavaScript
 
-efecto de escritura progresiva;
+La consigna requiere al menos una interacción dinámica en la portada y una diferente en cada perfil.
 
-secuencia de inicio activada con IntersectionObserver;
+El proyecto implementa una experiencia particular para cada integrante.
 
-comandos about, skills, work, game, study, psychology, photography, travel, design, music, status, theme, random, clear y tip;
+---
 
-navegación automática hacia secciones mediante scrollIntoView();
+## 🌐 Portada — `js/main.js`
 
-cambio de tema visual;
+### Menú mobile
 
-modos CAMERA_MODE, TRAVEL_MODE y DESIGN_MODE;
+El botón hamburguesa controla la apertura y cierre de la navegación en dispositivos pequeños.
 
-comandos secretos odin, finishhim y fatality;
+JavaScript actualiza dinámicamente:
 
-aparición animada de Odin con mensajes aleatorios y estado ONLINE / SLEEPING;
+```html
+aria-expanded="true"
+```
 
-Music Explorer: actualiza el álbum seleccionado y ofrece enlaces externos a YouTube;
+o:
 
-Cinema Explorer: responde a mouse, teclado y toque, actualizando modo, título, descripción y metadatos visuales.
+```html
+aria-expanded="false"
+```
 
-El perfil también respeta prefers-reduced-motion para reducir animaciones y desplazamiento suave cuando corresponde.
+para mantener sincronizado el estado visual con el estado accesible.
 
+---
 
+### Hero dinámico
 
-Dalila — js/dalila.js
+La portada contiene un mensaje que cambia automáticamente entre diferentes frases relacionadas con el equipo:
 
-El perfil de Dalila incorpora un Curiosity Explorer con contenido dinámico sobre distintos intereses.
+```text
+HTML · CSS · JavaScript
+5 perfiles · 1 equipo
+Diseño · Código · Colaboración
+Aprender · Crear · Compartir
+```
 
-JavaScript actualiza icono, título y descripción, utiliza una transición de entrada y administra el estado activo de los controles mediante aria-pressed.
+JavaScript modifica el contenido de `#dynamicText` mediante intervalos temporizados.
 
-También posee un Modo Eclipse, que alterna una clase temática en el documento y modifica la apariencia del perfil.
+La región utiliza:
 
+```html
+aria-live="polite"
+aria-atomic="true"
+```
 
+para permitir que lectores de pantalla detecten los cambios sin interrumpir al usuario.
 
-Jorge — js/jorge.js
+---
 
-El perfil de Jorge posee una Cyber Console con comandos relacionados con Python, música, videojuegos y datos aleatorios.
+### Intro de bienvenida
 
-El Modo Inferno modifica la apariencia del perfil y combina cambios visuales con la imagen Scorpion_Lair.jpg y el audio shao_kahn_laugh.mp3. El audio se reproduce únicamente después de una interacción explícita del usuario.
+Al ingresar al sitio se presenta una pantalla inicial con:
 
+- nombre del equipo;
+- cinco avatares;
+- identidad visual compartida;
+- mensaje de bienvenida;
+- botón de ingreso.
 
+La presentación utiliza los avatares de:
 
-Francisco Luis — js/luis.js
+```text
+Martina · Dalila · Jorge · Luis · Martín
+```
 
-El perfil de Luis utiliza un Vintage Player. Los botones cambian dinámicamente icono, categoría, título y descripción según el contenido elegido.
+y el mensaje:
 
-Incluye una opción aleatoria basada en Math.random() y mantiene sincronizado el estado visual de los botones con aria-pressed.
+> Cinco perfiles. Cinco estilos. Un solo equipo.
 
+La intro incorpora:
 
+- diálogo accesible;
+- administración del foco del teclado;
+- cierre mediante botón;
+- cierre mediante tecla `Escape`;
+- soporte para navegación por teclado;
+- almacenamiento mediante `sessionStorage`.
 
-Martín — js/martin.js
+`sessionStorage` permite evitar que la presentación vuelva a mostrarse constantemente durante la misma sesión de navegación.
 
-El perfil de Martín presenta MARTIN OS, una consola retro que permite ejecutar comandos como BOOT, STACK, GAMES, PETS, MISSION y SWITCH COLOR.
+---
+
+### Movimiento reducido
+
+La portada detecta:
+
+```css
+prefers-reduced-motion: reduce
+```
+
+Cuando el usuario tiene configurada esta preferencia:
+
+- se detienen animaciones innecesarias;
+- se desactiva el scroll suave;
+- se evita la rotación automática del hero;
+- la intro aparece sin animaciones escalonadas;
+- se reducen transiciones visuales.
+
+De esta manera la experiencia mantiene el contenido sin obligar al usuario a visualizar movimiento continuo.
+
+---
+
+![Interacción JavaScript de la portada](img/capturas/capturaportada.png)
+
+---
+
+# 👩‍💻 11. Martina — Terminal interactiva
+
+**Archivo:** `js/martina.js`
+
+El perfil de Martina incluye una terminal inspirada en interfaces de desarrollo.
+
+Los botones permiten consultar distintas categorías:
+
+```text
+código
+creatividad
+fuera_del_codigo
+random
+```
+
+JavaScript utiliza atributos `data-terminal` para identificar el comando seleccionado y actualizar dinámicamente:
+
+```html
+#terminalOutput
+```
+
+La opción `random` selecciona una respuesta al azar mediante:
+
+```javascript
+Math.random()
+```
+
+### Accesibilidad
+
+Los controles implementan:
+
+```html
+aria-controls="terminalOutput"
+aria-pressed="true/false"
+```
+
+Los botones activos modifican dinámicamente su estado mediante JavaScript.
+
+El resultado utiliza:
+
+```html
+role="status"
+aria-live="polite"
+aria-atomic="true"
+```
+
+para comunicar los cambios a tecnologías de asistencia.
+
+Los controles se encuentran agrupados mediante:
+
+```html
+role="group"
+```
+
+con una etiqueta accesible que explica su función.
+
+---
+
+![Terminal interactiva de Martina](img/capturas/capturaperfilmartina.png)
+
+---
+
+# 🌌 12. Dalila — Curiosity Explorer
+
+**Archivo:** `js/dalila.js`
+
+El perfil de Dalila incorpora un explorador interactivo de curiosidades relacionado con algunos de sus intereses.
+
+Entre las opciones se encuentran:
+
+- tortugas;
+- astronomía;
+- civilizaciones antiguas;
+- creatividad;
+- contenido aleatorio.
+
+Los controles utilizan atributos `data-interest` y JavaScript modifica:
+
+```text
+#dalilaExplorerIcon
+#dalilaExplorerTitle
+#dalilaExplorerText
+```
+
+También incorpora un efecto visual de escritura.
+
+### Modo Eclipse
+
+Dalila posee una segunda interacción que permite modificar la estética del perfil mediante la clase:
+
+```css
+.eclipse-mode
+```
+
+La interacción cambia dinámicamente variables CSS y genera una segunda identidad visual.
+
+### Accesibilidad
+
+Se utilizan estados accesibles como:
+
+```html
+aria-pressed
+aria-live
+aria-label
+```
+
+permitiendo comunicar qué opción se encuentra activa.
+
+---
+
+![Curiosity Explorer de Dalila](img/capturas/capturaperfildaly.png)
+
+---
+
+# 🔥 13. Jorge — Cyber Console & Modo Inferno
+
+**Archivo:** `js/jorge.js`
+
+El perfil de Jorge posee una consola interactiva basada en comandos.
+
+Las opciones permiten consultar:
+
+- Python;
+- música;
+- videojuego favorito;
+- datos aleatorios;
+- Modo Inferno.
+
+Los resultados se escriben dinámicamente dentro de:
+
+```html
+#jorgeConsoleOutput
+```
+
+### Modo Inferno
+
+Al activarlo se modifica la clase temática del documento y se producen cambios visuales relacionados con la estética del perfil.
 
 También incorpora:
 
-secuencia de arranque;
+- imagen ambiental `Scorpion_Lair.jpg`;
+- efectos visuales;
+- reproducción de audio mediante `shao_kahn_laugh.mp3`.
 
-cambio de tema mediante .green-mode;
+El audio se ejecuta como respuesta a una interacción explícita del usuario y no automáticamente al cargar la página.
 
-tarjetas de películas/series con efecto flip;
+### Accesibilidad
 
-carga del iframe de YouTube únicamente cuando el usuario solicita ver el trailer;
+La consola posee:
 
-cierre de otras tarjetas abiertas y eliminación del iframe para detener la reproducción.
+```html
+role="group"
+aria-label
+aria-live="polite"
+aria-atomic="true"
+```
 
+y los elementos visuales que no transmiten información relevante se ocultan de lectores de pantalla mediante:
 
+```html
+aria-hidden="true"
+```
 
-8. Accesibilidad
+---
 
-Durante el desarrollo se incorporaron mejoras para que los componentes interactivos no dependan únicamente del mouse.
+![Cyber Console de Jorge](img/capturas/capturaperfiljorge.png)
 
-Entre ellas:
+---
 
-navegación mediante teclado;
+# 🎵 14. Francisco Luis — Vintage Player
 
-indicadores :focus-visible;
+**Archivo:** `js/luis.js`
 
-estados aria-expanded y aria-pressed;
+Francisco Luis posee un reproductor interactivo con estética vintage.
 
-regiones dinámicas con aria-live y aria-atomic;
+Cada control utiliza:
 
-textos alternativos en imágenes;
+```html
+data-luis
+```
 
-elementos decorativos marcados con aria-hidden cuando corresponde;
+para identificar el contenido que debe cargarse.
 
-skip link en la portada;
+JavaScript actualiza dinámicamente:
 
-control de foco en la intro;
+- ícono;
+- categoría;
+- título;
+- descripción.
 
-soporte para prefers-reduced-motion.
+También existe una función `random` para seleccionar contenido de forma aleatoria.
 
-9. Diseño responsive
+### Accesibilidad
 
-La consigna solicita revisar específicamente 1200 px, 900 px y 400 px. El proyecto implementa esos breakpoints y utiliza además un ajuste intermedio de 600 px.
+El reproductor utiliza:
 
-1200 px: ajuste de grillas y espacios para notebooks y pantallas intermedias.
+```html
+aria-controls="luisPlayerDisplay"
+aria-pressed="true/false"
+```
 
-900 px: menú hamburguesa, contenido en menos columnas y reorganización de perfiles.
+La zona de contenido posee:
 
-600 px: controles apilados y adaptación de componentes interactivos.
+```html
+aria-live="polite"
+```
 
-400 px: reducción de tipografías, paddings, botones y grillas para smartphones pequeños.
+para comunicar las actualizaciones dinámicas.
 
-El objetivo es evitar desbordes horizontales, contenido superpuesto y controles inaccesibles.
+La navegación entre perfiles está representada semánticamente mediante:
 
-10. Bitácora
+```html
+<nav aria-label="Navegación entre perfiles">
+```
 
-El proceso de trabajo se documenta en bitacora.html.
+---
+
+![Vintage Player de Luis](img/capturas/capturaperfilluis.png)
+
+---
+
+# 🕹️ 15. Martín — MARTIN OS
+
+**Archivo:** `js/martin.js`
+
+El perfil de Martín presenta una consola inspirada en videojuegos retro.
+
+El sistema simula una interfaz:
+
+```text
+MARTIN OS v1.0
+```
+
+y permite ejecutar comandos como:
+
+```text
+BOOT
+STACK
+GAMES
+PETS
+MISSION
+SWITCH COLOR
+```
+
+### Boot Sequence
+
+El comando `BOOT` ejecuta una pequeña secuencia de inicialización antes de mostrar el sistema listo para utilizarse.
+
+### Cambio de tema
+
+`SWITCH COLOR` activa o desactiva:
+
+```css
+.green-mode
+```
+
+permitiendo modificar dinámicamente la apariencia del perfil.
+
+### Accesibilidad
+
+La consola utiliza:
+
+```html
+aria-live="polite"
+aria-atomic="true"
+```
+
+Además se incorporaron estilos mediante:
+
+```css
+:focus-visible
+```
+
+para que las personas que navegan con teclado identifiquen claramente qué elemento posee el foco.
+
+Los reproductores multimedia utilizan carga diferida cuando corresponde para reducir el impacto sobre la carga inicial.
+
+---
+
+![MARTIN OS](img/capturas/capturaperfilmartin.png)
+
+---
+
+# ♿ 16. Accesibilidad
+
+Además del contenido visual, durante el desarrollo se incorporaron distintas prácticas de accesibilidad.
+
+## Navegación mediante teclado
+
+Los botones y enlaces utilizan indicadores personalizados con:
+
+```css
+:focus-visible
+```
+
+Esto permite recorrer el sitio mediante la tecla `Tab` sin perder la posición actual.
+
+---
+
+## Skip Link
+
+La portada incluye un enlace:
+
+```text
+Saltar al contenido principal
+```
+
+que aparece al recibir foco y permite evitar la navegación repetitiva del header.
+
+---
+
+## Contenido dinámico
+
+Las interacciones que modifican información utilizan regiones como:
+
+```html
+aria-live="polite"
+```
+
+y, cuando corresponde:
+
+```html
+aria-atomic="true"
+```
+
+---
+
+## Estados dinámicos
+
+Los botones interactivos utilizan:
+
+```html
+aria-pressed
+aria-expanded
+aria-controls
+```
+
+para mantener sincronizados los estados visuales y accesibles.
+
+---
+
+## Elementos decorativos
+
+Los elementos cuya función es exclusivamente estética utilizan:
+
+```html
+aria-hidden="true"
+```
+
+para evitar información innecesaria en lectores de pantalla.
+
+---
+
+## Movimiento reducido
+
+Se implementó:
+
+```css
+@media (prefers-reduced-motion: reduce)
+```
+
+para respetar la preferencia configurada en el dispositivo del usuario.
+
+Cuando se encuentra activa:
+
+- las animaciones se reducen;
+- las transiciones se minimizan;
+- el desplazamiento suave se desactiva;
+- el hero deja de rotar automáticamente;
+- la intro mantiene su contenido pero elimina el movimiento decorativo.
+
+---
+
+# 📱 17. Diseño responsive
+
+La consigna solicita específicamente comprobar:
+
+```text
+1200 px
+900 px
+400 px
+```
+
+El proyecto implementa esos tres breakpoints y agrega uno intermedio de **600 px**.
+
+---
+
+## 1200 px
+
+Orientado a notebooks y pantallas intermedias.
+
+Se realizan ajustes como:
+
+- reducción de columnas;
+- modificación de espacios;
+- adaptación de grillas;
+- reorganización de contenido.
+
+---
+
+## 900 px
+
+Orientado principalmente a tablets.
+
+En este breakpoint:
+
+- se activa el menú hamburguesa;
+- el hero pasa a una columna;
+- las grillas reducen su cantidad de columnas;
+- se reorganizan los perfiles.
+
+---
+
+## 600 px
+
+Breakpoint adicional utilizado para:
+
+- cards en una sola columna;
+- controles apilados;
+- adaptación de contenido multimedia;
+- reducción de espacios.
+
+---
+
+## 400 px
+
+Orientado a smartphones pequeños.
+
+Se ajustan:
+
+- tipografías;
+- márgenes;
+- paddings;
+- botones;
+- avatares;
+- grillas;
+- terminales;
+- controles interactivos.
+
+El objetivo es evitar:
+
+- desbordes horizontales;
+- textos superpuestos;
+- botones inaccesibles;
+- contenido fuera de pantalla.
+
+---
+
+# 📓 18. Bitácora
+
+El proceso de desarrollo se documentó en:
+
+[**Ver Bitácora del Proyecto**](./bitacora.html)
 
 La bitácora registra:
 
-análisis de la consigna;
+- decisiones de arquitectura;
+- organización inicial;
+- distribución del trabajo;
+- construcción de la portada;
+- creación de perfiles;
+- desarrollo de interacciones;
+- incorporación de responsive;
+- problemas encontrados;
+- correcciones realizadas;
+- documentación;
+- publicación.
 
-recolección de información;
+Entre las dificultades abordadas durante el proyecto se encontraron:
 
-arquitectura del proyecto;
+- errores de sintaxis JavaScript;
+- diferentes proporciones de imágenes;
+- estilos duplicados;
+- navegación entre perfiles;
+- adaptación responsive;
+- actualización de contenido obligatorio;
+- sincronización de cambios mediante Git;
+- accesibilidad de componentes interactivos;
+- integración de multimedia;
+- documentación de las distintas funciones.
 
-desarrollo de portada y perfiles;
+---
 
-responsive;
+# 🚀 19. Publicación
 
-testing;
+El proyecto se encuentra publicado mediante **Vercel**.
 
-documentación y publicación;
+### 🌐 Sitio web
 
-problemas encontrados y correcciones realizadas.
+[https://tp1-frontend-grupal.vercel.app/](https://tp1-frontend-grupal.vercel.app/)
 
-Durante el pulido final se registraron, entre otras, correcciones de estructura HTML, eliminación de código obsoleto, ajustes de accesibilidad, limpieza de selectores y validación de JavaScript.
+La entrega oficial se realiza mediante el enlace al repositorio público del grupo y la URL publicada se encuentra documentada en este README.
 
-11. Uso de Inteligencia Artificial
+---
 
-La IA se utilizó como asistente técnico y creativo. El equipo mantuvo la autoría mediante revisión, adaptación, prueba y corrección manual de los resultados antes de incorporarlos al proyecto.
+# ▶️ 20. Ejecución local
 
-Herramientas registradas
+Al tratarse de un proyecto realizado con HTML, CSS y JavaScript Vanilla, no requiere instalación de dependencias.
 
-Herramienta
+Puede clonarse mediante:
 
-Modelo / modalidad registrada
-
-Plan registrado
-
-Uso principal
-
-ChatGPT — OpenAI
-
-GPT-5.6 Sol para revisión técnica y código; generador de imágenes integrado para recursos visuales
-
-Plus en la instancia documentada por Martina
-
-revisión de consigna, HTML/CSS/JS, debugging, accesibilidad, responsive, documentación e imágenes
-
-Gemini — Google
-
-modelo exacto no registrado
-
-gratuito
-
-apoyo en la creación del avatar de Dalila
-
-Claude — Anthropic
-
-modelo exacto no registrado
-
-no registrado
-
-consulta técnica y contraste de alternativas
-
-Cuando el modelo o plan exacto no quedó registrado durante el proceso, se indica de forma explícita en lugar de inventarlo.
-
-Avatares e imágenes
-
-Los avatares se trabajaron a partir de información aportada por cada integrante: colores, intereses, estética deseada y referencias visuales.
-
-Los avatares de Martina, Jorge, Luis y Martín se documentaron como generados mediante las herramientas de imagen integradas en ChatGPT. El avatar de Dalila se documentó como generado con Gemini.
-
-También se generó una caricatura independiente de Odin, el gato incluido en el perfil de Martina. Para esa imagen se utilizó como referencia una ilustración aportada por Martina y se pidió aislar al gato, mantener sus rasgos visuales y conservar la estética gamer/neón del perfil.
-
-Las imágenes resultantes fueron seleccionadas y adaptadas manualmente antes de incorporarse al sitio.
-
-Criterio de uso
-
-La IA se utilizó para:
-
-interpretar requisitos;
-
-proponer estructuras y alternativas;
-
-detectar y explicar errores;
-
-revisar código;
-
-mejorar accesibilidad;
-
-generar propuestas visuales;
-
-ayudar a organizar documentación.
-
-El equipo revisó y modificó manualmente los resultados. La decisión final sobre contenido, diseño y funcionamiento permaneció en el grupo.
-
-12. Publicación y ejecución
-
-Sitio publicado
-
-https://tp1-frontend-grupal.vercel.app/
-
-Ejecución local
-
-El proyecto no requiere instalación de dependencias.
-
+```bash
 git clone https://github.com/Martina-bistagnino/tp1-frontend-grupal.git
+```
+
+Ingresar a la carpeta:
+
+```bash
 cd tp1-frontend-grupal
+```
 
-Luego puede abrirse index.html directamente o ejecutarse con un servidor local como Live Server.
+Luego puede abrirse:
 
-13. Evolución
+```text
+index.html
+```
 
-Este TP funciona como primera versión del sitio grupal. Como posibles mejoras futuras se consideran:
+directamente desde el navegador o mediante una extensión de servidor local como **Live Server**.
 
-optimización adicional del peso de imágenes;
+---
 
-persistencia de algunas preferencias visuales con localStorage;
+# 📈 21. Evolución del proyecto
 
-nuevas fuentes externas de contenido cuando el alcance del proyecto lo permita;
+Este TP representa la primera etapa del sitio.
 
-mejoras progresivas de accesibilidad y rendimiento;
+Como posibles mejoras futuras se consideran:
 
-ampliación de las interacciones sin perder claridad ni usabilidad.
+### Persistencia de preferencias
 
-14. Verificación contra la consigna
+Utilizar:
 
-Requisito
+```javascript
+localStorage
+```
 
-Estado
+para recordar configuraciones visuales elegidas por los usuarios.
 
-Repositorio independiente
+---
 
-✅
+### Animaciones activadas por scroll
 
-index.html y perfiles en la raíz
+Implementar:
 
-✅
+```javascript
+IntersectionObserver
+```
 
-Cinco integrantes enlazados
+para controlar animaciones según la posición del contenido en pantalla, manteniendo compatibilidad con `prefers-reduced-motion`.
 
-✅
+---
 
-Navegación interna
+### APIs externas
 
-✅
+Incorporar fuentes de información externas para enriquecer contenidos relacionados con:
 
-Foto o avatar por integrante
+- películas;
+- música;
+- videojuegos.
 
-✅
+---
 
-Edad y ubicación
+### Formularios
 
-✅
+Agregar una sección de contacto con:
 
-Al menos cuatro habilidades por perfil
+- validación JavaScript;
+- mensajes accesibles;
+- feedback visual.
 
-✅
+---
 
-Tres películas por integrante (lectura literal de la consigna)
+### Optimización
 
-⚠️ Revisar si la docente lo exige literalmente
+Continuar trabajando sobre:
 
-Tres discos / álbumes por integrante
+- peso de imágenes;
+- rendimiento;
+- accesibilidad;
+- semántica;
+- experiencia mobile;
+- organización CSS.
 
-✅
+---
 
-JavaScript en portada
+# 🤖 22. Uso de Inteligencia Artificial
 
-✅
+La Inteligencia Artificial se utilizó como **herramienta de asistencia técnica y creativa**, no como reemplazo del trabajo y criterio del equipo.
 
-JavaScript propio en cada perfil
+---
 
-✅
+## Herramientas utilizadas
 
-CSS propio y Google Fonts
+### ChatGPT — OpenAI
 
-✅
+**Aplicación:** ChatGPT  
+**Modelo utilizado durante la etapa final de revisión técnica:** GPT-5.6 Sol  
+**Plan:** Plus en la instancia utilizada por Martina.
 
-Breakpoints 1200 / 900 / 400 px
+Se utilizó principalmente para:
 
-✅
+- interpretar y revisar la consigna;
+- estructurar componentes HTML;
+- analizar organización CSS;
+- desarrollar y revisar funciones JavaScript;
+- detectar errores;
+- mejorar accesibilidad;
+- implementar atributos ARIA;
+- incorporar `prefers-reduced-motion`;
+- revisar navegación;
+- revisar responsive;
+- ordenar el README;
+- proponer mejoras de experiencia de usuario.
 
-Bitácora HTML enlazada
+También se utilizó el **generador de imágenes integrado en ChatGPT** para elaborar algunos de los avatares empleados en el proyecto.
 
-✅
+---
 
-Publicación en Vercel
+### Claude — Anthropic
 
-✅
+Se utilizó como herramienta complementaria de consulta técnica y redacción durante distintas etapas del trabajo.
 
-URL de Vercel documentada
+El uso se realizó como apoyo para analizar alternativas y contrastar soluciones antes de incorporarlas al código definitivo.
 
-✅
+---
 
-Uso de IA documentado
+### Gemini — Google
 
-🟡 Falta confirmar algunos modelos/planes y experiencia previa
+Gemini fue utilizado en modalidad gratuita para la creación del avatar de Gabriela Dalila Contrera.
 
-Capturas de las funciones JavaScript
+Para su construcción se utilizaron como referencia:
 
-🟡 Actualizar las capturas finales para mostrar las interacciones
+- una imagen proporcionada por la integrante;
+- una imagen de su mascota;
+- referencias visuales de la identidad general del proyecto.
 
-15. Pendientes antes de entregar
+---
 
-Para cerrar el README sin inventar información quedan dos verificaciones documentales:
+# 🎨 23. Uso de IA para avatares
 
-reemplazar las capturas generales de los perfiles por capturas donde se vea la interacción JavaScript de cada integrante;
+Los avatares no fueron generados de manera aleatoria.
 
-confirmar el modelo, plan y experiencia previa de las herramientas de IA cuando esos datos no quedaron registrados durante el desarrollo.
+Se utilizaron las respuestas de los cuestionarios individuales para definir aspectos como:
 
-Estos puntos se dejan visibles hasta contar con la información definitiva del equipo.
+- colores;
+- estilo;
+- temática;
+- vestimenta;
+- accesorios;
+- ambientación;
+- personalidad visual.
 
-Cinco perfiles. Cinco estilos. Un solo equipo.
+Los avatares de:
 
-<EquipoDev/>
+- Martina Bistagnino;
+- Jorge Caliz;
+- Francisco Luis Bronzi;
+- Martín Roige;
+
+fueron generados mediante las herramientas de generación de imágenes integradas en ChatGPT, coordinadas por Martina.
+
+Se buscó mantener una identidad común basada principalmente en una estética tecnológica/cyberpunk, pero respetando las preferencias visuales de cada integrante.
+
+El avatar de Dalila fue generado utilizando Gemini, tomando como referencia material proporcionado por ella y la identidad visual ya desarrollada para el proyecto.
+
+Posteriormente las imágenes fueron seleccionadas, recortadas y adaptadas para funcionar correctamente dentro de los marcos de perfil utilizados por el sitio.
+
+---
+
+# 🧠 24. Criterio aplicado a los prompts
+
+Los prompts se construyeron a partir de información suministrada voluntariamente por cada integrante.
+
+Se consideraron elementos como:
+
+```text
+estética deseada
+colores preferidos
+temática tecnológica
+estilo gamer o profesional
+rasgos visuales generales
+fondos
+objetos
+intereses
+```
+
+No se buscó incorporar información personal innecesaria.
+
+La IA fue utilizada para generar una propuesta inicial que posteriormente fue evaluada por el equipo.
+
+---
+
+# ✍️ 25. Autoría y revisión humana
+
+Las respuestas producidas por herramientas de IA **no fueron incorporadas automáticamente** al proyecto.
+
+El equipo realizó tareas de:
+
+- lectura;
+- validación;
+- prueba;
+- adaptación;
+- corrección;
+- reescritura;
+- integración.
+
+Durante este proceso se modificaron manualmente:
+
+- textos;
+- HTML;
+- estructuras;
+- estilos;
+- colores;
+- distribuciones;
+- interacciones JavaScript;
+- comportamiento responsive;
+- atributos ARIA;
+- navegación;
+- contenidos de los perfiles.
+
+El equipo mantuvo la responsabilidad sobre las decisiones finales y verificó el funcionamiento de los elementos incorporados.
+
+---
+
+# 🔐 26. Privacidad
+
+Para evitar exponer información personal innecesaria se permitió utilizar:
+
+- avatares;
+- ilustraciones;
+- descripciones generales.
+
+No fue obligatorio utilizar fotografías personales ni publicar redes sociales si el integrante prefería no hacerlo.
+
+La información utilizada en cada perfil surgió de cuestionarios respondidos voluntariamente por los integrantes y fue revisada antes de incorporarse al sitio.
+
+---
+
+# ✅ 27. Requisitos cubiertos
+
+| Requisito de la consigna | Estado |
+|---|:---:|
+| Repositorio público e independiente | ✅ |
+| Participación de los cinco integrantes | ✅ |
+| `index.html` en raíz | ✅ |
+| Cinco perfiles individuales | ✅ |
+| Foto o avatar por integrante | ✅ |
+| Edad y ubicación | ✅ |
+| Mínimo cuatro habilidades | ✅ |
+| Películas favoritas | ✅ |
+| Discos / música favorita | ✅ |
+| Navegación interna | ✅ |
+| JavaScript en portada | ✅ |
+| JavaScript individual por perfil | ✅ |
+| CSS propio y organizado | ✅ |
+| Google Fonts | ✅ |
+| Breakpoint 1200 px | ✅ |
+| Breakpoint 900 px | ✅ |
+| Breakpoint 400 px | ✅ |
+| Bitácora HTML | ✅ |
+| Capturas de las interacciones | ✅ |
+| Documentación de JavaScript | ✅ |
+| Uso de IA documentado | ✅ |
+| Publicación en Vercel | ✅ |
+| URL de Vercel en README | ✅ |
+
+---
+
+# 💡 28. Conclusión
+
+Este trabajo permitió integrar los contenidos principales de desarrollo frontend trabajados durante la materia:
+
+```text
+HTML
+CSS
+JavaScript
+Responsive Design
+Accesibilidad
+Git
+GitHub
+Trabajo colaborativo
+Documentación
+Publicación web
+```
+
+El objetivo no fue solamente desarrollar cinco páginas individuales, sino construir una experiencia común donde cada integrante pudiera conservar su propia identidad dentro de una arquitectura visual y técnica compartida.
+
+**Cinco perfiles. Cinco estilos. Un solo equipo.**
+
+### `<EquipoDev/>`
