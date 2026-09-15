@@ -133,7 +133,12 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 
 ### 4. Perfil de Jorge (`js/jorge.js`)
 
-* **Cyber Console & Modo Inferno:** Procesador de comandos interactivo que escribe registros dinámicos en `#jorgeConsoleOutput` y conmuta la clase `.inferno-mode` en la página, alterando las variables CSS, aplicando un fondo estático de la guarida de Scorpion (Scorpion_Lair.jpg) y disparando efectos multimedia (reproducción de audio de Shao Kahn y destello visual al activarse).
+* **Cyber Console & Modo Inferno:** Procesador interactivo con dactilógrafo DOM recursivo (preserva etiquetas y enlaces externos). Conmuta la clase `.inferno-mode` con variables CSS, fondo de *Scorpion's Lair* (`Scorpion_Lair.jpg`), flash visual y sistema de audio dual (*Shao Kahn* al activar / *No Mercy* al estabilizar).
+* **Comandos de consola (`jorgeCommands`):**
+  * `python`: Simulación de runtime v3.12 con indicadores de estado color-coded.
+  * `music`: Deck de audio con gradiente y enlaces directos a YouTube (*Band-Maid*, *Ling Tosite Sigure*, *Lörihen*).
+  * `game`: HUD de ficha de rol/beat 'em up para *D&D: Shadow over Mystara*.
+  * `inferno`: Realm merge de *Outworld* con alerta táctica y transiciones de audio.
 
 ![Perfil de Jorge](img/capturas/capturaperfiljorge.png)
 
