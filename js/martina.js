@@ -701,24 +701,17 @@ function changeMartinaTheme() {
 
 function activateFatality() {
 
-    document.body.classList.add(
-        "fatality-mode"
-    );
+    const fatalitySound = new Audio('audio/fatality.mp3');
+    fatalitySound.play().catch(e => console.log('Audio autoplay bloqueado o error:', e));
 
+    document.body.classList.add("fatality-mode");
 
     setTimeout(
         () => {
-
-            document.body.classList.remove(
-                "fatality-mode"
-            );
-
+            document.body.classList.remove("fatality-mode");
         },
-        martinaReducedMotion.matches
-            ? 0
-            : 1000
+        martinaReducedMotion.matches ? 0 : 1000
     );
-
 
     return `
 FATALITY.
