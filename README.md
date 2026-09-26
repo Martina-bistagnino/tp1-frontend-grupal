@@ -164,19 +164,35 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 
 ![Perfil de Luis](img/capturas/capturaperfilluis.png)
 
-### 6. Perfil de Martín (`js/martin.js`)
-* **Retro System Console:** Consola interactiva con estética *arcade/retro terminal* (`MARTIN OS v1.0`) que procesa comandos mediante botones con `data-command`. Actualiza en tiempo real el contenido en `#martinConsole` (con soporte accesible vía `aria-live="polite"` y `aria-atomic="true"`) y permite conmutar dinámicamente el tema visual activando la clase `.green-mode`.
+### 6. Perfil de Martín (`martin.html` y `js/martin.js`)
+
+* **Retro System Console (MARTIN OS v1.0):**
+  * Consola interactiva inspirada en terminales arcade y sistemas retro de 8 bits (`#martinConsole`).
+  * Procesamiento de comandos mediante botones con atributos `data-command`, vinculados dinámicamente por eventos de escucha (`click`).
+  * Inyección reactiva de contenido en el DOM con soporte accesible en tiempo real mediante `aria-live="polite"` y `aria-atomic="true"`.
+  * Efecto de cursor parpadeante retro implementado vía CSS (`@keyframes martinCursor`).
+
+* **Comandos Interactivos del Sistema (`martinCommands`):**
+  * `BOOT`: Ejecuta una rutina de inicialización diagnóstica del sistema ("System Kernel: Online", "Fullstack Engine: Ready", "Logistics DB: Migrated").
+  * `STACK`: Despliega el stack tecnológico desbloqueado organizado por categorías (Frontend: HTML, CSS, JS, React; Backend: Node.js, Python, Django; Cloud & DB: MySQL, Supabase, Git).
+  * `GAMES`: Muestra el registro de videojuegos clásicos favoritos y títulos de estrategia/RPG (StarCraft, Diablo II: Resurrected).
+  * `PETS`: Ejecuta el módulo de monitoreo del hogar detectando las mascotas ("Dogs detected: 3", "Cats detected: 8").
+  * `MISSION`: Muestra el objetivo y misión principal de carrera ("Transition to Fullstack Developer").
+  * `SWITCH COLOR`: Conmutador dinámico de tema cromático que añade o remueve la clase `.green-mode` en el `body`, alterando al vuelo las variables CSS a una paleta verde fósforo retro (`#65ff94`, `#b4ffcf`).
+
 * **Optimización de Rendimiento y Multimedia:**
-  * Implementación de carga diferida (`loading="lazy"`) y supresión de atributos obsoletos en los reproductores de YouTube embebidos, evitando bloqueos en la carga inicial y mejorando el score en métricas web.
-  * Incorporación de atributos explícitos de proporción y tamaño en la imagen de avatar para prevenir saltos de diseño (*Cumulative Layout Shift* - CLS).
-* **Accesibilidad (A11y) y Navegación por Teclado:**
-  * Indicador de foco personalizado (`:focus-visible`) estilizado con estética neón/glow difuminado y bordes redondeados, garantizando un recorrido nítido y sin solapamientos en enlaces y botones interactivos.
-  * Corrección de la maquetación en enlaces de tarjetas para ceñir el área activa al texto y evitar áreas de foco desproporcionadas.
-  * Incorporación de `scroll-padding-top` en el documento base para evitar que el header fijo tape los encabezados al saltar entre secciones internas (`#sobre-mi`, `#habilidades`, `#interactivo`, etc.).
-  * Navegación semántica e inclusiva con `<nav aria-label="Navegación entre perfiles">` y atributos contextuales en enlaces externos y decoraciones.
-* **Diseño Responsivo Reforzado:**
-  * Adaptación fluida de la sección musical (`.martin-track`), reorganizando la disposición de elementos en pantalla completa a columnas verticales en móviles sin desbordes horizontales.
-  * Ajuste en el menú desplegable mobile (`responsive.css`) ampliando la altura máxima admisible para albergar la totalidad de enlaces del perfil sin recortes.
+  * Implementación de carga diferida (`loading="lazy"`) en los reproductores de YouTube embebidos (`<iframe>`) correspondientes a la selección musical (*Metallica*, *Roxette*, *Imagine Dragons*), reduciendo peticiones bloqueantes en la carga inicial del sitio.
+  * Inclusión de títulos descriptivos (`title`) y políticas de seguridad modernas (`referrerpolicy="strict-origin-when-cross-origin"`) en los elementos embebidos.
+  * Dimensiones y proporciones explícitas en el contenedor de avatar para prevenir cambios bruscos de diseño (*Cumulative Layout Shift* - CLS).
+
+* **Accesibilidad Web (A11y) y Navegación:**
+  * Indicador de foco personalizado (`:focus-visible`) estilizado con estética glow neón, permitiendo una navegación cómoda y visible mediante teclado (Tab).
+  * Implementación de `scroll-padding-top` en el viewport para compensar la barra de navegación fija y evitar solapamientos con los títulos de sección al usar anclas internas (`#sobre-mi`, `#habilidades`, `#favoritos`, `#interactivo`).
+  * Paginación semántica accesible mediante `<nav class="profile-navigation" aria-label="Navegación entre perfiles">` con botones contextuales hacia el perfil anterior (Luis) y siguiente (Martina).
+
+* **Diseño Responsivo Específico:**
+  * Disposición adaptable de las tarjetas de música (`.martin-track`), reorganizando el contenedor del reproductor y la información textual a formato vertical en pantallas móviles para evitar desbordes horizontales.
+  * Grid adaptable de habilidades (`.martin-stack-grid`) y rasgos de personalidad (`.martin-stats`), escalando de forma fluida de 4 y 5 columnas en escritorio a 2 columnas en tablets y 1 columna en móviles menores a 400 px.
 
 ![Perfil de Martín](img/capturas/capturaperfilmartin.png)
 
@@ -223,4 +239,3 @@ Propuestas proyectadas para futuras etapas del proyecto:
   * Los avatares de *Martina Bistagnino, Jorge Caliz, Francisco Luis Bronzi y Martín Roige* se generaron con *ChatGPT Plus* (plan pago), a cargo de Martina Bistagnino, con un criterio visual de estilo *cyberpunk* aplicado como fondo/ambientación en los cuatro casos.
   * El avatar de *Gabriela Dalila Contrera* se generó con *Gemini* (plan gratuito), proporcionando como referencia una foto propia, una foto de su mascota y la imagen de estilo del avatar de Martina, solicitando un resultado visual similar.
 * *Criterio de Validación y Autoría:* Cada sugerencia producida por herramientas de IA fue revisada, modificada y probada individualmente por el equipo. El código CSS, la arquitectura de archivos y la lógica de interacción final reflejan decisiones y desarrollo propio de los integrantes del grupo.
-*
