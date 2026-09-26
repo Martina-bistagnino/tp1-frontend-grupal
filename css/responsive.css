@@ -87,11 +87,14 @@
 
     /* HERO */
 
-    .hero {
+    .hero,
+    .profile-hero {
         min-height: auto;
     }
 
-    .hero__container {
+    .hero__container,
+    .profile-hero__container,
+    .logbook-hero {
         grid-template-columns: 1fr;
 
         padding: 100px 0 80px;
@@ -154,7 +157,9 @@
 
     /* HERO */
 
-    .hero__container {
+    .hero__container,
+    .profile-hero__container,
+    .logbook-hero {
         padding-top: 75px;
     }
 

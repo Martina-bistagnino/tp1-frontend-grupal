@@ -574,7 +574,7 @@ button {
 ========================================== */
 .logbook-hero {
   position: relative;
-  padding: 130px 0 100px;
+  padding: 80px 0;
   overflow: hidden;
   border-bottom: 1px solid var(--border);
   background: radial-gradient(
