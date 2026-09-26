@@ -115,19 +115,31 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 
 ![Perfil de Martina](img/capturas/capturaperfilmartina.png)
 
-### 3. Perfil de Dalila (`js/dalila.js`)
+### 3. Perfil de Dalila (`dalila.html` y `js/dalila.js`)
 
-* **Curiosity Explorer:** Menú interactivo con opciones identificadas mediante `data-interest`. Al seleccionar una opción, JavaScript actualiza dinámicamente el ícono, el título y la descripción de la sección (`#dalilaExplorerIcon`, `#dalilaExplorerTitle` y `#dalilaExplorerText`). Presenta información sobre diferentes intereses relacionados con la astronomía, las tortugas y la creatividad, acompañada de un efecto visual de tipeo con cursor parpadeante.
+* **Curiosity Explorer (Terminal Interactiva):**
+  - Consola/terminal de navegación (`#dalilaExplorer`) con botones contextuales identificados mediante `data-interest` (Tortugas, Astronomía, Egiptología, Creatividad y Curiosidades/Random).
+  - Actualización dinámica del DOM con transición suave de desvanecimiento (`fading`) para intercambiar íconos, títulos y textos descriptivos de forma fluida.
 
-* **Accesibilidad Web (Atributos ARIA):** Implementación de estados dinámicos `aria-selected="true/false"` o `aria-expanded` en los botones del explorador interactivo para notificar a los lectores de pantalla sobre el elemento activo. Además, se definieron roles semánticos y regiones accesibles para garantizar la navegabilidad con teclado.
+* **Asistente Virtual Carmelucha:**
+  - Componente flotante interactivo (`#carmeluchaAssistant`) que se activa al seleccionar el botón correspondiente ("Carmelucha") en el menú de intereses.
+  - Inyecta consejos dinámicos de desarrollo, buenas prácticas de código y mensajes motivacionales aleatorios que se ocultan automáticamente tras unos segundos.
+  - Gestión avanzada de temporizadores (`clearTimeout`) y reinicio de animación de entrada mediante *reflow* del DOM (`offsetWidth`).
 
-* **Modo Eclipse:** Funcionalidad en JavaScript que permite conmutar el tema visual principal (`.dalila-theme`) hacia una paleta de colores alternativa (`.eclipse-mode`), modificando dinámicamente las variables de CSS en tiempo real.
+* **Modo Eclipse (Tema Alternativo):**
+  - Conmutador de tema visual (`#dalilaEclipseToggle`) que altera la clase `.eclipse-mode` en el elemento `<body>`.
+  - Actualización síncrona de texto e indicadores de accesibilidad (`aria-pressed="true/false"`).
 
-* **Diseño y Efectos Visuales CSS:** 
-  * **Efecto Neón:** Aplicación de sombreados y bordes neón resplandecientes (`box-shadow` en tonos rosa/magenta) con transiciones suaves al interactuar con las tarjetas (`:hover`).
-  * **Fondo Espacial Animado:** Generación de estrellas titilantes en el fondo mediante pseudoelementos (`::before` y `::after`) y animaciones fotograma a fotograma (`@keyframes`).
+* **Accesibilidad Web (Atributos ARIA):**
+  - Sincronización dinámica de estados `aria-pressed` y `active` en la botonera de intereses y en el selector de tema.
+  - Estructuración semántica con regiones accesibles (`<aside>`, `<article>`, `<header>`, `<main>`, `<footer>`).
 
-* **Sección Multimedia:** Tarjetas estructuradas mediante CSS Grid con reproductores de video incrustados (`<iframe>`) para mostrar la selección de contenido musical y cinematográfico.
+* **Diseño y Estética Neón:**
+  - Estilos visuales resplandecientes (`box-shadow` e iluminación neón) con respuestas interactivas en estado `:hover`.
+  - Fondo espacial con estrellas animadas mediante pseudoelementos y `@keyframes`.
+
+* **Integración Multimedia:**
+  - Reproductores embebidos mediante `<iframe>` para tráilers de cine/series y álbumes musicales destacados, configurados con títulos descriptivos (`title`) para accesibilidad.
 
 ![Perfil de Dalila](img/capturas/capturaperfildaly.png)
 
