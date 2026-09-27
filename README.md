@@ -186,7 +186,7 @@ De esta manera se combinan manipulación del DOM, estados visuales, temporizador
 Captura — Terminal 2.0 y Odin.exe
 En la siguiente captura se observa la ejecución del comando secreto odin y la aparición del asistente en pantalla.
  
-![alt text](martina-terminal-odin.png)
+![alt text](img/capturas/martina-terminal-odin.png)
 
 La terminal también permite activar diferentes modos visuales relacionados con intereses personales.
 Estos módulos aparecen temporalmente en pantalla y modifican su contenido mediante JavaScript y atributos *data*.
@@ -203,7 +203,7 @@ El módulo incorpora elementos visuales como:
 - apertura;
 - información relacionada con fotografía.
 
-![alt text](martina-camera-mode-1.jpg)
+![alt text](img/capturas/martina-camera-mode-1.jpg)
 
 ##TRAVEL_MODE
 
@@ -216,7 +216,7 @@ El panel modifica dinámicamente:
 - modo activo;
 - representación visual.
 
-![alt text](martina-travel-mode.png)
+![alt text](img/capturas/martina-travel-mode.png)
 
 ##DESIGN_MODE
 
@@ -267,7 +267,7 @@ rel="noopener noreferrer"
 
 De esta forma se evita almacenar canciones comerciales dentro del repositorio y el contenido se abre en una nueva pestaña.
 
-![alt text](martina-cinema-music.jpg)
+![alt text](img/capturas/martina-cinema-music.jpg)
 
 La siguiente captura muestra ambas secciones interactivas funcionando dentro del perfil.
  
