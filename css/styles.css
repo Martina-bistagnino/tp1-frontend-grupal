@@ -1217,6 +1217,7 @@ button {
     align-items: flex-start;
   }
 }
+
 /* Quita el contorno tosco por defecto cuando se hace clic con el ratón */
 a:focus:not(:focus-visible),
 button:focus:not(:focus-visible) {
@@ -1513,10 +1514,13 @@ body.intro-open {
 
     align-items: center;
 
+    flex-wrap: wrap;
+
     gap: 14px;
 
     margin-top: 45px;
 
+    max-width: 100%;
 }
 
 
