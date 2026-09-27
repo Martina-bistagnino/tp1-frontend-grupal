@@ -371,6 +371,7 @@ En las distintas interacciones del perfil se aplicaron conceptos como:
 
 ![Perfil Francisco Luis Bronzi](img/capturas/capturaperfilluis.png)
 
+> **Enfoque del módulo:** Responsable del área de **Infraestructura y Desarrollo Web**, asegurando la maquetación responsiva, la correcta integración front-end, el despliegue de servidores y la implementación de estándares de accesibilidad (A11y) y navegación semántica.
 Vintage Player: Botonera interactiva con data-luis que actualiza la carátula, categoría, título y descripción dentro de #luisPlayerDisplay.
 
 ![Vintage Player - Categoría Jazz](img/capturas/Luis-captura-vintage-player1.png)
