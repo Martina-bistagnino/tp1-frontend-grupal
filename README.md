@@ -363,6 +363,8 @@ En las distintas interacciones del perfil se aplicaron conceptos como:
   * `game`: HUD de ficha de rol/beat 'em up para *D&D: Shadow over Mystara*.
   * `inferno`: Realm merge de *Outworld* con alerta táctica y transiciones de audio.
 
+![Secuencia del modo inferno activando y desactivando](img/capturas/inferno-mode.gif)
+
 ![Perfil de Jorge](img/capturas/capturaperfiljorge.png)
 
 ### 5. Perfil de Luis (js/luis.js)
