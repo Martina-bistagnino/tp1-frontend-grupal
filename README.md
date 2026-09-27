@@ -367,6 +367,8 @@ En las distintas interacciones del perfil se aplicaron conceptos como:
 
 ### 5. Perfil de Luis (js/luis.js)
 
+![Perfil Francisco Luis Bronzi](img/capturas/capturaperfilluis.png)
+
 Vintage Player: Botonera interactiva con data-luis que actualiza la carátula, categoría, título y descripción dentro de #luisPlayerDisplay.
 
 ![Vintage Player - Categoría Jazz](img/capturas/Luis-captura-vintage-player1.png)
@@ -383,8 +385,6 @@ Navegación Semántica y Accesible: Menú mobile accesible con aria-label, aria-
 <img src="img/capturas/Luis-musica-AndréRiu.png" alt="Selección Musical - André Rieu" width="900">
 
 Etiquetado y Ocultamiento Decorativo: Enlaces de retorno al inicio con aria-label="Volver al inicio" (header y footer) y elementos puramente estéticos del hero protegidos con aria-hidden="true".
-
-![Perfil Francisco Luis Bronzi](img/capturas/capturaperfilluis.png)
 
 ### 6. Perfil de Martín (`martin.html` y `js/martin.js`)
 
