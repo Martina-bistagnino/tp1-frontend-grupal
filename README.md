@@ -320,6 +320,9 @@ En las distintas interacciones del perfil se aplicaron conceptos como:
 
 * **Curiosity Explorer (Terminal Interactiva):**
   - Consola/terminal de navegación (`#dalilaExplorer`) con botones contextuales identificados mediante `data-interest` (Tortugas, Astronomía, Egiptología, Creatividad y Curiosidades/Random).
+
+  ![alt text](img/capturas/curiosidades.png)
+
   - Actualización dinámica del DOM con transición suave de desvanecimiento (`fading`) para intercambiar íconos, títulos y textos descriptivos de forma fluida.
 
 * **Asistente Virtual Carmelucha:**
@@ -327,8 +330,15 @@ En las distintas interacciones del perfil se aplicaron conceptos como:
   - Inyecta consejos dinámicos de desarrollo, buenas prácticas de código y mensajes motivacionales aleatorios que se ocultan automáticamente tras unos segundos.
   - Gestión avanzada de temporizadores (`clearTimeout`) y reinicio de animación de entrada mediante *reflow* del DOM (`offsetWidth`).
 
+![alt text](img/capturas/boton-carmelucha.png)
+
 * **Modo Eclipse (Tema Alternativo):**
-  - Conmutador de tema visual (`#dalilaEclipseToggle`) que altera la clase `.eclipse-mode` en el elemento `<body>`.
+  - Conmutador de tema visual (`#dalilaEclipseToggle`) que altera la clase `.eclipse-mode` en el elemento `<body>`. Al hacer click en el botón modo eclipse cambian los colores de fondo y al hacer click en modo noche vuelve a la paleta de colores original.
+
+![alt text](img/capturas/modoeclipse.png)
+
+![alt text](img/capturas/modonoche.png)
+
   - Actualización síncrona de texto e indicadores de accesibilidad (`aria-pressed="true/false"`).
 
 * **Accesibilidad Web (Atributos ARIA):**
