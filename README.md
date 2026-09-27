@@ -375,12 +375,12 @@ Vintage Player: Botonera interactiva con data-luis que actualiza la carátula, c
 Accesibilidad (A11y) y Atributos ARIA (Completado):
 Región Dinámica Accesible: Implementación de aria-live="polite" en #luisPlayerDisplay para anunciar en tiempo real y sin interrupciones los cambios de categoría a usuarios de lectores de pantalla.
 
-![Selección Musical - Parte 1](img/capturas/Luis-musica-CaféFrech.png)
+<img src="img/capturas/Luis-musica-CaféFrech.png" alt="Selección Musical - Café Frech" width="800">
 
-Controles y Estados Interactivos: Incorporación de aria-controls="luisPlayerDisplay" y alternancia dinámica de estado mediante aria-pressed="true|false" in todos los botones del reproductor sincronizados vía JavaScript.
+Controles y Estados Interactivos: Incorporación de aria-controls="luisPlayerDisplay" y alternancia dinámica de estado mediante aria-pressed="true|false" en todos los botones del reproductor sincronizados vía JavaScript.
 Navegación Semántica y Accesible: Menú mobile accesible con aria-label, aria-expanded y aria-controls, y marcado semántico de paginación entre integrantes mediante <nav class="profile-navigation" aria-label="Navegación entre perfiles">.
 
-![Selección Musical - Parte 2](img/capturas/Luis-musica-AndréRiu.png)
+<img src="img/capturas/Luis-musica-AndréRiu.png" alt="Selección Musical - André Rieu" width="800">
 
 Etiquetado y Ocultamiento Decorativo: Enlaces de retorno al inicio con aria-label="Volver al inicio" (header y footer) y elementos puramente estéticos del hero protegidos con aria-hidden="true".
 
