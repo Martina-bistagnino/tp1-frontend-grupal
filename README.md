@@ -369,6 +369,8 @@ En las distintas interacciones del perfil se aplicaron conceptos como:
 
 ### 5. Perfil de Luis (js/luis.js)
 
+![Perfil Francisco Luis Bronzi](img/capturas/capturaperfilluis.png)
+
 Vintage Player: Botonera interactiva con data-luis que actualiza la carátula, categoría, título y descripción dentro de #luisPlayerDisplay.
 
 ![Vintage Player - Categoría Jazz](img/capturas/Luis-captura-vintage-player1.png)
@@ -377,16 +379,14 @@ Vintage Player: Botonera interactiva con data-luis que actualiza la carátula, c
 Accesibilidad (A11y) y Atributos ARIA (Completado):
 Región Dinámica Accesible: Implementación de aria-live="polite" en #luisPlayerDisplay para anunciar en tiempo real y sin interrupciones los cambios de categoría a usuarios de lectores de pantalla.
 
-![Selección Musical - Parte 1](img/capturas/Luis-musica-CaféFrech.png)
+<img src="img/capturas/Luis-musica-CaféFrech.png" alt="Selección Musical - Café Frech" width="900">
 
-Controles y Estados Interactivos: Incorporación de aria-controls="luisPlayerDisplay" y alternancia dinámica de estado mediante aria-pressed="true|false" in todos los botones del reproductor sincronizados vía JavaScript.
+Controles y Estados Interactivos: Incorporación de aria-controls="luisPlayerDisplay" y alternancia dinámica de estado mediante aria-pressed="true|false" en todos los botones del reproductor sincronizados vía JavaScript.
 Navegación Semántica y Accesible: Menú mobile accesible con aria-label, aria-expanded y aria-controls, y marcado semántico de paginación entre integrantes mediante <nav class="profile-navigation" aria-label="Navegación entre perfiles">.
 
-![Selección Musical - Parte 2](img/capturas/Luis-musica-AndréRiu.png)
+<img src="img/capturas/Luis-musica-AndréRiu.png" alt="Selección Musical - André Rieu" width="900">
 
 Etiquetado y Ocultamiento Decorativo: Enlaces de retorno al inicio con aria-label="Volver al inicio" (header y footer) y elementos puramente estéticos del hero protegidos con aria-hidden="true".
-
-![Perfil Francisco Luis Bronzi](img/capturas/capturaperfilluis.png)
 
 ### 6. Perfil de Martín (`martin.html` y `js/martin.js`)
 
