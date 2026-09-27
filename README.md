@@ -112,6 +112,8 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 
 ### Perfil de Martina (`martina.html` y `js/martina.js`)
 
+![Perfil de Dalila](img/capturas/capturaperfilmartina.png)
+
 Hola!
 Mi perfil tiene una estética tecnológica/gamer y utiliza una **Terminal 2.0** como principal centro de interacción.
 
@@ -318,6 +320,8 @@ En las distintas interacciones del perfil se aplicaron conceptos como:
 
 ### 3. Perfil de Dalila (`dalila.html` y `js/dalila.js`)
 
+![Perfil de Dalila](img/capturas/capturaperfildaly.png)
+
 * **Curiosity Explorer (Terminal Interactiva):**
   - Consola/terminal de navegación (`#dalilaExplorer`) con botones contextuales identificados mediante `data-interest` (Tortugas, Astronomía, Egiptología, Creatividad y Curiosidades/Random).
 
@@ -352,9 +356,9 @@ En las distintas interacciones del perfil se aplicaron conceptos como:
 * **Integración Multimedia:**
   - Reproductores embebidos mediante `<iframe>` para tráilers de cine/series y álbumes musicales destacados, configurados con títulos descriptivos (`title`) para accesibilidad.
 
-![Perfil de Dalila](img/capturas/capturaperfildaly.png)
-
 ### 4. Perfil de Jorge (`js/jorge.js`)
+
+![Perfil de Jorge](img/capturas/capturaperfiljorge.png)
 
 * **Cyber Console & Modo Inferno:** Procesador interactivo con dactilógrafo DOM recursivo (preserva etiquetas y enlaces externos). Conmuta la clase `.inferno-mode` con variables CSS, fondo de *Scorpion's Lair* (`Scorpion_Lair.jpg`), flash visual y sistema de audio dual (*Shao Kahn* al activar / *No Mercy* al estabilizar).
 * **Comandos de consola (`jorgeCommands`):**
@@ -364,8 +368,6 @@ En las distintas interacciones del perfil se aplicaron conceptos como:
   * `inferno`: Realm merge de *Outworld* con alerta táctica y transiciones de audio.
 
 ![Secuencia del modo inferno activando y desactivando](img/capturas/inferno-mode.gif)
-
-![Perfil de Jorge](img/capturas/capturaperfiljorge.png)
 
 ### 5. Perfil de Luis (js/luis.js)
 
