@@ -110,35 +110,211 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 
 ![Captura Portada](img/capturas/capturaportada.png)
 
-2. Perfil de Martina (martina.html y js/martina.js)
+### Perfil de Martina (`martina.html` y `js/martina.js`)
 
-Mi perfil utiliza una Terminal 2.0 como centro principal de interacción. La terminal permite ejecutar comandos escritos o mediante accesos rápidos, modifica contenido del DOM y conecta distintas secciones del perfil.
-- Terminal 2.0:
-  - Entrada de comandos mediante formulario e historial de ejecución.
-  - Recuperación de comandos anteriores con las flechas ↑ y ↓.
-  - Contador dinámico de comandos y efecto de escritura progresiva (typewriter).
-  - Secuencia de inicio (boot sequence) activada con IntersectionObserver cuando la terminal entra en pantalla.
-  - Comandos informativos: about, personal, skills, work, game, study, psychology, status, random, clear y tip.
-  - Cambio de tema mediante theme, alternando los modos visuales cyan, rosa y violeta.
-- Navegación y modos visuales desde comandos:
-  - about y skills llevan automáticamente a sus respectivas secciones mediante scrollIntoView().
-  - music desplaza la página hasta el módulo musical.
-  - photography, travel y design activan respectivamente CAMERA_MODE, TRAVEL_MODE y DESIGN_MODE, mostrando paneles visuales temporales con contenido personalizado.
-- Odin.exe y Easter Eggs:
-  - El comando secreto odin activa un asistente flotante basado en la mascota del perfil, cambia su estado de SLEEPING a ONLINE y muestra mensajes seleccionados aleatoriamente.
-  - Los comandos secretos finishhim y fatality activan un efecto visual temporal y reproducen audio/fatality.mp3 a partir de una interacción explícita del usuario.
-- Music Explorer:
-  - Las tarjetas de los álbumes responden a mouseenter, foco por teclado y click/tap.
-  - JavaScript actualiza dinámicamente el álbum y artista seleccionados utilizando atributos data-*.
-  - Cada álbum incluye un enlace externo a YouTube con target="_blank" y rel="noopener noreferrer".
-- Cinema Explorer:
-  - Las tarjetas de películas/series responden a mouse, teclado y dispositivos táctiles.
-  - La selección modifica dinámicamente modo, ícono, título, descripción, formato, vibe y foco mediante atributos data-* y manipulación del DOM.
-  - Cada opción activa una identidad visual distinta (ACTION_MODE, SCIENCE_MODE o CITY_MODE).
-- Accesibilidad y experiencia de uso:
-  - Regiones dinámicas con aria-live / aria-atomic, controles navegables por teclado y estados visuales de foco.
-  - La lógica consulta prefers-reduced-motion para reducir animaciones, escritura progresiva y desplazamientos suaves cuando el usuario así lo solicita.
-  - Los módulos flotantes se cierran entre sí para evitar superposiciones y mantener una interfaz clara en pantallas pequeñas.
+Hola!
+Mi perfil tiene una estética tecnológica/gamer y utiliza una **Terminal 2.0** como principal centro de interacción.
+
+Además de mostrar información personal, la terminal permite ejecutar comandos, navegar entre secciones y activar distintos módulos visuales desarrollados con JavaScript.
+
+#### Terminal 2.0
+
+La terminal permite ejecutar comandos escritos por el usuario o utilizar botones de acceso rápido.
+
+Entre sus funcionalidades se encuentran:
+
+- ingreso de comandos mediante formulario;
+- historial de comandos ejecutados;
+- navegación por el historial utilizando las flechas `↑` y `↓`;
+- contador dinámico de comandos;
+- efecto de escritura progresiva (*typewriter*);
+- secuencia de inicio (*boot sequence*);
+- activación de la terminal mediante `IntersectionObserver`;
+- respuestas dinámicas según el comando ingresado;
+- modificación de elementos del DOM;
+- cambio de temas visuales.
+
+Algunos de los comandos disponibles son:
+
+- `about`
+- `personal`
+- `skills`
+- `work`
+- `game`
+- `study`
+- `psychology`
+- `photography`
+- `travel`
+- `design`
+- `music`
+- `status`
+- `theme`
+- `random`
+- `clear`
+- `tip`
+
+También existen algunos comandos ocultos utilizados como *Easter Eggs*.
+
+#### Navegación desde la terminal
+
+Algunos comandos no solamente muestran información, sino que también permiten navegar hacia distintas partes del perfil.
+
+Por ejemplo:
+
+- `about` → sección **Sobre mí**;
+- `skills` → sección **Habilidades**;
+- `music` → sección **Music Explorer**.
+
+Para estos desplazamientos se utiliza `scrollIntoView()`.
+
+Cuando el usuario tiene configurada la opción `prefers-reduced-motion`, el desplazamiento se realiza sin animación.
+
+#### Odin.exe
+Uno de los comandos secretos de la terminal es:
+
+`odin`
+
+Al ejecutarlo, JavaScript activa un asistente flotante basado en Odin, la mascota del perfil.
+La interacción realiza diferentes acciones:
+- detecta el comando ingresado;
+- cambia el estado de Odin de SLEEPING a ONLINE;
+- muestra dinámicamente la ilustración de Odin;
+- selecciona una frase aleatoria mediante Math.random();
+- utiliza setTimeout() para mantener el asistente visible durante unos segundos;
+- vuelve automáticamente al estado SLEEPING.
+De esta manera se combinan manipulación del DOM, estados visuales, temporizadores y contenido dinámico.
+Captura — Terminal 2.0 y Odin.exe
+En la siguiente captura se observa la ejecución del comando secreto odin y la aparición del asistente en pantalla.
+ 
+![alt text](martina-terminal-odin.png)
+
+La terminal también permite activar diferentes modos visuales relacionados con intereses personales.
+Estos módulos aparecen temporalmente en pantalla y modifican su contenido mediante JavaScript y atributos *data*.
+
+##CAMERA_MODE
+
+El comando:
+"potography", activa CAMERA_MODE, un panel inspirado en la interfaz de una cámara.
+El módulo incorpora elementos visuales como:
+- indicador REC;
+- punto de enfoque;
+- ISO;
+- velocidad de obturación;
+- apertura;
+- información relacionada con fotografía.
+
+![alt text](martina-camera-mode-1.jpg)
+
+##TRAVEL_MODE
+
+El comando:
+"travel", activa TRAVEL_MODE.
+Este módulo utiliza una representación tipo radar para acompañar visualmente el interés por viajar y conocer nuevos lugares.
+El panel modifica dinámicamente:
+- título;
+- descripción;
+- modo activo;
+- representación visual.
+
+![alt text](martina-travel-mode.png)
+
+##DESIGN_MODE
+
+El comando:
+"design", activa DESIGN_MODE.
+Este módulo muestra la identidad cromática utilizada en el perfil y representa visualmente el interés por el diseño aplicado al desarrollo web.
+La paleta principal utilizada es:
+#080D2C
+#31AFE6
+#DF3C5D
+#7A18C6
+
+##Cinema Explorer
+La sección de películas y series incorpora una interacción desarrollada con JavaScript denominada Cinema Explorer.
+Las tarjetas reaccionan al:
+- pasar el mouse;
+- recibir foco mediante teclado;
+- hacer click o tocar desde dispositivos táctiles.
+Cada tarjeta contiene información mediante atributos data-*.
+Cuando una opción es seleccionada, JavaScript actualiza dinámicamente:
+- ícono;
+- título;
+- descripción;
+- modo visual;
+- formato;
+- vibe;
+- foco temático.
+Los modos utilizados son:
+- ACTION_MODE
+- SCIENCE_MODE
+- CITY_MODE
+También se agrega una clase activa a la tarjeta seleccionada para brindar una respuesta visual inmediata.
+Music Explorer
+La sección musical incorpora otra interacción independiente denominada Music Explorer.
+Cada álbum contiene atributos como:
+data-album
+data-artist
+
+JavaScript utiliza estos datos para actualizar dinámicamente el panel inferior cuando el usuario interactúa con una tarjeta.
+Las tarjetas responden a:
+- mouseenter;
+- foco mediante teclado;
+- click o toque.
+Además, cada álbum incluye un enlace externo para acceder al contenido musical en YouTube.
+Los enlaces utilizan:
+target="_blank"
+rel="noopener noreferrer"
+
+De esta forma se evita almacenar canciones comerciales dentro del repositorio y el contenido se abre en una nueva pestaña.
+
+![alt text](martina-cinema-music.jpg)
+
+La siguiente captura muestra ambas secciones interactivas funcionando dentro del perfil.
+ 
+Easter Eggs
+La Terminal 2.0 también incluye comandos ocultos:
+finishhim
+fatality
+
+Al ejecutarlos se activa temporalmente un modo especial llamado:
+fatality-mode
+
+Además, la interacción puede reproducir el archivo:
+audio/fatality.mp3
+
+El sonido únicamente se ejecuta luego de una interacción explícita del usuario, respetando las restricciones de reproducción automática de los navegadores.
+Accesibilidad
+Durante el desarrollo del perfil también se incorporaron diferentes mejoras de accesibilidad.
+Entre ellas:
+- navegación mediante teclado;
+- estados visibles de foco;
+- botones con semántica adecuada;
+- uso de aria-live;
+- uso de aria-atomic;
+- textos alternativos en imágenes;
+- enlaces externos con rel="noopener noreferrer";
+- soporte para prefers-reduced-motion;
+- reducción de animaciones cuando el usuario lo solicita;
+- funcionamiento con mouse, teclado y dispositivos táctiles.
+Los módulos flotantes también están preparados para evitar superposiciones innecesarias entre distintas interacciones.
+Conceptos de JavaScript utilizados
+En las distintas interacciones del perfil se aplicaron conceptos como:
+- querySelector() y querySelectorAll();
+- addEventListener();
+- manipulación de classList;
+- atributos dataset;
+- modificación dinámica de textContent;
+- Math.random();
+- setTimeout();
+- IntersectionObserver;
+- scrollIntoView();
+- eventos de teclado;
+- eventos de mouse;
+- formularios;
+- arreglos y objetos;
+- funciones asincrónicas;
+- manipulación dinámica del DOM.
+
 
 ### 3. Perfil de Dalila (`dalila.html` y `js/dalila.js`)
 
