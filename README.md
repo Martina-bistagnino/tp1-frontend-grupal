@@ -110,10 +110,35 @@ Se combinaron caracteres ASCII técnicos (`</>`, `{ }`, `0101`, `PY`, `FLB`, `8B
 
 ![Captura Portada](img/capturas/capturaportada.png)
 
-### 2. Perfil de Martina (`js/martina.js`)
-* **Terminal Interactiva:** Botones con atributo `data-terminal` que inyectan respuestas sobre código, creatividad y hobbies dentro de `#terminalOutput`.
+2. Perfil de Martina (martina.html y js/martina.js)
 
-![Perfil de Martina](img/capturas/capturaperfilmartina.png)
+Mi perfil utiliza una Terminal 2.0 como centro principal de interacción. La terminal permite ejecutar comandos escritos o mediante accesos rápidos, modifica contenido del DOM y conecta distintas secciones del perfil.
+- Terminal 2.0:
+  - Entrada de comandos mediante formulario e historial de ejecución.
+  - Recuperación de comandos anteriores con las flechas ↑ y ↓.
+  - Contador dinámico de comandos y efecto de escritura progresiva (typewriter).
+  - Secuencia de inicio (boot sequence) activada con IntersectionObserver cuando la terminal entra en pantalla.
+  - Comandos informativos: about, personal, skills, work, game, study, psychology, status, random, clear y tip.
+  - Cambio de tema mediante theme, alternando los modos visuales cyan, rosa y violeta.
+- Navegación y modos visuales desde comandos:
+  - about y skills llevan automáticamente a sus respectivas secciones mediante scrollIntoView().
+  - music desplaza la página hasta el módulo musical.
+  - photography, travel y design activan respectivamente CAMERA_MODE, TRAVEL_MODE y DESIGN_MODE, mostrando paneles visuales temporales con contenido personalizado.
+- Odin.exe y Easter Eggs:
+  - El comando secreto odin activa un asistente flotante basado en la mascota del perfil, cambia su estado de SLEEPING a ONLINE y muestra mensajes seleccionados aleatoriamente.
+  - Los comandos secretos finishhim y fatality activan un efecto visual temporal y reproducen audio/fatality.mp3 a partir de una interacción explícita del usuario.
+- Music Explorer:
+  - Las tarjetas de los álbumes responden a mouseenter, foco por teclado y click/tap.
+  - JavaScript actualiza dinámicamente el álbum y artista seleccionados utilizando atributos data-*.
+  - Cada álbum incluye un enlace externo a YouTube con target="_blank" y rel="noopener noreferrer".
+- Cinema Explorer:
+  - Las tarjetas de películas/series responden a mouse, teclado y dispositivos táctiles.
+  - La selección modifica dinámicamente modo, ícono, título, descripción, formato, vibe y foco mediante atributos data-* y manipulación del DOM.
+  - Cada opción activa una identidad visual distinta (ACTION_MODE, SCIENCE_MODE o CITY_MODE).
+- Accesibilidad y experiencia de uso:
+  - Regiones dinámicas con aria-live / aria-atomic, controles navegables por teclado y estados visuales de foco.
+  - La lógica consulta prefers-reduced-motion para reducir animaciones, escritura progresiva y desplazamientos suaves cuando el usuario así lo solicita.
+  - Los módulos flotantes se cierran entre sí para evitar superposiciones y mantener una interfaz clara en pantallas pequeñas.
 
 ### 3. Perfil de Dalila (`dalila.html` y `js/dalila.js`)
 
