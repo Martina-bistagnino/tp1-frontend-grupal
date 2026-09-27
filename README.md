@@ -373,15 +373,18 @@ Vintage Player: Botonera interactiva con data-luis que actualiza la carátula, c
 ![Vintage Player - Categoría Cine](img/capturas/Luis-captura-vintage-player.png)
 
 Accesibilidad (A11y) y Atributos ARIA (Completado):
-- **Región Dinámica Accesible:** Implementación de aria-live="polite" en #luisPlayerDisplay para anunciar en tiempo real y sin interrupciones los cambios de categoría a usuarios de lectores de pantalla.
-- **Controles y Estados Interactivos:** Incorporación de aria-controls="luisPlayerDisplay" y alternancia dinámica de estado mediante aria-pressed="true|false" en todos los botones del reproductor sincronizados vía JavaScript.
+Región Dinámica Accesible: Implementación de aria-live="polite" en #luisPlayerDisplay para anunciar en tiempo real y sin interrupciones los cambios de categoría a usuarios de lectores de pantalla.
 
-![Selección Musical - Tarjetas interactiva 1](img/capturas/Luis-musica-CaféFrech.png)
+![Selección Musical - Parte 1](img/capturas/Luis-musica-CaféFrech.png)
 
-- **Navegación Semántica y Accesible:** Menú mobile accesible con aria-label, aria-expanded y aria-controls, y marcado semántico de paginación entre integrantes mediante `<nav class="profile-navigation" aria-label="Navegación entre perfiles">`.
-- **Etiquetado y Ocultamiento Decorativo:** Enlaces de retorno al inicio con aria-label="Volver al inicio" (header y footer) y elementos puramente estéticos del hero protegidos con aria-hidden="true".
+Controles y Estados Interactivos: Incorporación de aria-controls="luisPlayerDisplay" y alternancia dinámica de estado mediante aria-pressed="true|false" in todos los botones del reproductor sincronizados vía JavaScript.
+Navegación Semántica y Accesible: Menú mobile accesible con aria-label, aria-expanded y aria-controls, y marcado semántico de paginación entre integrantes mediante <nav class="profile-navigation" aria-label="Navegación entre perfiles">.
 
-![Selección Musical - Tarjetas interactiva 2](img/capturas/Luis-musica-AndréRiu.png)
+![Selección Musical - Parte 2](img/capturas/Luis-musica-AndréRiu.png)
+
+Etiquetado y Ocultamiento Decorativo: Enlaces de retorno al inicio con aria-label="Volver al inicio" (header y footer) y elementos puramente estéticos del hero protegidos con aria-hidden="true".
+
+![Perfil Francisco Luis Bronzi](img/capturas/capturaperfilluis.png)
 
 ### 6. Perfil de Martín (`martin.html` y `js/martin.js`)
 
