@@ -367,6 +367,8 @@ En las distintas interacciones del perfil se aplicaron conceptos como:
 
 ### 6. Perfil de Martín (`martin.html` y `js/martin.js`)
 
+![Perfil de Martín](img/capturas/capturaperfilmartin.png)
+
 * **Retro System Console (MARTIN OS v1.0):**
   * Consola interactiva inspirada en terminales arcade y sistemas retro de 8 bits (`#martinConsole`).
   * Procesamiento de comandos mediante botones con atributos `data-command`, vinculados dinámicamente por eventos de escucha (`click`).
@@ -395,7 +397,10 @@ En las distintas interacciones del perfil se aplicaron conceptos como:
   * Disposición adaptable de las tarjetas de música (`.martin-track`), reorganizando el contenedor del reproductor y la información textual a formato vertical en pantallas móviles para evitar desbordes horizontales.
   * Grid adaptable de habilidades (`.martin-stack-grid`) y rasgos de personalidad (`.martin-stats`), escalando de forma fluida de 4 y 5 columnas en escritorio a 2 columnas en tablets y 1 columna en móviles menores a 400 px.
 
-![Perfil de Martín](img/capturas/capturaperfilmartin.png)
+#### Evidencia de interactividad con JS:
+> Animación en bucle del comando `BOOT` en **MARTIN OS v1.0**. Muestra la ejecución asíncrona mediante temporizadores de JavaScript, simulando una secuencia de booteo retro que valida y despliega en tiempo real los módulos del sistema en pantalla.
+
+![Secuencia interactiva de Boot en MartinOS](img/capturas/MartinOS-Boot.gif)
 
 ---
 
